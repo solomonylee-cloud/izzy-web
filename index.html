@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Izzy — Your AI Ski &amp; Snowboard Companion</title>
+  <meta name="description" content="Izzy is a hands-free AI companion for the mountain — real-time conditions, voice navigation, safety SOS, and a way to find your crew." />
+  <style>
+    :root {
+      --navy: #0B1B3F;
+      --navy-deep: #07122B;
+      --orange: #FF7A1A;
+      --orange-warm: #FFB066;
+      --ink: #EAF0FF;
+      --muted: rgba(234, 240, 255, 0.66);
+      --card: rgba(255, 255, 255, 0.05);
+      --line: rgba(255, 255, 255, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, #16335f 0%, var(--navy) 45%, var(--navy-deep) 100%);
+      color: var(--ink);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px 80px; }
+    .logo { font-size: 56px; line-height: 1; }
+    h1 { font-size: 44px; font-weight: 800; letter-spacing: -1px; margin: 18px 0 6px; }
+    .tag { font-size: 20px; color: var(--orange-warm); font-weight: 600; margin-bottom: 22px; }
+    .lede { font-size: 18px; color: var(--muted); max-width: 60ch; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 40px 0; }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 36px; } }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+    .card h3 { font-size: 16px; margin-bottom: 4px; }
+    .card p { font-size: 14px; color: var(--muted); }
+    .pill { display: inline-block; background: rgba(255,122,26,0.16); color: var(--orange-warm);
+            border: 1px solid rgba(255,122,26,0.35); border-radius: 999px; padding: 6px 14px;
+            font-size: 13px; font-weight: 600; letter-spacing: 0.3px; margin-bottom: 28px; }
+    a { color: var(--orange-warm); }
+    .footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+              font-size: 14px; color: var(--muted); }
+    .footer a { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="logo">🏔️</div>
+    <h1>Izzy</h1>
+    <div class="tag">Your AI ski &amp; snowboard companion.</div>
+    <span class="pill">In development — coming to iOS &amp; Android</span>
+    <p class="lede">
+      Izzy rides with you, hands-free. Ask out loud and get real-time mountain
+      conditions, on-trail navigation, and quick answers — plus safety tools and
+      an easy way to stay connected with your crew on the hill.
+    </p>
+
+    <div class="grid">
+      <div class="card"><h3>🎙️ Voice companion</h3><p>Talk to Izzy hands-free for conditions, runs, and answers — no fumbling with gloves off.</p></div>
+      <div class="card"><h3>🗺️ Resort &amp; navigation</h3><p>Live conditions, trail maps, and guidance so you always know what's open and where to go.</p></div>
+      <div class="card"><h3>⛑️ Safety &amp; SOS</h3><p>Fall detection and one-tap SOS that can alert your emergency contacts with your location.</p></div>
+      <div class="card"><h3>💬 Find your crew</h3><p>Connect with ski buddies, see who's at the resort, and meet up faster.</p></div>
+    </div>
+
+    <div class="footer">
+      <p>Questions or feedback? <a href="mailto:izzywolfai@gmail.com">izzywolfai@gmail.com</a></p>
+      <p style="margin-top:8px"><a href="./privacy.html">Privacy Policy</a></p>
+      <p style="margin-top:16px">© <span id="yr"></span> Izzy. All rights reserved.</p>
+    </div>
+  </main>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
