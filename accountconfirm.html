@@ -2,12 +2,18 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Confirm your Izzy account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>.confirm-wrap{max-width:460px;margin:12vh auto;padding:24px;text-align:center}
-.confirm-wrap h1{margin:.4em 0}.confirm-btn{display:inline-block;margin-top:20px;padding:14px 28px;border-radius:999px;background:#1B426B;color:#fff;text-decoration:none;font-weight:700}
-.muted{opacity:.7;font-size:14px}</style>
+.confirm-wrap,.confirm-wrap h1,.confirm-wrap p,.confirm-wrap a{font-family:'Quicksand',ui-rounded,system-ui,sans-serif}
+.confirm-logo{width:76px;height:76px;border-radius:20px;margin:0 auto 20px;display:block;box-shadow:0 8px 28px rgba(0,0,0,.35)}
+.confirm-wrap h1{margin:.4em 0;font-weight:700}.confirm-btn{display:inline-block;margin-top:20px;padding:14px 28px;border-radius:999px;background:#1B426B;color:#fff;text-decoration:none;font-weight:700}
+.muted{opacity:.7;font-size:14px;font-weight:500}</style>
 </head><body>
 <div class="confirm-wrap" id="wrap">
+  <img class="confirm-logo" src="assets/app-icon.png" alt="Izzy">
   <h1 id="title">Confirming…</h1>
   <p id="msg" class="muted">One moment while we confirm your account.</p>
   <a id="openApp" class="confirm-btn" style="display:none" href="#">Open Izzy</a>
