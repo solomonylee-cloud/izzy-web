@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "8TTV7VVZ47.com.solomonylee.SkiBuddyGemini",
+          "8TTV7VVZ47.com.solomonylee.SkiBuddyGemini.dev"
+        ],
+        "components": [
+          { "/": "/accountconfirm", "comment": "email confirmation landing" },
+          { "/": "/accountconfirm/*", "comment": "email confirmation w/ trailing path" }
+        ]
+      }
+    ]
+  }
+}
