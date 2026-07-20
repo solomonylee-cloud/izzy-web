@@ -18,8 +18,12 @@
   <p id="msg" class="muted">One moment while we confirm your account.</p>
   <a id="openApp" class="confirm-btn" style="display:none" href="#">Open Izzy</a>
 </div>
+<!-- Vendored @supabase/supabase-js@2.110.7 UMD build (official npm dist/umd/supabase.js,
+     tarball sha512 verified against the npm registry's published dist.integrity before
+     vendoring — see commit message). Same-origin, no third-party fetch, no floating version. -->
+<script src="vendor/supabase-js@2.110.7.umd.js"></script>
 <script type="module">
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+const { createClient } = window.supabase; // from the vendored UMD script above
 const PROJECTS = {
   prod:    { url: 'https://jfafstzpurlgpyrfoheg.supabase.co', anon: 'sb_publishable_eTyWJE4lS_74Ek7JDtwvIA_rQ7dj9mU' },
   staging: { url: 'https://kncotpbwcaqtqgnksiue.supabase.co', anon: 'sb_publishable_w4d48K0MtUuvOyULYmCLJA_gl9_j25U' },
