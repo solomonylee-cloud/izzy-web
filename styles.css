@@ -54,6 +54,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip; /* decorative halos extend past the viewport on small screens */
 }
 
 body {
