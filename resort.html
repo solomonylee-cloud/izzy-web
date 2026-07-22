@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="en"><head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Izzy Resort — Real-time mountain ops &amp; patrol dispatch</title>
+<meta name="description" content="Izzy Resort is the real-time operating system for ski patrol and mountain ops: a live dispatch console for the shack, a patrol app for the hill, and a direct line to skiers' phones. Replace paper sweep logs, whiteboards, and radio roll-calls.">
+
+<!-- Open Graph / social -->
+<meta property="og:title" content="Izzy Resort — Real-time mountain ops &amp; patrol dispatch">
+<meta property="og:description" content="When a skier taps SOS, your patrol's phones buzz in seconds. Live dispatch, digital sweep logs, lift &amp; trail status, staff comms — one system, updating in under a second.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://izzywolf.com/resort.html">
+<meta property="og:image" content="https://izzywolf.com/assets/app-icon.png">
+
+<link rel="icon" href="assets/app-icon.png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+
+<!-- Fonts: Quicksand (display 600/700) + Hanken Grotesk (body 400/500/600) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Quicksand:wght@600;700&amp;display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Izzy — home">
+      <img src="assets/app-icon.png" alt="" width="38" height="38">
+      Izzy <span class="brand-suffix">Resort</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#console">Ops console</a>
+      <a href="#patrol">Patrol app</a>
+      <a href="#safety">Life-safety</a>
+      <a href="app.html">For skiers</a>
+    </nav>
+    <a class="btn btn-primary btn-sm header-cta" href="#pilot">Request a pilot</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Izzy Resort — for mountain ops &amp; patrol</p>
+        <h1>When a skier taps SOS, <em>your patrol's phones buzz in seconds.</em></h1>
+        <p class="lede">Izzy Resort is the real-time operating system for the mountain: a dispatch console for the shack, a staff app for the hill, and a live wire to skiers' phones. Retire the paper sweep logs, the whiteboard, and the radio roll-call — run the whole day from one live system.</p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#pilot">Request a pilot</a>
+          <a class="btn btn-ghost" href="index.html#loop">See how the loop works</a>
+        </div>
+
+        <div class="trust-row">
+          <span>SOS → patrol push in 2–3 seconds</span>
+          <span>Live updates in under a second</span>
+          <span>Every action audit-logged</span>
+        </div>
+      </div>
+
+      <div class="hero-art console-art">
+        <div class="halo"></div>
+        <div class="console-mock" role="img" aria-label="Illustration of the Izzy Resort dispatch console: a live incident queue with an SOS being acknowledged.">
+          <div class="cm-head">
+            <span class="cm-dot"></span><span class="cm-dot"></span><span class="cm-dot"></span>
+            <span class="cm-title">Dispatch — Incident queue</span>
+            <span class="cm-live"><span class="dot"></span>LIVE</span>
+          </div>
+          <div class="cm-row is-sos">
+            <span class="cm-pill pill-red">SOS</span>
+            <span class="cm-txt"><b>Skier SOS — Upper Ridge</b><small>GPS + breadcrumb · fall detected · 12s ago</small></span>
+            <span class="cm-pill pill-amber">DISPATCHING</span>
+          </div>
+          <div class="cm-row">
+            <span class="cm-pill pill-blue">INC-214</span>
+            <span class="cm-txt"><b>Knee injury — Bear Chutes</b><small>J. Alvarez en route · 4 min</small></span>
+            <span class="cm-pill pill-amber">EN ROUTE</span>
+          </div>
+          <div class="cm-row">
+            <span class="cm-pill pill-blue">INC-213</span>
+            <span class="cm-txt"><b>Lost kid — Base lodge</b><small>Reunited with parent · closed</small></span>
+            <span class="cm-pill pill-green">CLOSED</span>
+          </div>
+          <div class="cm-row is-dim">
+            <span class="cm-pill pill-blue">SWEEP</span>
+            <span class="cm-txt"><b>Close sweep — East Bowl</b><small>Clear · logged from patrol app</small></span>
+            <span class="cm-pill pill-green">CLEAR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STATS ============================ -->
+  <section class="section stats-band">
+    <div class="wrap">
+      <div class="stat-chips">
+        <div class="stat"><b>2–3s</b><span>from skier SOS to patrol push</span></div>
+        <div class="stat"><b>&lt;1s</b><span>console &amp; app updates, no refresh</span></div>
+        <div class="stat"><b>6×</b><span>auto re-alerts until a human responds</span></div>
+        <div class="stat"><b>100%</b><span>of state changes audit-logged</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ OPS CONSOLE ============================ -->
+  <section class="story" id="console">
+    <div class="wrap">
+      <div class="text-side">
+        <p class="eyebrow">The ops console</p>
+        <h2>One screen that runs the mountain.</h2>
+        <div class="body">
+          <p>A live dispatch console that works in any browser — on the shack iPad, the patrol director's laptop, or the wall. Skier SOS alerts and staff-reported incidents land in the same queue, and everything updates in under a second.</p>
+        </div>
+        <ul class="feature-list">
+          <li><span class="tick">✓</span><span class="txt"><strong>Live incident queue &amp; dispatch</strong> — assign patrollers, add timeline notes, track acknowledged → en&nbsp;route → on&nbsp;scene → closed, with outcomes and injury severity.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Incident wall map</strong> — every open incident on a live mountain map, built for the shack iPad.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Coverage heatmap</strong> — see which sections of the mountain nobody has checked lately: green under 2 hours, amber 2–4, red beyond.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Lift &amp; trail status board</strong> — open, hold, or close in one click; the change flows straight into skiers' apps.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Shift &amp; staffing dispatch</strong> — who's clocked in where, per lift and per position, with force clock-out and a 14-hour fatigue safeguard.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Staff comms that confirm</strong> — broadcast to everyone, one team, or one lift crew; urgent messages require acknowledgment, and you see who has read what, live.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Skier announcements</strong> — publish "Lift 7 on wind hold" once and it pushes to skiers on your mountain.</span></li>
+        </ul>
+        <p class="note-line"><b>Role-aware by design.</b> Patrol, mountain ops, and guest services each see exactly their piece — and every state change writes an append-only audit row with the real actor behind it.</p>
+      </div>
+      <div class="art-side">
+        <div class="panel-stack">
+          <div class="mini-panel">
+            <h4>Coverage — East side</h4>
+            <div class="cov-grid">
+              <span class="cov ok">Summit</span><span class="cov ok">Ridge</span><span class="cov warn">Bowl</span>
+              <span class="cov ok">Glades</span><span class="cov late">Chutes</span><span class="cov ok">Base</span>
+            </div>
+            <small>Green &lt;2h · amber 2–4h · red &gt;4h since last sweep</small>
+          </div>
+          <div class="mini-panel">
+            <h4>Lifts</h4>
+            <div class="lift-row"><span>Summit Express</span><span class="cm-pill pill-green">OPEN</span></div>
+            <div class="lift-row"><span>Lift 7</span><span class="cm-pill pill-amber">WIND HOLD</span></div>
+            <div class="lift-row"><span>Tram</span><span class="cm-pill pill-blue">SCHEDULED</span></div>
+            <small>Changes reach skiers' apps in near real time</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PATROL APP ============================ -->
+  <section class="story reverse" id="patrol">
+    <div class="wrap">
+      <div class="text-side">
+        <p class="eyebrow">The patrol app</p>
+        <h2>Dispatch in every patroller's pocket.</h2>
+        <div class="body">
+          <p>iOS and Android, built for gloves and goggles. One staff app for patrollers, lifties, and leads — clock in, and the mountain knows you're on.</p>
+        </div>
+        <ul class="feature-list">
+          <li><span class="tick">✓</span><span class="txt"><strong>Time-critical incident push</strong> — an SOS reaches every on-shift patroller's phone in 2–3 seconds.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>One-tap "I'm taking this"</strong> — acknowledge to claim, then update en&nbsp;route → on&nbsp;scene → closed from the hill.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Navigate to the skier</strong> — the incident shows their live GPS on the map, with one-tap hand-off to turn-by-turn navigation.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Digital sweep logs</strong> — log open sweeps, spot checks, and close sweeps in seconds; the coverage map updates itself.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Photos &amp; notes on the incident</strong> — the report writes itself while you work.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Two-way comms</strong> — receive scoped broadcasts, acknowledge the urgent ones, reply to the sender.</span></li>
+        </ul>
+        <p class="note-line"><b>Never fake a location.</b> On-shift patroller positions refresh every few minutes so dispatch can route the nearest responder — and a bad GPS fix is dropped, never guessed, because a wrong dot could send help to the wrong side of the mountain.</p>
+      </div>
+      <div class="art-side">
+        <div class="hero-art">
+          <div class="halo"></div>
+          <div class="phone">
+            <div class="screen patrol-screen">
+              <span class="notch"></span>
+              <div class="ps-alert">
+                <b>🚨 SOS — Upper Ridge</b>
+                <small>Fall detected · GPS attached · 8s ago</small>
+              </div>
+              <div class="ps-actions">
+                <span class="ps-btn primary">Acknowledge — I'm taking this</span>
+                <span class="ps-btn">View on map</span>
+              </div>
+              <div class="ps-log">
+                <span><i class="pl-dot"></i>Push received · 2.4s after SOS</span>
+                <span><i class="pl-dot"></i>Breadcrumb trail attached</span>
+                <span><i class="pl-dot"></i>Dispatch watching live</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CLOSED LOOP ============================ -->
+  <section class="story" id="loop">
+    <div class="wrap">
+      <div class="text-side">
+        <p class="eyebrow">The closed loop</p>
+        <h2>The only console wired straight to the skier's phone.</h2>
+        <div class="body">
+          <p>Thousands of skiers already carry <a href="app.html" style="color:var(--blue-bright)">Izzy, the AI ski companion</a>. Partner with Izzy Resort and their SOS lands in <em>your</em> dispatch queue — with their real name, live GPS, and a 60-second breadcrumb trail — and your patrol's response travels all the way back to their pocket.</p>
+        </div>
+        <ul class="feature-list">
+          <li><span class="tick">✓</span><span class="txt"><strong>Verified identity, stamped server-side</strong> — dispatch sees who's calling; it can't be forged.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>"Patrol is responding," back to a locked phone</strong> — the skier hears from you even with the phone in a pocket. Parents of a kid in SOS are alerted in parallel.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>A push channel to your guests</strong> — announcements and lift status reach every Izzy user on your mountain, instantly.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Honest fallback</strong> — if no patroller confirms in time, the skier is told to call 911. Izzy never fakes coverage — and never replaces your emergency procedures.</span></li>
+        </ul>
+      </div>
+      <div class="art-side">
+        <div class="loop-diagram" role="img" aria-label="Diagram of the closed safety loop between the skier's app and resort dispatch.">
+          <div class="ld-node"><b>Skier's phone</b><small>SOS · GPS · breadcrumb</small></div>
+          <div class="ld-arrows"><span class="ld-arrow">→ 2–3s →</span><span class="ld-arrow back">← "responding" ←</span></div>
+          <div class="ld-node"><b>Your dispatch</b><small>incident · patrol push · ack</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ LIFE-SAFETY ============================ -->
+  <section class="story safety reverse" id="safety">
+    <div class="wrap">
+      <div class="text-side">
+        <p class="eyebrow is-red">Life-safety engineering</p>
+        <h2>Built like lives depend on it.</h2>
+        <div class="body">
+          <p>Izzy Resort treats every SOS as a life-safety event, and the engineering follows: the system is designed to fail toward alerting a human, never toward silence.</p>
+        </div>
+        <ul class="feature-list">
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>Never-drop SOS</strong> — an incident is never lost to a push hiccup; alerting keeps retrying around any failure.</span></li>
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>Escalates until a human answers</strong> — re-alerts roughly every minute, widening from on-shift patrollers to all patrol-eligible staff; an unacknowledged incident stays loud on the console, never silently expires.</span></li>
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>Confirm-first honesty</strong> — the skier hears "patrol is responding" only when a patroller actually responds, never from a delivery count.</span></li>
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>One press, one incident</strong> — retries can't duplicate an SOS, and floods can't poison the queue.</span></li>
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>Accountable to the second</strong> — an append-only audit trail records every state change with the real person behind it; staff access is per-resort, least-privilege, with two-factor on sensitive changes.</span></li>
+        </ul>
+        <p class="note-line"><b>Supplemental by design:</b> Izzy Resort strengthens your existing patrol and emergency procedures — it never replaces radios, dispatch protocols, or 911.</p>
+      </div>
+      <div class="art-side">
+        <div class="sos-stage">
+          <span class="ring r1"></span>
+          <span class="ring r2"></span>
+          <button class="sos-btn" type="button" aria-label="Skier SOS — lands directly in your dispatch queue">SOS<small>→ YOUR DISPATCH</small></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PILOT ============================ -->
+  <section class="section pricing" id="pilot">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow" style="justify-content:center">Pilot program · 2026–27 season</p>
+        <h2>Live in days, not seasons.</h2>
+        <p class="lede">Izzy Resort is launching with partner mountains for the 2026–27 season. One codebase, no per-resort builds, no hardware beyond the iPads you already own — onboarding is measured in days.</p>
+      </div>
+      <div class="onboard-steps">
+        <div class="ob-step"><span class="step-num">1</span><h3>Import your mountain</h3><p>Pull your lift and trail roster from OpenStreetMap in one click, set your map and mountain sections.</p></div>
+        <div class="ob-step"><span class="step-num">2</span><h3>Invite your staff</h3><p>Email invites with role-based access — patrol, ops, guest services; admins and members. No public sign-up, ever.</p></div>
+        <div class="ob-step"><span class="step-num">3</span><h3>Go live</h3><p>Patrollers clock in on their phones, dispatch opens the console, and skier SOS starts landing in your queue.</p></div>
+      </div>
+      <div class="cta-row" style="justify-content:center; margin-top:40px">
+        <a class="btn btn-primary" href="mailto:solomonylee@gmail.com?subject=Izzy%20Resort%20pilot">Request a pilot</a>
+        <a class="btn btn-ghost" href="index.html">Explore the ecosystem</a>
+      </div>
+      <p class="pricing-foot">Pilot slots for the 2026–27 season are limited. Tell us about your mountain — patrol size, pass affiliation, current dispatch setup — and we'll come back within days.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/app-icon.png" alt="" width="38" height="38">
+          Izzy <span class="brand-suffix">Resort</span>
+        </a>
+        <p>Real-time dispatch, digital sweep logs, and a live wire to skiers' phones — mountain ops in one system.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Izzy Resort</h4>
+        <ul>
+          <li><a href="#console">Ops console</a></li>
+          <li><a href="#patrol">Patrol app</a></li>
+          <li><a href="#safety">Life-safety engineering</a></li>
+          <li><a href="#pilot">Pilot program</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Izzy</h4>
+        <ul>
+          <li><a href="index.html">The ecosystem</a></li>
+          <li><a href="app.html">Izzy for skiers</a></li>
+          <li><a href="mailto:solomonylee@gmail.com">Press &amp; partnerships</a></li>
+          <li><a href="./privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Izzy. All rights reserved.</span>
+      <span>Izzy Resort supplements — never replaces — your emergency procedures and 911.</span>
+    </div>
+  </div>
+</footer>
+
+</body></html>
