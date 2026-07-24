@@ -2,6 +2,16 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Legacy anchor redirects: these sections moved to app.html when the homepage
+     became the ecosystem landing. Preserve old inbound links (izzywolf.com/#pricing → app.html#pricing). -->
+<script>
+  (function () {
+    var moved = { '#voice': 1, '#safety': 1, '#family': 1, '#pricing': 1, '#faq': 1 };
+    if (moved[location.hash]) location.replace('app.html' + location.hash);
+  })();
+</script>
+
 <title>Izzy — The connected mountain</title>
 <meta name="description" content="Izzy is one connected safety loop for the mountain: an AI ski companion in every skier's pocket, and a real-time dispatch console + patrol app for the resort — wired together, so the moment someone needs help, the mountain already knows.">
 
