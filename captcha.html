@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Verifying…</title>
+<style>
+  /* Transparent + centred: the RN side overlays this WebView, and in the common
+     case (no interaction needed) nothing is ever painted. Do NOT give this a
+     background — a white flash on every signup is exactly the friction the
+     invisible/interaction-only mode exists to avoid. */
+  html,body{margin:0;padding:0;height:100%;background:transparent;overflow:hidden}
+  #wrap{display:flex;align-items:center;justify-content:center;height:100%}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="cf"></div></div>
+
+<!--
+  Turnstile widget host for the Izzy mobile app (audit C5 — signup/sign-in gate).
+
+  WHY THIS PAGE EXISTS, AND WHY IT IS HOSTED RATHER THAN INLINE
+  Turnstile enforces a hostname allowlist against the ORIGIN the widget renders
+  on. Cloudflare's documented React Native pattern is a WebView pointed at a
+  hosted URL; loading inline HTML with a spoofed `baseUrl` leaves that origin
+  behaviour UNDOCUMENTED, and signup is not a place to gamble on undocumented
+  behaviour. Serving from izzywolf.com (this repo's CNAME) makes the origin
+  unambiguous and matches the sitekey's allowlist exactly.
+
+  Second, load-bearing reason: this page can be fixed by deploying izzy-web,
+  WITHOUT cutting an App Store build. Everything else in this flow is behind a
+  review cycle; this is not.
+
+  NOTE ON VENDORING: this repo vendors supabase-js locally for supply-chain
+  safety (see vendor/). Turnstile's api.js is deliberately NOT vendored and
+  cannot be — it is a live challenge service endpoint, not a library. Pinning a
+  copy would break verification outright.
+
+  MESSAGE PROTOCOL (this page -> native, via ReactNativeWebView.postMessage)
+  Every message is JSON with a `t` discriminator:
+    {t:'ready'}              widget rendered; safe to call execute
+    {t:'token', token}       SUCCESS — single-use, short-lived
+    {t:'interactive-start'}  an interactive challenge is being shown to the user
+    {t:'interactive-end'}    interactive challenge finished
+    {t:'error', code}        error-callback fired; `code` is Cloudflare's
+    {t:'expired'}            token expired before we consumed it
+    {t:'timeout'}            interactive challenge timed out
+    {t:'unsupported'}        this client/browser is unsupported by Turnstile
+    {t:'boot-failed'}        api.js never loaded (network/DNS/blocked)
+  Native -> this page: call window.izzyCaptcha.execute() / .reset().
+
+  `interactive-start` is the signal the native side swaps its short "widget
+  never appeared" timeout for a long "a human is solving this" one. A flat
+  timeout would reject a user part-way through a legitimate challenge.
+
+  CALLBACK CONTRACT — verified against Cloudflare's widget-configurations doc
+  2026-07-25, not assumed. Only `callback` (token) and `error-callback`
+  (errorCode) receive arguments; every other callback receives NONE. Do not
+  "read" an argument off the others.
+-->
+<script>
+(function () {
+  'use strict';
+
+  var RN = window.ReactNativeWebView;
+  function send(o) {
+    try {
+      var s = JSON.stringify(o);
+      if (RN && RN.postMessage) RN.postMessage(s);
+      else console.log('[captcha]', s); // opened in a plain browser — degrade, never throw
+    } catch (e) {}
+  }
+
+  // Sitekey comes from the query string so one page serves every environment:
+  // prod uses the real key, dev/staging use Cloudflare's published TEST keys
+  // (1x00000000000000000000BB passes invisibly; 3x00000000000000000000FF forces
+  // an interactive challenge, which is how the interactive path gets exercised
+  // deliberately instead of never). Safe to accept from the URL: a sitekey is
+  // public, and Turnstile's own hostname allowlist decides which ones work here.
+  var params = new URLSearchParams(location.search);
+  var sitekey = params.get('sitekey') || '';
+  if (!sitekey) { send({ t: 'error', code: 'no-sitekey' }); return; }
+
+  var widgetId = null;
+
+  window.izzyCaptcha = {
+    execute: function () {
+      if (widgetId === null) { send({ t: 'error', code: 'not-ready' }); return; }
+      try { window.turnstile.execute(widgetId); }
+      catch (e) { send({ t: 'error', code: 'execute-threw' }); }
+    },
+    reset: function () {
+      if (widgetId === null) return;
+      try { window.turnstile.reset(widgetId); } catch (e) {}
+    }
+  };
+
+  // Called by api.js once it has loaded (?render=explicit&onload=izzyOnload).
+  window.izzyOnload = function () {
+    try {
+      widgetId = window.turnstile.render('#cf', {
+        sitekey: sitekey,
+        // Run the challenge only when the app asks, not at render time — the
+        // app needs a FRESH single-use token at the moment of submit.
+        execution: 'execute',
+        // Paint nothing unless the user actually has to do something.
+        appearance: 'interaction-only',
+        size: 'flexible',
+        // Deterministic control: no silent auto-retry or auto-refresh racing the
+        // app's own timeout/settlement logic and delivering a token after we
+        // have already settled. One outcome per execute(); the app retries.
+        retry: 'never',
+        'refresh-expired': 'never',
+        // Managed-mode only. Cloudflare logs "has no effect on an
+        // invisible/non-interactive widget" when this page is loaded with the
+        // TEST sitekeys (which are invisible-mode) — that warning is expected
+        // noise in staging, not a misconfiguration. The production sitekey is a
+        // Managed widget, where this does apply. Do not "fix" it by deleting.
+        'refresh-timeout': 'never',
+        callback: function (token) { send({ t: 'token', token: token }); },
+        'error-callback': function (code) { send({ t: 'error', code: String(code || 'unknown') }); },
+        'expired-callback': function () { send({ t: 'expired' }); },
+        'timeout-callback': function () { send({ t: 'timeout' }); },
+        'before-interactive-callback': function () { send({ t: 'interactive-start' }); },
+        'after-interactive-callback': function () { send({ t: 'interactive-end' }); },
+        'unsupported-callback': function () { send({ t: 'unsupported' }); }
+      });
+      send({ t: 'ready' });
+    } catch (e) {
+      send({ t: 'error', code: 'render-threw' });
+    }
+  };
+
+  // If api.js never arrives (no network, DNS, blocked), nothing above ever runs
+  // and the app would sit waiting on its own timeout with no reason. Say so.
+  setTimeout(function () {
+    if (!window.turnstile) send({ t: 'boot-failed' });
+  }, 12000);
+}());
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=izzyOnload" async defer></script>
+</body>
+</html>
