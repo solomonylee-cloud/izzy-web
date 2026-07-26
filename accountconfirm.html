@@ -47,7 +47,11 @@ const title = document.getElementById('title'), msg = document.getElementById('m
     msg.textContent = 'This confirmation link has already been used or expired. Open Izzy and request a new one.';
   }
   openApp.style.display = 'inline-block';
-  openApp.href = 'https://apps.apple.com/app/id6761801986';
+  // Platform-aware store link — Android users get Play, everyone else the App Store.
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  openApp.href = isAndroid
+    ? 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
+    : 'https://apps.apple.com/app/id6761801986';
 })();
 </script>
 </body></html>
