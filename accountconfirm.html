@@ -47,11 +47,48 @@ const title = document.getElementById('title'), msg = document.getElementById('m
     msg.textContent = 'This confirmation link has already been used or expired. Open Izzy and request a new one.';
   }
   openApp.style.display = 'inline-block';
-  // Platform-aware store link — Android users get Play, everyone else the App Store.
-  const isAndroid = /Android/i.test(navigator.userAgent);
-  openApp.href = isAndroid
+
+  // DEEP LINK FIRST, store only as a fallback.
+  //
+  // Whoever taps this just created their account INSIDE the app, so they
+  // already have it installed — a store page is the wrong destination for the
+  // overwhelmingly common case. It was also, as of 2026-07-26, a DEAD
+  // destination on BOTH platforms: there is no Play listing yet, and
+  // apps.apple.com/app/id6761801986 is an App Store Connect record for an app
+  // that has not shipped, so it returns "App Not Available". Sending a user who
+  // has the app to a 404 for an app they already own is the worst of both.
+  //
+  // `skibuddy://` is the production scheme registered in the app
+  // (SkiBuddyGemini app.json "scheme"; routes in App.tsx deepLinkConfig).
+  // Opening it hands off to the app if installed and does nothing visible if
+  // not — which is why the store fallback below is still needed.
+  const STORE_URL = /Android/i.test(navigator.userAgent)
     ? 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
     : 'https://apps.apple.com/app/id6761801986';
+
+  // Keep a real href so the control stays a working link for keyboard users,
+  // middle-click, and any browser that blocks the scripted scheme handoff.
+  openApp.href = STORE_URL;
+
+  openApp.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    // If the scheme handoff succeeds the browser is backgrounded, so this page
+    // is hidden by the time the timer fires — that is the signal to NOT bounce
+    // the user to a store they do not need. pagehide covers Safari, which can
+    // background without firing visibilitychange.
+    let handedOff = false;
+    const markHandedOff = () => { handedOff = true; };
+    document.addEventListener('visibilitychange', () => { if (document.hidden) markHandedOff(); }, { once: true });
+    window.addEventListener('pagehide', markHandedOff, { once: true });
+
+    window.location.href = 'skibuddy://';
+
+    // 1200ms: long enough for the OS scheme prompt/handoff on a slow device,
+    // short enough not to feel broken when the app genuinely is not installed.
+    window.setTimeout(() => {
+      if (!handedOff && !document.hidden) window.location.href = STORE_URL;
+    }, 1200);
+  });
 })();
 </script>
 </body></html>
