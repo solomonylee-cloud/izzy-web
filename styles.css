@@ -943,11 +943,11 @@ p { margin: 0; text-wrap: pretty; }
 .lift-row:last-of-type { border-bottom: 0; }
 
 /* ---- patrol app screen mock ------------------------------------------- */
-.patrol-screen {
+.patrol-screen, .resort-app-screen {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 44px 14px 18px;
+  gap: 12px;
+  padding: 42px 14px 14px;
   background: linear-gradient(180deg, #16304e 0%, var(--navy-darker) 100%);
 }
 .ps-alert {
@@ -1031,8 +1031,125 @@ p { margin: 0; text-wrap: pretty; }
 .ob-step p { color: var(--grey); font-size: 14.5px; line-height: 1.6; }
 @media (min-width: 740px) { .onboard-steps { grid-template-columns: repeat(3, 1fr); } }
 
+/* =========================================================================
+   Artwork: console maps mock, customer-comms card, unified resort-app screen
+   Dynamic (animated); all motion disabled under prefers-reduced-motion below.
+   ========================================================================= */
+
+/* ---- console art-side stack (maps + customer comms) ------------------- */
+.console-stack { display: grid; gap: 16px; width: min(430px, 90vw); }
+
+/* incident wall map mock */
+.map-mock {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0b1a2c;
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 40px 90px -40px rgba(0,0,0,.75);
+}
+.mm-head {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(52,84,125,.5);
+  background: rgba(255,255,255,.03);
+}
+.mm-title { font-family: var(--display); font-weight: 600; color: var(--white); font-size: 13.5px; }
+.mm-head .cm-live { margin-left: auto; }
+.mm-terrain { position: relative; aspect-ratio: 16 / 10; }
+.mm-terrain svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.mm-center {
+  position: absolute; transform: translate(-50%, -50%);
+  width: 12px; height: 12px; border-radius: 50%;
+  border: 2px solid rgba(47,147,255,.75);
+}
+.mm-center::after { content: ""; position: absolute; inset: 3px; border-radius: 50%; background: rgba(47,147,255,.55); }
+.mm-pin {
+  position: absolute; transform: translate(-50%, -50%);
+  min-width: 20px; height: 20px; padding: 0 5px;
+  display: grid; place-items: center;
+  border-radius: 999px; font-size: 10px; font-weight: 800; color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,.5);
+}
+.mm-pin.low  { background: #35c26e; }
+.mm-pin.high { background: var(--red); }
+.mm-pin.sos {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--red-bright); font-size: 9px; letter-spacing: .04em;
+  box-shadow: 0 0 0 2px rgba(239,59,45,.4), 0 4px 12px rgba(213,43,30,.6);
+  z-index: 2;
+}
+.mm-ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid var(--red-bright);
+  animation: mm-ring 2.2s ease-out infinite;
+}
+@keyframes mm-ring { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(2.7); opacity: 0; } }
+.mm-card {
+  position: absolute; left: 44%; top: 42%;
+  transform: translate(16px, 14px);
+  max-width: 165px;
+  background: rgba(11,26,44,.94);
+  border: 1px solid rgba(52,84,125,.7);
+  border-radius: 10px; padding: 7px 10px;
+  font-size: 11.5px; color: var(--white); font-weight: 600; line-height: 1.35;
+  display: flex; flex-direction: column;
+  box-shadow: 0 10px 24px rgba(0,0,0,.5);
+}
+.mm-card small { color: var(--grey-dim); font-weight: 400; font-size: 10.5px; }
+
+/* customer-comms announcement card */
+.comms-card {
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--navy-line);
+  padding: 16px;
+}
+.cc-head { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+.cc-from { font-family: var(--display); font-weight: 600; color: var(--white); font-size: 13px; }
+.cc-title { color: var(--grey); font-size: 14px; line-height: 1.45; margin-bottom: 11px; }
+.cc-reach { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--grey-dim); }
+.cc-reach b { color: var(--blue-bright); }
+
+/* ---- unified resort-app screen (multi-role) -------------------------- */
+.ra-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: var(--display); font-weight: 600; color: var(--white); font-size: 13px;
+}
+.ra-role { font-family: var(--body); font-weight: 500; font-size: 10.5px; color: #4fd68b; }
+.resort-app-screen .ps-alert { animation: alert-pulse 2.2s ease-in-out infinite; }
+@keyframes alert-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,59,45,0); }
+  50%      { box-shadow: 0 0 0 4px rgba(239,59,45,.18); }
+}
+.ra-toast {
+  display: flex; align-items: center; gap: 8px;
+  border-radius: 10px; padding: 9px 11px;
+  background: rgba(245,183,61,.12); border: 1px solid rgba(245,183,61,.32);
+  font-size: 11.5px; color: var(--grey);
+}
+.ra-toast .pl-dot { background: #f5b73d; }
+.ra-tabs {
+  margin-top: auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+  padding-top: 10px; border-top: 1px solid rgba(52,84,125,.4);
+}
+.ra-tab {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  font-size: 9.5px; color: var(--grey-faint);
+}
+.ra-tab i { width: 16px; height: 16px; border-radius: 5px; background: rgba(255,255,255,.1); }
+.ra-tab.active { color: var(--blue-bright); }
+.ra-tab.active i { background: var(--blue); box-shadow: 0 0 10px rgba(0,122,255,.6); }
+
+/* ---- make the hero console mock feel live ---------------------------- */
+.cm-live .dot { animation: cm-blink 1.6s ease-in-out infinite; }
+@keyframes cm-blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+.cm-row.is-sos { animation: cm-sos 2.4s ease-in-out infinite; }
+@keyframes cm-sos { 0%, 100% { background: rgba(213,43,30,.08); } 50% { background: rgba(213,43,30,.17); } }
+.cm-row.is-sos .pill-amber { animation: cm-blink 1.6s ease-in-out infinite; }
+
 /* ---- motion preferences ---------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  * { transition: none !important; }
+  * { transition: none !important; animation: none !important; }
 }
