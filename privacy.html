@@ -37,11 +37,14 @@
       <li><strong>Account information:</strong> your email address, used to create and sign in to your account.</li>
       <li><strong>Profile information:</strong> details you provide such as your name or nickname, date of birth/age, gender (optional), home and current city/state, skill level, the disciplines you ride (ski/snowboard), and an optional profile photo.</li>
       <li><strong>Location data:</strong> precise GPS location while you use location features (detecting when you're at a resort, on-mountain navigation, sharing your location with friends, and safety/SOS). You control location permission in your device settings.</li>
+      <li><strong>Fitness and fall-detection data:</strong> your runs, vertical feet, speed, and distance while you ski or ride, so we can show you your day's stats. If you enable fall detection, the App continuously reads your device's accelerometer and gyroscope on-device to recognize a possible hard fall; if one is detected, that event (and, for SOS escalation, your location) is sent to your emergency contacts and/or ski patrol.</li>
       <li><strong>Voice and audio:</strong> when you use the voice companion, audio from your microphone is captured and streamed to our AI provider to generate responses. We do not use your voice to identify you.</li>
+      <li><strong>AI-derived memory (paid plans):</strong> if you're on a paid plan, our AI runs a lightweight pass over your conversations with Izzy to extract durable facts you've shared — things like your home resort, skiing preferences, gear, family members you've mentioned, or injuries — so future conversations can be personalized. We never do this for accounts we identify as belonging to a child under 13. These facts are deleted when you delete your account (see "Data retention and deletion" below); there isn't a separate way to delete only this data today.</li>
       <li><strong>Messages and social data:</strong> direct messages with other users (including any photos or videos you share in them), friend/"ski buddy" connections, and resort bulletin posts.</li>
       <li><strong>Emergency contacts:</strong> contact details you choose to add for the SOS feature.</li>
       <li><strong>Purchase information:</strong> subscription and purchase status (processed by the app stores and our subscription provider; we do not receive your full payment card details).</li>
       <li><strong>Device and diagnostic data:</strong> device push-notification tokens, app version, and crash/diagnostic logs used to keep the App working.</li>
+      <li><strong>Device identifier (subscription device limit):</strong> on paid plans, we read a vendor-scoped device identifier (Apple's identifierForVendor on iOS, Android's SSAID) to enforce how many devices can be signed into one subscription at a time, which helps prevent account sharing. This is not an advertising identifier — it is not Apple's IDFA or Google's Advertising ID, and we do not use it for ad tracking or ad attribution.</li>
     </ul>
 
     <h2>How we use information</h2>
@@ -66,6 +69,11 @@
     </ul>
     <p>These providers process data under their own privacy policies. We do not sell your personal information.</p>
 
+    <h2>Tracking and advertising</h2>
+    <p>Izzy does not include any advertising SDK, analytics SDK, or attribution SDK, and the App
+      does not show Apple's App Tracking Transparency prompt because it does not track you across
+      other companies' apps or websites.</p>
+
     <h2>Children's privacy</h2>
     <p>Izzy is intended for a general audience and is not directed to children under 13. Some
       family features may involve minors added by a parent or guardian; where a minor participates,
@@ -75,9 +83,14 @@
 
     <h2>Data retention and deletion</h2>
     <p>We keep your information for as long as your account is active or as needed to provide the
-      App. You can request deletion of your account and associated personal data at any time by
-      emailing <a href="mailto:solomon@izzywolf.com">solomon@izzywolf.com</a>. We will delete or
-      anonymize your data except where we must retain it for legal or security reasons.</p>
+      App. The fastest way to delete your account is right in the App: go to
+      <strong>Profile → Delete account</strong>. Once you confirm, your account and its profile,
+      location, activity, and social data are deleted immediately — no waiting period. If you no
+      longer have the App installed, email
+      <a href="mailto:solomon@izzywolf.com">solomon@izzywolf.com</a> from the address on your
+      account with the subject "Delete my account" and we will confirm and complete the deletion.
+      We will delete or anonymize your data except where we must retain it for legal or security
+      reasons.</p>
 
     <h2>Your choices</h2>
     <ul>
