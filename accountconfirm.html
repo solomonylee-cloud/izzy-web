@@ -2,6 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Confirm your Izzy account</title>
+<meta name="referrer" content="strict-origin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,7 +38,17 @@ const title = document.getElementById('title'), msg = document.getElementById('m
   if (!token_hash) { title.textContent = 'Link incomplete'; msg.textContent = 'This confirmation link is missing its token. Request a new email from the app.'; return; }
   try {
     const { url, anon } = PROJECTS[project];
-    const supabase = createClient(url, anon);
+    // persistSession/autoRefreshToken/detectSessionInUrl all default to true in
+    // the vendored client, which would let a crafted #access_token=... fragment
+    // plant a session in this origin's localStorage on page load. This page
+    // never reads a session back — it only calls verifyOtp() below with the
+    // token_hash it parsed from the query string — so none of those defaults
+    // are needed, and disabling them closes that off. detectSessionInUrl only
+    // gates the client's own automatic URL-scanning during construction; it has
+    // no effect on the explicit verifyOtp() call.
+    const supabase = createClient(url, anon, {
+      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+    });
     const { error } = await supabase.auth.verifyOtp({ type, token_hash });
     if (error) throw error;
     title.textContent = '✅ Email confirmed!';
