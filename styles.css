@@ -1153,3 +1153,95 @@ p { margin: 0; text-wrap: pretty; }
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
 }
+
+/* ---- store badge: pre-launch "coming soon" state ---------------------- */
+/* Applied to a <span class="appstore is-soon"> in place of the <a>. The App
+   Store and Google Play listings do not exist yet (verified: Apple lookup API
+   returns resultCount 0, Play returns 404), so the badge must not be
+   clickable. To go live: swap the <span> back to an <a href="…"> and drop
+   the is-soon class. */
+.appstore.is-soon {
+  background: rgba(255,255,255,.05);
+  color: var(--grey-dim);
+  border: 1px solid var(--navy-line);
+  box-shadow: none;
+  cursor: default;
+}
+.appstore.is-soon:hover { background: rgba(255,255,255,.05); transform: none; }
+.appstore.is-soon .lab b { color: var(--grey); }
+
+/* ---- forms (press & partnerships) ------------------------------------ */
+.form-card {
+  background: rgba(255,255,255,.045);
+  border: 1px solid var(--navy-line);
+  border-radius: 18px;
+  padding: 28px;
+  max-width: 620px;
+}
+.field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 18px; }
+.field label {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--white);
+}
+.field .hint { font-size: 13px; color: var(--grey-dim); font-weight: 400; }
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--body);
+  font-size: 16px;              /* 16px prevents iOS Safari zoom-on-focus */
+  color: var(--white);
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--navy-line);
+  border-radius: 12px;
+  padding: 13px 14px;
+  min-height: 50px;
+  width: 100%;
+  transition: border-color .18s var(--ease), background .18s var(--ease);
+}
+.field textarea { min-height: 150px; resize: vertical; line-height: 1.55; }
+.field select { appearance: none; cursor: pointer; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--blue-bright);
+  background: rgba(255,255,255,.09);
+}
+.field input::placeholder,
+.field textarea::placeholder { color: var(--grey-faint); }
+.field select option { background: var(--navy-darker); color: var(--white); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+@media (max-width: 620px) { .form-row { grid-template-columns: 1fr; } }
+.form-honey { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+.form-note { font-size: 13.5px; color: var(--grey-dim); margin-top: 4px; line-height: 1.6; }
+.form-sent {
+  border: 1px solid rgba(47,147,255,.55);
+  background: rgba(47,147,255,.12);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+/* ---- press & partnerships page ---------------------------------------- */
+.press-page .head {
+  max-width: 620px;
+  margin: 0 auto clamp(28px, 5vw, 44px);
+  text-align: left;
+}
+.press-page .head h2 { font-size: clamp(30px, 5.2vw, 46px); margin-bottom: 16px; }
+.press-page .head .lede { margin-inline: 0; max-width: none; }
+.press-page .form-card,
+.press-page .form-sent,
+.press-page .press-kit { margin-inline: auto; }
+.press-page .press-kit { max-width: 620px; margin-top: clamp(36px, 6vw, 52px); }
+.press-page .press-kit h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 21px;
+  margin: 0 0 10px;
+}
+.press-page .press-kit p { color: var(--grey); line-height: 1.65; margin: 0; }
+.press-page .press-kit p a { color: var(--blue-bright); }
