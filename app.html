@@ -111,7 +111,7 @@
           <li><span class="tick">✓</span><span class="txt"><strong>The whole resort, on tap</strong> — restaurants, special events, daycare, ski school, and just about everything else on the mountain.</span></li>
           <li><span class="tick">✓</span><span class="txt"><strong>Pick your own Izzy</strong> — choose the skibud who rides with you, male or female.</span></li>
         </ul>
-        <p class="note-line"><b>Base</b> includes tap-to-talk with a daily voice-time allowance. <b>Pro</b> unlocks always-on voice with no daily limit.</p>
+        <p class="note-line"><b>Base</b> includes tap-to-talk with 10 minutes of Izzy a day. <b>Pro</b> unlocks up to 60 minutes every day — and Max triples it.</p>
       </div>
       <div class="art-side">
         <div class="hero-art">
@@ -187,57 +187,158 @@
   </section>
 
   <!-- ============================ PRICING ============================ -->
+  <style>
+    /* Pricing toggle (Base | Families | Solo) */
+    .price-seg { display:flex; justify-content:center; gap:0; margin:6px auto 34px; background:rgba(255,255,255,.05); border:1px solid var(--navy-line); border-radius:999px; padding:5px; width:max-content; max-width:100%; }
+    .price-seg button { min-height:48px; padding:0 22px; border-radius:999px; border:0; background:transparent; color:var(--grey-dim); font-family:var(--body); font-weight:600; font-size:15.5px; cursor:pointer; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap; }
+    @media (max-width: 420px){ .price-seg button { padding:0 14px; font-size:14px; } }
+    .price-seg button:focus-visible { outline:3px solid var(--blue-bright); outline-offset:2px; }
+    .price-seg button[aria-pressed="true"].seg-base { background:rgba(246,248,251,.14); color:var(--white); }
+    .price-seg button[aria-pressed="true"].seg-fam { background:rgba(245,183,61,.18); color:#f5b73d; }
+    .price-seg button[aria-pressed="true"].seg-pro { background:rgba(47,147,255,.18); color:#2f93ff; }
+    .price-panels { position:relative; }
+    .price-panel { display:none; }
+    .price-panel.on { display:grid; grid-template-columns:1fr; gap:20px; animation:panelIn .22s var(--ease); }
+    @media (min-width: 860px){ .price-panel.on { grid-template-columns:1fr 1fr; } .price-panel.on.solo-card { grid-template-columns:minmax(0,720px); justify-content:center; } }
+    @keyframes panelIn { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:none;} }
+    @media (prefers-reduced-motion: reduce){ .price-panel.on { animation:none; } }
+    .cadence { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:2px 0 16px; }
+    .cadence div { text-align:center; padding:10px 6px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid var(--navy-line); }
+    .cadence .cad-label { display:block; font-size:11.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--grey-dim); margin-bottom:3px; }
+    .cadence .cad-price { font-family:var(--display); font-weight:700; font-size:19px; font-variant-numeric:tabular-nums; color:var(--white); }
+    .cadence .cad-note { display:block; font-size:11px; color:var(--grey-dim); margin-top:2px; }
+    .cadence .pop { border-color:currentColor; }
+    .plan-fam .cadence .pop { color:#f5b73d; } .plan-pro .cadence .pop { color:#2f93ff; }
+    .plan ul li em { font-style:normal; color:var(--grey-dim); }
+  </style>
   <section class="section pricing" id="pricing">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow" style="justify-content:center">Pricing</p>
         <h2>Built for families. Open to everyone.</h2>
-        <p class="lede">Start with the Family season pass — the way Izzy is meant to ride. Going solo? Pro and Base have you covered too.</p>
+        <p class="lede">Ride by the week, the month, or the whole season — season passes get a month free. Go Max when you want triple the Izzy.</p>
       </div>
-      <div class="plans">
-        <div class="plan featured">
-          <span class="tag">Built for families</span>
-          <h3 style="color:#f5b73d">Family</h3>
-          <div class="price">$100 <span>/ season</span></div>
-          <p class="plan-sub">One season pass, Nov to Apr — Pro for every adult, plus parent-managed kids.</p>
-          <ul>
-            <li>Pro for both adults</li>
-            <li>Up to 4 parent-managed kid accounts</li>
-            <li>Izzy's voice on or off for each kid, set by the billing parent</li>
-            <li>Shared family map &amp; SOS routed to parents</li>
-          </ul>
-          <a class="btn btn-primary" href="#get">Set up Family</a>
+
+      <div class="price-seg" role="group" aria-label="Choose plan type">
+        <button type="button" class="seg-base" id="segBase" aria-pressed="true">Base</button>
+        <button type="button" class="seg-fam" id="segFam" aria-pressed="false">For families</button>
+        <button type="button" class="seg-pro" id="segPro" aria-pressed="false">Going solo</button>
+      </div>
+
+      <div class="price-panels">
+        <div class="price-panel solo-card on" id="panelBase">
+          <div class="plan">
+            <h3 style="color:#f6f8fb">Base</h3>
+            <div class="price">Free</div>
+            <p class="plan-sub">Everything you need to ride with Izzy — and the baseline every paid plan builds on.</p>
+            <ul>
+              <li><span>Safety SOS &amp; fall detection — <em>Izzy has your back</em></span></li>
+              <li><span>10 minutes of Izzy voice a day</span></li>
+              <li><span>Text chat with Izzy, on and off the mountain — <em>Izzy doesn&rsquo;t sleep</em></span></li>
+              <li><span>Snap a photo, ask Izzy — <em>Izzy has vision power</em></span></li>
+              <li><span>Conditions at IKON, EPIC &amp; independent resorts — <em>Izzy is a snow-pert. That&rsquo;s a snow expert&hellip; dad joke.</em></span></li>
+              <li><span>Limited memory — <em>Izzy may not have had enough blueberries, but she&rsquo;ll know your name and a few things</em></span></li>
+              <li><span>Limited thinking — <em>Izzy IQ: chilled</em></span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#get">Get Izzy free</a>
+          </div>
         </div>
 
-        <div class="plan">
-          <h3 style="color:#2f93ff">Pro</h3>
-          <div class="price">$50 <span>/ season</span></div>
-          <p class="plan-sub">No caps — talk to Izzy as much as the mountain demands.</p>
-          <ul>
-            <li>Everything in Base</li>
-            <li>Always-on voice, no daily caps</li>
-            <li>Real-time resort status &amp; surrounding-area info, including daycare</li>
-            <li>Works at every IKON, EPIC &amp; independent resort</li>
-            <li>Priority answers all season</li>
-          </ul>
-          <a class="btn btn-ghost" href="#get">Go Pro</a>
+        <div class="price-panel plan-fam" id="panelFam">
+          <div class="plan featured">
+            <span class="tag">Built for families</span>
+            <h3 style="color:#f5b73d">Family</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$20</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$40</span><span class="cad-note">most popular</span></div>
+              <div><span class="cad-label">Season</span><span class="cad-price">$200</span><span class="cad-note">Nov&ndash;Apr &middot; 1 month free</span></div>
+            </div>
+            <p class="plan-sub">Everything in Pro for both adults, plus the whole family stack.</p>
+            <ul>
+              <li><span>Pro for both adults — up to 60 minutes of Izzy a day, each</span></li>
+              <li><span>Up to 4 parent-managed kid accounts — <em>Izzy loves kids and always keeps them safe</em></span></li>
+              <li><span>Find My Family live map &amp; Kid SOS routed to parents — <em>Izzy tracks the crew</em></span></li>
+              <li><span>Family chat &amp; end-of-day recap</span></li>
+              <li><span>Expanded memory — <em>Izzy knows your fam</em></span></li>
+              <li><span>Higher thinking — <em>Izzy can be your kids&rsquo; tutor</em></span></li>
+            </ul>
+            <a class="btn btn-primary" href="#get">Set up Family</a>
+          </div>
+          <div class="plan">
+            <span class="tag">3&times; the Izzy</span>
+            <h3 style="color:#f5b73d">Family Max</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$40</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$80</span></div>
+              <div><span class="cad-label">Season</span><span class="cad-price">$400</span><span class="cad-note">Nov&ndash;Apr &middot; 1 month free</span></div>
+            </div>
+            <p class="plan-sub">The Family plan, tripled — for crews that live on the mountain.</p>
+            <ul>
+              <li><span>Everything in Family</span></li>
+              <li><span>Up to 180 minutes of Izzy a day, each adult</span></li>
+              <li><span>Max memory — <em>should Izzy remember this much?</em></span></li>
+              <li><span>Deepest thinking — <em>your kids may end up at Harvard</em></span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#get">Go Family Max</a>
+          </div>
         </div>
 
-        <div class="plan">
-          <h3 style="color:#f6f8fb">Base</h3>
-          <div class="price">Free</div>
-          <p class="plan-sub">Everything you need to ride with Izzy.</p>
-          <ul>
-            <li>A daily allowance of tap-to-talk voice time</li>
-            <li>Safety SOS &amp; fall detection</li>
-            <li>Conditions at IKON, EPIC &amp; independent resorts</li>
-          </ul>
-          <a class="btn btn-ghost" href="#get">Get Izzy free</a>
+        <div class="price-panel plan-pro" id="panelPro">
+          <div class="plan">
+            <h3 style="color:#2f93ff">Pro</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$10</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$20</span><span class="cad-note">most popular</span></div>
+              <div><span class="cad-label">Season</span><span class="cad-price">$100</span><span class="cad-note">Nov&ndash;Apr &middot; 1 month free</span></div>
+            </div>
+            <p class="plan-sub">The full Izzy — voice, vision, live mountain answers.</p>
+            <ul>
+              <li><span>Everything in Base</span></li>
+              <li><span>Up to 60 minutes of Izzy voice every day</span></li>
+              <li><span>Live conditions, lift status, trip planning and anything you can think of — <em>powered by Gemini</em></span></li>
+              <li><span>Izzy Vision — snap a photo of a trail map or anything else and talk to Izzy about it</span></li>
+              <li><span>Expanded memory — <em>Izzy knows how you ride. Blueberry overload.</em></span></li>
+              <li><span>Higher thinking — <em>Izzy IQ: lifted</em></span></li>
+              <li><span>See every Izzy rider, find Skibuds &amp; post on the resort bulletin</span></li>
+            </ul>
+            <a class="btn btn-primary" style="background:var(--blue);color:#fff" href="#get">Go Pro</a>
+          </div>
+          <div class="plan">
+            <span class="tag" style="background:#2f93ff;color:var(--navy)">3&times; the Izzy</span>
+            <h3 style="color:#2f93ff">Pro Max</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$20</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$40</span></div>
+              <div><span class="cad-label">Season</span><span class="cad-price">$200</span><span class="cad-note">Nov&ndash;Apr &middot; 1 month free</span></div>
+            </div>
+            <p class="plan-sub">Pro, tripled — for riders who never stop talking lines.</p>
+            <ul>
+              <li><span>Everything in Pro</span></li>
+              <li><span>Up to 180 minutes of Izzy voice every day</span></li>
+              <li><span>Max memory — <em>Izzy just knows you. Barfing blueberries.</em></span></li>
+              <li><span>Deepest thinking — <em>Izzy IQ: propelled</em></span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#get">Go Pro Max</a>
+          </div>
         </div>
       </div>
-      <p class="pricing-foot">Coming soon to iPhone &amp; Android — free on the App&nbsp;Store and Google&nbsp;Play.</p>
+
+      <p class="pricing-foot">Coming soon to iPhone &amp; Android — free on the App&nbsp;Store and Google&nbsp;Play. Prices in USD; cancel anytime.</p>
     </div>
   </section>
+  <script>
+    (function(){
+      var segs=[['segBase','panelBase'],['segFam','panelFam'],['segPro','panelPro']];
+      segs.forEach(function(pair,i){
+        document.getElementById(pair[0]).addEventListener('click',function(){
+          segs.forEach(function(q,j){
+            document.getElementById(q[0]).setAttribute('aria-pressed', i===j?'true':'false');
+            document.getElementById(q[1]).classList.toggle('on', i===j);
+          });
+        });
+      });
+    })();
+  </script>
 
   <!-- ============================ FAQ ============================ -->
   <section class="section faq" id="faq">
@@ -269,7 +370,7 @@
         </details>
         <details>
           <summary>What's the difference between Pro and Family?</summary>
-          <p>Pro covers one rider. Family covers up to 6 (2 adults + 4 kids), gives everyone full Pro, and adds the family stack — live Find My Family map, family chat, Kid SOS, end-of-day recap, and COPPA kid mode for under-13s. Solo rider → Pro; household → Family. <a href="#pricing" style="color:var(--blue-bright)">See the plans →</a></p>
+          <p>Pro covers one rider. Family covers up to 6 (2 adults + 4 kids) — full Pro for both adults, kid accounts built for safety — and adds the family stack: live Find My Family map, family chat, Kid SOS, end-of-day recap, and COPPA kid mode for under-13s. Solo rider → Pro; household → Family. <a href="#pricing" style="color:var(--blue-bright)">See the plans →</a></p>
         </details>
       </div>
     </div>
