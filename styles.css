@@ -1245,3 +1245,166 @@ p { margin: 0; text-wrap: pretty; }
 }
 .press-page .press-kit p { color: var(--grey); line-height: 1.65; margin: 0; }
 .press-page .press-kit p a { color: var(--blue-bright); }
+
+/* =========================================================================
+   Year-round: Izzy Snow + Izzy Sun, Izzy Vision (added 2026-09-04)
+   --sun is the ONLY new accent; red stays SOS-only.
+   ========================================================================= */
+:root { --sun: #ffb347; }
+
+.hero-sub {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 2.6vw, 24px);
+  line-height: 1.3;
+  color: var(--grey);
+  margin: -4px 0 18px;
+}
+.hero-sub b { color: var(--sun); font-weight: 700; }
+
+.eyebrow.is-sun { color: var(--sun); }
+.eyebrow.is-sun::before { background: var(--sun); }
+
+.new-pill {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  font-weight: 700;
+  background: rgba(47,147,255,.18);
+  color: var(--blue-bright);
+}
+.new-pill.is-sun { background: rgba(255,179,71,.18); color: var(--sun); }
+
+/* season strip */
+.yearround {
+  background: linear-gradient(180deg, var(--navy-darker) 0%, var(--navy-deep) 100%);
+  border-bottom: 1px solid rgba(52,84,125,.4);
+}
+.yearround .head { text-align: center; max-width: 760px; margin: 0 auto clamp(30px, 5vw, 48px); }
+.yearround h2 { font-size: clamp(30px, 5.4vw, 50px); margin-bottom: 16px; }
+.yearround h2 em { font-style: normal; color: var(--sun); }
+.yearround .lede b { color: var(--white); }
+.season-strip { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 740px) { .season-strip { grid-template-columns: repeat(3, 1fr); } }
+.season {
+  position: relative;
+  padding: 22px 22px 24px;
+  border-radius: var(--r-card);
+  border: 1px solid var(--navy-line);
+  background: rgba(255,255,255,.035);
+}
+.season .s-label {
+  display: block;
+  font-size: 11.5px; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--grey-dim);
+  margin-bottom: 8px;
+}
+.season strong {
+  display: block;
+  font-family: var(--display); font-weight: 700; font-size: 22px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.season p { color: var(--grey); font-size: 15px; line-height: 1.55; }
+.season small {
+  display: inline-block;
+  margin-top: 12px; padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+  background: rgba(255,179,71,.14); color: var(--sun);
+}
+.season.is-snow { border-color: rgba(47,147,255,.45); box-shadow: inset 0 1px 0 rgba(47,147,255,.25); }
+.season.is-snow strong { color: var(--blue-bright); }
+.season.is-sun {
+  border-color: rgba(255,179,71,.5);
+  box-shadow: inset 0 1px 0 rgba(255,179,71,.3);
+  background: linear-gradient(180deg, rgba(255,179,71,.08), rgba(255,255,255,.03));
+}
+.season.is-sun strong { color: var(--sun); }
+
+/* Sun phone art */
+.hero-art.is-sun .halo { background: radial-gradient(55% 45% at 60% 30%, rgba(255,179,71,.45) 0%, transparent 65%); }
+.phone .screen img.izzy-sun { object-position: 50% 22%; }
+.phone .screen img.izzy-sun-f { object-position: 50% 18%; }
+
+/* Izzy Vision lens overlay (pure SVG over the home-screen portrait) */
+.lens-overlay {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.lens-caption {
+  position: absolute;
+  left: 50%; bottom: 2.5%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-family: var(--display); font-weight: 600; font-size: 12px;
+  color: var(--white);
+  background: rgba(5,16,31,.6);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* ---- Sun art: dual-phone hero, strip medallions, homepage scene (2026-09-04) ---- */
+.hero-art.duo {
+  width: min(520px, 92vw);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(10px, 3vw, 22px);
+  align-items: end;
+}
+.hero-art.duo .halo { inset: -10% 30% 10% -10%; }
+.hero-art.duo .halo-sun {
+  inset: -10% -10% 10% 30%;
+  background: radial-gradient(55% 45% at 50% 30%, rgba(255,179,71,.42) 0%, transparent 65%);
+}
+.duo-phone { margin: 0; position: relative; z-index: 1; }
+.duo-snow { transform: rotate(-4deg) translateY(6px); }
+.duo-sun  { transform: rotate(4deg); }
+.duo-phone figcaption {
+  display: flex; flex-direction: column; align-items: center;
+  margin-top: 14px;
+  font-family: var(--display); font-weight: 700; font-size: 15px;
+  color: var(--white);
+}
+.duo-phone figcaption span { font-family: var(--body); font-weight: 500; font-size: 12px; color: var(--grey-dim); margin-top: 2px; }
+.duo-snow figcaption b { color: var(--blue-bright); }
+.duo-sun figcaption b { color: var(--sun); }
+@media (min-width: 880px) {
+  .hero-art.duo { width: min(560px, 46vw); }
+}
+
+.season { padding-top: 24px; }
+.season .s-face {
+  position: absolute; top: 18px; right: 18px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  object-fit: cover; object-position: 50% 50%;
+  border: 2px solid rgba(255,255,255,.14);
+  box-shadow: 0 8px 20px -8px rgba(0,0,0,.6);
+}
+.season.is-snow .s-face { border-color: rgba(47,147,255,.55); }
+.season.is-sun  .s-face { border-color: rgba(255,179,71,.6); }
+.season .s-label, .season strong { padding-right: 70px; }
+
+/* homepage Snow & Sun scene: wide lakeside shot with a summer phone overlapping it */
+.sun-scene { position: relative; width: min(460px, 88vw); justify-self: center; padding-bottom: 80px; }
+.sun-scene .halo { background: radial-gradient(55% 45% at 50% 40%, rgba(255,179,71,.4) 0%, transparent 65%); }
+.sun-scene .shot { position: relative; z-index: 1; }
+.sun-scene .shot { aspect-ratio: 1 / 1; }
+.sun-scene .shot img { object-position: 50% 58%; }
+.sun-scene-phone {
+  position: absolute; left: -4%; bottom: 0;
+  width: 40%;
+  z-index: 2;
+  transform: rotate(-5deg);
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,.55));
+}
+.story .art-side .sun-scene { width: min(460px, 88vw); }
+@media (min-width: 880px) { .story .art-side:has(.sun-scene) { width: min(460px, 42vw); } }
+.story .art-side:has(.sun-scene) { width: min(460px, 88vw); }
