@@ -1,36 +1,36 @@
 <!DOCTYPE html><html lang="en"><head>
 
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Legacy anchor redirects: these sections moved to app.html when the homepage
-     became the ecosystem landing. Preserve old inbound links (izzywolf.com/#pricing → app.html#pricing). -->
+<!-- Legacy anchor redirects: the ecosystem sections moved to mountain.html when the consumer page
+     became the homepage (2026-09-05). Preserve old inbound links (izzywolf.com/#loop → mountain.html#loop). -->
 <script>
   (function () {
-    var moved = { '#voice': 1, '#safety': 1, '#family': 1, '#pricing': 1, '#faq': 1 };
-    if (moved[location.hash]) location.replace('app.html' + location.hash);
+    var moved = { '#loop': 1, '#two-way': 1, '#products': 1 };
+    if (moved[location.hash]) location.replace('mountain.html' + location.hash);
   })();
 </script>
-
-<title>Izzy — The connected mountain</title>
+<title>Izzy — Snow and Sun · Your AI skibud, year-round</title>
 <meta name="referrer" content="strict-origin">
-<meta name="description" content="Izzy is one connected safety loop for the mountain: an AI companion in every skier's pocket, and a real-time dispatch console + resort staff app for the mountain — wired together, so the moment someone needs help, the mountain already knows. Izzy Snow for winter, Izzy Sun for summer: Izzy has your back year-round.">
+<meta name="description" content="Izzy is your AI buddy on the mountain, in every season. Tap and talk about conditions, trails and lifts, hands-free. Show Izzy what you see with Izzy Vision on the mountain. One-tap safety SOS and family tools. Izzy Snow for winter, Izzy Sun for summer — one app, one annual plan.">
 
 <!-- Open Graph / social -->
-<meta property="og:title" content="Izzy — The connected mountain">
-<meta property="og:description" content="An AI ski companion for skiers. A real-time ops platform for resorts. One connected safety loop between them.">
+<meta property="og:title" content="Izzy — Snow and Sun · Your AI skibud, year-round">
+<meta property="og:description" content="Tap and talk on the mountain. Snap a photo and Izzy talks it through. One-tap safety SOS. Izzy Snow for winter, Izzy Sun for summer — one app, one plan.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://izzywolf.com/">
-<meta property="og:image" content="https://izzywolf.com/assets/home-og.png">
+<meta property="og:image" content="https://izzywolf.com/assets/app-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Izzy — one connected safety loop: a skier's SOS reaching resort dispatch and patrol responding back.">
+<meta property="og:image:alt" content="Izzy — your AI ski &amp; snowboard companion: hands-free voice and one-tap safety SOS.">
 
 <!-- Twitter / X large card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Izzy — The connected mountain">
-<meta name="twitter:description" content="An AI companion for skiers. A real-time platform for resorts. One connected safety loop between them.">
-<meta name="twitter:image" content="https://izzywolf.com/assets/home-og.png">
+<meta name="twitter:title" content="Izzy — Snow and Sun · Your AI skibud, year-round">
+<meta name="twitter:description" content="Hands-free voice, Izzy Vision in Izzy Snow and Izzy Sun, one-tap safety SOS, and family tools — winter and summer. Free to start.">
+<meta name="twitter:image" content="https://izzywolf.com/assets/app-og.png">
 
 <link rel="icon" href="assets/app-icon.png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
@@ -52,12 +52,15 @@
       Izzy
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#loop">The loop</a>
-      <a href="#yearround">Snow &amp; Sun</a>
-      <a href="app.html">For skiers</a>
+      <a href="#voice">Voice</a>
+      <a href="#vision">Vision</a>
+      <a href="#sun">Sun</a>
+      <a href="#safety">Safety</a>
+      <a href="#family">Family</a>
+      <a href="#pricing">Pricing</a>
       <a href="resort.html">For resorts</a>
     </nav>
-    <a class="btn btn-primary btn-sm header-cta" href="app.html#get">Get Izzy</a>
+    <a class="btn btn-primary btn-sm header-cta" href="#get">Get Izzy</a>
   </div>
 </header>
 
@@ -67,101 +70,106 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <p class="eyebrow">The Izzy ecosystem</p>
-        <h1>One mountain. <em>One connected safety loop.</em></h1>
-        <p class="lede">Izzy puts a warm, knowledgeable AI companion in every skier's pocket — and a real-time command center in the resort's. Then it wires them together, so the moment someone on the hill needs help, the mountain already knows. And it doesn't clock out in April: <b>Izzy Snow</b> rides with you all winter, <b>Izzy Sun</b> takes over at the same mountains all summer.</p>
+        <p class="eyebrow">Izzy — <span class="w-snow">Snow</span> and <span class="w-sun">Sun</span></p>
+        <h1>Welcome to Izzy, <em>a voice-first AI companion for all <span class="w-pass">IKON</span> and <span class="w-pass">EPIC</span> resorts.</em></h1>
+        <p class="hero-sub">Izzy knows the mountain with your safety always in mind — and Izzy rides it <b>year-round</b>.</p>
+        <p class="lede">A warm, knowledgeable skibud that rides with you all day — real-time conditions, trail, lift and resort answers, a camera lens Izzy can see through, social connections and safety SOS. Hands-free, gloves on, eyes on the run. Built for families, spreading the love with others. And when the lifts stop turning, Izzy Sun takes over at the same mountains.</p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="app.html">Izzy for skiers</a>
-          <a class="btn btn-ghost" href="resort.html">Izzy Resort for mountain ops</a>
+          <span class="appstore is-soon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.5c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.7-.8 1.9-1.4 2.8-1.4Zm3.2 16c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1-2 0-2.5 1-3.9 1-1.7 0-3-1.6-3.9-3C-.1 16.4-.5 11 1.8 8.2 2.9 6.8 4.6 6 6.2 6c1.6 0 2.6 1 3.9 1 1.3 0 2-1 3.9-1 1.4 0 2.9.8 4 2.1-3.5 1.9-3 6.9 1.7 9.4Z"></path></svg>
+            <span class="lab"><small>Coming soon to the</small><b>App Store</b></span>
+          </span>
+          <span class="appstore is-soon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.156l11.04 10.95zm0 2.022l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
+            <span class="lab"><small>Coming soon to</small><b>Google Play</b></span>
+          </span>
+          <span class="soon-pill"><span class="dot"></span>In TestFlight now</span>
         </div>
+        <p class="hero-note">iPhone now in TestFlight — App Store &amp; Google Play coming soon. Free to start, no account required.</p>
 
         <div class="trust-row">
-          <span>91 resorts covered — IKON, EPIC &amp; independents</span>
-          <span>SOS reaches patrol in seconds at partner resorts</span>
-          <span>One app for Snow and Sun — year-round</span>
-          <span>Built family-first, open to all</span>
+          <span><a href="resorts.html">Izzy is at 91 IKON, EPIC &amp; select independent resorts</a></span>
+          <span>Voice or tap SOS for patrol</span>
+          <span>One app for Snow and Sun</span>
+          <span>Inspired for families, open to all</span>
         </div>
       </div>
 
-      <div class="hero-art">
+      <div class="hero-art duo">
         <div class="halo"></div>
-        <div class="phone">
-          <div class="screen">
-            <span class="notch"></span>
-            <img src="assets/hero-character.png" alt="Izzy Wolf — a smiling snowboarder in a pastel suit holding an Izzy Wolf board on a snowy summit." width="320" height="693" onerror="this.style.display='none'">
+        <div class="halo halo-sun"></div>
+        <figure class="duo-phone duo-snow">
+          <div class="phone">
+            <div class="screen">
+              <span class="notch"></span>
+              <img src="assets/hero-character.png" alt="Izzy Wolf in winter — a smiling snowboarder in a pastel suit holding an Izzy Wolf board on a snowy summit." width="320" height="693" onerror="this.style.display='none'">
+            </div>
           </div>
-        </div>
+          <figcaption><b>Izzy Snow</b><span>Winter</span></figcaption>
+        </figure>
+        <figure class="duo-phone duo-sun">
+          <div class="phone">
+            <div class="screen">
+              <span class="notch"></span>
+              <img src="assets/izzy-hiker-sun.jpg" class="izzy-sun" alt="Izzy Wolf in summer — a smiling hiker in a paisley shirt-dress with a backpack, water bottle and camera, on a trail above a mountain village under a sunburst." width="320" height="693" onerror="this.style.display='none'">
+            </div>
+          </div>
+          <figcaption><b>Izzy Sun</b><span>Summer · preview</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ============================ THE LOOP ============================ -->
-  <section class="section loop" id="loop">
+  <!-- ============================ YEAR-ROUND ============================ -->
+  <section class="section yearround" id="yearround">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow" style="justify-content:center">How the loop works</p>
-        <h2>From "I need help" to "help is on the way" — in seconds.</h2>
-        <p class="lede" style="margin-inline:auto">Most safety apps stop at a text message. At partner resorts, Izzy closes the loop: the skier's SOS lands in the resort's live dispatch queue, and patrol's answer travels all the way back to the skier's pocket.</p>
+        <p class="eyebrow is-sun" style="justify-content:center">Year-round</p>
+        <h2>The season changes. <em>Your skibud doesn't.</em></h2>
+        <p class="lede" style="margin-inline:auto">One app, one plan, both seasons. Izzy Snow rides with you all winter. When your mountain flips to summer, Izzy Sun takes over — same resorts, same Izzy, same safety net. <b>Izzy has your back year-round.</b></p>
       </div>
-
-      <ol class="loop-steps">
-        <li>
-          <span class="step-num">1</span>
-          <div class="step-body">
-            <h3>A skier calls for help</h3>
-            <p>One tap, a voice command, or fall detection after a hard impact. The SOS carries live GPS, a 60‑second breadcrumb trail, and who the skier is — stamped from their verified profile, so it can't be spoofed.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-num">2</span>
-          <div class="step-body">
-            <h3>Patrol's phones buzz — in 2–3 seconds</h3>
-            <p>The SOS becomes a live incident in the resort's dispatch console, and every on‑shift patroller's phone gets a time‑critical push. No answer? Izzy re‑alerts and widens the circle until a human responds.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-num">3</span>
-          <div class="step-body">
-            <h3>A patroller takes it and heads out</h3>
-            <p>One tap acknowledges and claims the incident. Dispatch watches en&nbsp;route → on&nbsp;scene live, with the skier's location on the map and the nearest patroller in view.</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-num">4</span>
-          <div class="step-body">
-            <h3>The skier hears back — even with the phone in a pocket</h3>
-            <p>"🚨 Ski patrol is responding — help is on the way." The push wakes a locked phone. If it's a kid, every parent is alerted too, and the kid's screen flips to "Mom's on the way."</p>
-          </div>
-        </li>
-        <li>
-          <span class="step-num">5</span>
-          <div class="step-body">
-            <h3>Honest by design</h3>
-            <p>Izzy says "patrol is responding" only when a patroller actually responds — never on a hopeful guess. If patrol can't be confirmed, the skier is told plainly to call 911. Never a fake "you're covered."</p>
-          </div>
-        </li>
-      </ol>
-
-      <p class="note-line loop-note">The full dispatch loop runs at <b>partner resorts</b> in the Izzy Resort pilot program. Everywhere else, Izzy still sends your emergency contact your live GPS and hands you a patrol number to tap &mdash; verified against the resorts&rsquo; own sources, with a straight route to 911 wherever a resort publishes no patrol line of its own. <b>But a phone number is a bridge, not the destination.</b> As each mountain brings Izzy Resort online, its patrol gets a live dispatch console in the shack and the resort app on every on&#8209;shift patroller&rsquo;s phone &mdash; and your SOS stops being a call you have to place. It becomes a page that reaches them in seconds, with your name, your live location and your last minute of movement already on their screen, so nobody has to ask where you are. Then their answer comes back to your locked phone: <em>patrol is responding</em>. The goal was never a better number to call. It&rsquo;s not needing one.</p>
+      <div class="season-strip">
+        <div class="season is-snow">
+          <img class="s-face" src="assets/izzy-female-headshot.jpg" alt="" width="64" height="64">
+          <span class="s-label">Winter</span>
+          <strong>Izzy Snow</strong>
+          <p>Conditions, grooming, lifts, lunch — and an SOS that reaches patrol at partner resorts.</p>
+        </div>
+        <div class="season is-sun">
+          <img class="s-face" src="assets/izzy-female2-headshot-sun.jpg" alt="" width="64" height="64">
+          <span class="s-label">Summer</span>
+          <strong>Izzy Sun</strong>
+          <p>Hiking, biking, ziplining, camping — on the mountains you already ride.</p>
+          <small>Preview until resorts open for summer</small>
+        </div>
+        <div class="season is-always">
+          <img class="s-face" src="assets/izzy-male-headshot-sun.jpg" alt="" width="64" height="64">
+          <span class="s-label">Always</span>
+          <strong>Izzy has your back</strong>
+          <p>SOS, fall detection and the family map work exactly the same in both seasons.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============================ BOTH DIRECTIONS ============================ -->
-  <section class="story" id="two-way">
+  <!-- ============================ VOICE ============================ -->
+  <section class="story" id="voice">
     <div class="wrap">
       <div class="text-side">
-        <p class="eyebrow">More than SOS</p>
-        <h2>The whole mountain, talking both ways.</h2>
+        <p class="eyebrow">Voice companion</p>
+        <h2>Just talk. Keep your gloves on.</h2>
         <div class="body">
-          <p>The safety loop is the heart — but the same live wire carries the everyday mountain too. What the resort knows, skiers hear. What skiers need, the resort sees.</p>
+          <p>Just ask. <em>"How's the snow up top?" "Where should we grab lunch?" "When does ski school start?"</em> Izzy answers out loud — conversational and turn-based, no menus, no typing, no fishing your phone out with bare hands.</p>
         </div>
         <ul class="feature-list">
-          <li><span class="tick">✓</span><span class="txt"><strong>Live lift &amp; trail status</strong> — when ops opens, holds, or closes a lift in the console, skiers' apps update in near real time.</span></li>
-          <li><span class="tick">✓</span><span class="txt"><strong>Resort announcements</strong> — "Avalanche control 9–10am," "Lift 7 on wind hold" — pushed straight to skiers on the mountain.</span></li>
-          <li><span class="tick">✓</span><span class="txt"><strong>Verified patrol lines</strong> — tap‑to‑call the resort's real dispatch number, not a web search.</span></li>
-          <li><span class="tick">✓</span><span class="txt"><strong>One companion who knows it all</strong> — Izzy folds resort data into every answer: conditions, grooming, lifts, dining, events.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Conditions &amp; snow report</strong> — fresh totals, temps, wind, and visibility.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Grooming &amp; trail status</strong> — what's open, what's corduroy, what to skip.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Lifts &amp; local time</strong> — line waits, last chair, sunset, daylight left.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>The whole resort, on tap</strong> — restaurants, special events, daycare, ski school, and just about everything else on the mountain.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Pick your own Izzy</strong> — choose the skibud who rides with you, male or female.</span></li>
         </ul>
+        <p class="note-line"><b>Base</b> includes tap-to-talk with 10 minutes of Izzy a day. <b>Pro</b> unlocks up to 60 minutes every day — and Max triples it.</p>
       </div>
       <div class="art-side">
         <div class="hero-art">
@@ -177,36 +185,50 @@
     </div>
   </section>
 
-  <!-- ============================ YEAR-ROUND ============================ -->
-  <section class="story yearround" id="yearround">
+  <!-- ============================ IZZY VISION ============================ -->
+  <section class="story vision reverse" id="vision">
     <div class="wrap">
       <div class="text-side">
-        <p class="eyebrow is-sun">Izzy Snow &amp; Izzy Sun</p>
-        <h2>The season changes. <em>Your skibud doesn't.</em></h2>
+        <p class="eyebrow">Izzy Vision</p>
+        <h2>Show Izzy what you see.</h2>
         <div class="body">
-          <p>The mountain you know in January is the same mountain in July. Izzy now rides it in both seasons: <strong>Izzy Snow</strong> all winter, and when the lifts stop turning, <strong>Izzy Sun</strong> takes over at the same resorts — hiking, biking, ziplining, camping, the lodge that's still serving lunch. Same Izzy, same Skibuds, same family map, same SOS.</p>
-          <p>One annual plan covers both. <strong>Izzy has your back year-round.</strong></p>
+          <p>Tap Izzy's eyes on the home screen and the lens opens. Snap the trail map, the lift board, a menu, a sign you can't decode — Izzy looks at it and talks it through with you, out loud. No typing, no describing it, no confirm step. Snap, and Izzy's already looking.</p>
         </div>
         <ul class="feature-list">
-          <li><span class="tick">✓</span><span class="txt"><strong>Follows the mountain's calendar</strong> — Sun becomes the default when winter ends; Snow is one look away.</span></li>
-          <li><span class="tick">✓</span><span class="txt"><strong>Safety is season-blind</strong> — SOS, fall detection and the family map work exactly the same in both modes.</span></li>
-          <li><span class="tick">✓</span><span class="txt"><strong>Izzy Vision</strong> — tap Izzy's eyes, snap a photo, and talk it through out loud.</span></li>
-          <li><span class="tick">✓</span><span class="txt"><strong>Annual, weekly or monthly</strong> — annual plans cover Snow and Sun for less than ten months at the monthly price.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Tap Izzy's eyes</strong> — the camera lens opens right on the home screen; your conversation stays around it.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Snap and talk</strong> — the photo goes straight to Izzy and the answer comes back in voice. Ask a follow-up, snap again.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Trail maps, signs, lift boards, menus</strong> — anything you'd point a local at and say "what's this?" In winter and in summer.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>No setup</strong> — the lens opens even when Izzy's asleep; your first snap is the wake-up.</span></li>
         </ul>
-        <p class="note-line">Izzy Sun launches as a <b>preview</b> until resorts open for summer — the summer art and map are there now; live summer conditions arrive when resort activities do. <a href="app.html#sun" style="color:var(--blue-bright)">See Izzy Sun →</a></p>
       </div>
       <div class="art-side">
-        <div class="sun-scene">
+        <div class="hero-art">
           <div class="halo"></div>
-          <div class="shot wide-ratio">
-            <img src="assets/izzy-lake-sun.jpg" alt="Izzy Wolf in summer — standing on a lakeside dock with a dog, a boat and mountains behind, under a rising sun." width="800" height="600" onerror="this.style.display='none'">
-          </div>
-          <div class="sun-scene-phone">
-            <div class="phone">
-              <div class="screen">
-                <span class="notch"></span>
-                <img src="assets/izzy-male-sun.jpg" class="izzy-sun" alt="Izzy Wolf in summer — a zipliner in a helmet and harness on a green mountainside." width="320" height="693" onerror="this.style.display='none'">
-              </div>
+          <div class="phone">
+            <div class="screen">
+              <span class="notch"></span>
+              <img src="assets/izzy-female-sun.jpg" class="izzy-sun-f" alt="Izzy Wolf in summer on the home screen with the Izzy Vision lens open — two light beams from Izzy's eyes converge on a camera viewfinder." width="320" height="693" onerror="this.style.display='none'">
+              <svg class="lens-overlay" viewBox="0 0 100 216" aria-hidden="true" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="beamL" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#2f93ff" stop-opacity="0"></stop>
+                    <stop offset="1" stop-color="#2f93ff" stop-opacity=".95"></stop>
+                  </linearGradient>
+                </defs>
+                <!-- beams from Izzy's eyes to the viewfinder -->
+                <polygon points="44.5,38 47.5,38 58,112 30,112" fill="url(#beamL)"></polygon>
+                <polygon points="52.5,38 55.5,38 70,112 42,112" fill="url(#beamL)"></polygon>
+                <!-- viewfinder -->
+                <image href="assets/summer-trail-map.jpg" x="14" y="112" width="72" height="72" preserveAspectRatio="xMidYMid slice"></image>
+                <rect x="14" y="112" width="72" height="72" rx="6" fill="none" stroke="rgba(246,248,251,.35)" stroke-width=".6"></rect>
+                <g fill="none" stroke="#f6f8fb" stroke-width="2.2" stroke-linecap="round">
+                  <path d="M18 124 V116 H26"></path><path d="M82 124 V116 H74"></path>
+                  <path d="M18 172 V180 H26"></path><path d="M82 172 V180 H74"></path>
+                </g>
+                <circle cx="50" cy="196" r="6.5" fill="none" stroke="#f6f8fb" stroke-width="1.4"></circle>
+                <circle cx="50" cy="196" r="4.2" fill="#f6f8fb"></circle>
+              </svg>
+              <span class="lens-caption">Izzy is looking…</span>
             </div>
           </div>
         </div>
@@ -214,49 +236,323 @@
     </div>
   </section>
 
-  <!-- ============================ FORK ============================ -->
-  <section class="section fork" id="products">
+  <!-- ============================ IZZY SUN ============================ -->
+  <section class="story sun" id="sun">
+    <div class="wrap">
+      <div class="text-side">
+        <p class="eyebrow is-sun">Izzy Sun</p>
+        <h2>Same mountain. A new line down it.</h2>
+        <div class="body">
+          <p>The mountain you know in January is the same mountain in July. Izzy Sun brings summer to the resorts you already ride — hiking, mountain biking, ziplining, camping, and the lodge that's still serving lunch. Izzy follows your mountain's calendar: when the lifts stop turning for winter, Sun becomes the default and Snow is one look away.</p>
+        </div>
+        <ul class="feature-list">
+          <li><span class="tick">✓</span><span class="txt"><strong>Same resorts, same Izzy</strong> — your home mountain, your Skibuds, your family map, all summer.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Summer conditions</strong> — current temp, forecast, open trails and open lifts, as resorts go live for the season.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Honest when it's quiet</strong> — not every mountain spins in summer. If yours doesn't, Izzy says so, then tells you what's open nearby.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Safety is season-blind</strong> — SOS, fall detection and the family map work exactly the same in Sun.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Izzy Vision works in Izzy Snow and Izzy Sun</strong> — tap Izzy's eyes to snap the trail map, the bike park or the shoreline and talk it through.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Look around any time</strong> — switch to Izzy Sun from your profile, even in December.</span></li>
+        </ul>
+        <p class="note-line"><b>Izzy Sun launches as a preview</b> until resorts open for summer — the summer art and map are there now; live summer conditions arrive when resort activities do.</p>
+      </div>
+      <div class="art-side">
+        <div class="hero-art is-sun">
+          <div class="halo"></div>
+          <div class="phone">
+            <div class="screen">
+              <span class="notch"></span>
+              <img src="assets/izzy-male-sun.jpg" class="izzy-sun" alt="Izzy Wolf in summer — a smiling zipliner in a helmet and harness on a green mountainside under a sunburst." width="320" height="693" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SAFETY ============================ -->
+  <section class="story safety reverse" id="safety">
+    <div class="wrap">
+      <div class="text-side">
+        <p class="eyebrow is-red">Safety</p>
+        <h2>Need help? Help knows where you are.</h2>
+        <div class="body">
+          <p>Trigger&nbsp;<strong>SOS</strong>&nbsp;by voice or tap and Izzy texts your emergency contact and alerts ski patrol with the colors that you're wearing, your live GPS, a Google&nbsp;Maps link, and a breadcrumb trail of your last 60&nbsp;seconds on the mountain. Take a hard fall and can't reach your phone? Fall detection can trigger it for you.</p>
+        </div>
+        <ul class="feature-list">
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>SOS text with location</strong> — live GPS, a 60-second breadcrumb trail, and a tappable Maps link.</span></li>
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>Fall detection</strong> — a hard impact can auto-trigger SOS, hands-free.</span></li>
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>Tap-to-call ski patrol</strong> — patrol numbers verified against the resorts&rsquo; own sources, and a straight route to 911 where a resort publishes none &mdash; no searching when seconds count.</span></li>
+          <li class="is-red"><span class="tick">✓</span><span class="txt"><strong>Every season</strong> — the same SOS, the same fall detection, in Izzy Snow and Izzy Sun.</span></li>
+        </ul>
+        <p class="note-line">At <b>partner resorts</b> in our pilot program, patrol receives a real-time alert on their own dashboard the moment you call. <a href="mountain.html#loop" style="color:var(--blue-bright)">See how the loop works →</a></p>
+      </div>
+      <div class="art-side">
+        <div class="sos-stage">
+          <span class="ring r1"></span>
+          <span class="ring r2"></span>
+          <button class="sos-btn" type="button" aria-label="Emergency SOS — one tap alerts your emergency contact">SOS<small>TAP TO SEND</small></button>
+          <span class="sos-caption"><br></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FAMILY ============================ -->
+  <section class="story" id="family">
+    <div class="wrap">
+      <div class="text-side">
+        <p class="eyebrow">THE IZZY FAMILY</p>
+        <h2>Inspired for families. Open to all.</h2>
+        <div class="body">
+          <p>Izzy started with one question: how do we keep the whole family safe and connected on the mountain? The <strong>Family plan</strong> is the heart of the app — it puts Pro in every adult's pocket and gives parents real control over kids on the hill. Set it up once, and the whole family rides covered: 2 adults and up to 4 kids (age 17 and under), in Snow and in Sun.</p>
+        </div>
+        <ul class="feature-list">
+          <li><span class="tick">✓</span><span class="txt"><strong>Parent-managed kid accounts</strong> — one billing parent sets up the family; each kid gets their own account under a parent's control.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Parent-controlled Izzy voice</strong> — switch Izzy's voice on or off for each child, any time.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Voice or Tap SOS for kids</strong> — automatically alerts parents and ski patrol, together.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>Find-my-family</strong>&nbsp;— everyone on a shared family map, live, all day.</span></li>
+          <li><span class="tick">✓</span><span class="txt"><strong>End-of-day recap</strong> — a DM with each kid's max speed, vertical, and runs.</span></li>
+        </ul>
+        <p class="note-line">Built for families: riders under 13 join only through a parent-created family account, and a parent controls their settings. See our <a href="./children-privacy.html">Children’s Privacy Policy</a>.</p>
+      </div>
+      <div class="art-side">
+        <div class="hero-art">
+          <div class="halo"></div>
+          <div class="phone">
+            <div class="screen">
+              <span class="notch"></span>
+              <img src="assets/izzy-family.png" class="izzy-family" alt="An Izzy Wolf family of four in colorful ski suits on a sunny mountain deck, holding skis and an Izzy Wolf snowboard." width="320" height="693" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PRICING ============================ -->
+  <style>
+    /* Pricing toggle (Base | Families | Solo) */
+    .price-seg { display:flex; justify-content:center; gap:0; margin:6px auto 34px; background:rgba(255,255,255,.05); border:1px solid var(--navy-line); border-radius:999px; padding:5px; width:max-content; max-width:100%; }
+    .price-seg button { min-height:48px; padding:0 22px; border-radius:999px; border:0; background:transparent; color:var(--grey-dim); font-family:var(--body); font-weight:600; font-size:15.5px; cursor:pointer; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap; }
+    @media (max-width: 420px){ .price-seg button { padding:0 14px; font-size:14px; } }
+    .price-seg button:focus-visible { outline:3px solid var(--blue-bright); outline-offset:2px; }
+    .price-seg button[aria-pressed="true"].seg-base { background:rgba(246,248,251,.14); color:var(--white); }
+    .price-seg button[aria-pressed="true"].seg-fam { background:rgba(245,183,61,.18); color:#f5b73d; }
+    .price-seg button[aria-pressed="true"].seg-pro { background:rgba(47,147,255,.18); color:#2f93ff; }
+    .price-panels { position:relative; }
+    .price-panel { display:none; }
+    .price-panel.on { display:grid; grid-template-columns:1fr; gap:20px; animation:panelIn .22s var(--ease); }
+    @media (min-width: 860px){ .price-panel.on { grid-template-columns:1fr 1fr; } .price-panel.on.solo-card { grid-template-columns:minmax(0,720px); justify-content:center; } }
+    @keyframes panelIn { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:none;} }
+    @media (prefers-reduced-motion: reduce){ .price-panel.on { animation:none; } }
+    .cadence { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:2px 0 16px; }
+    .cadence div { text-align:center; padding:10px 6px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid var(--navy-line); }
+    .cadence .cad-label { display:block; font-size:11.5px; letter-spacing:1.2px; text-transform:uppercase; color:var(--grey-dim); margin-bottom:3px; }
+    .cadence .cad-price { font-family:var(--display); font-weight:700; font-size:19px; font-variant-numeric:tabular-nums; color:var(--white); }
+    .cadence .cad-note { display:block; font-size:11px; color:var(--grey-dim); margin-top:2px; }
+    .cadence .pop { border-color:currentColor; }
+    .cadence .annual { background:linear-gradient(180deg, rgba(255,179,71,.10), rgba(47,147,255,.08)); }
+    .cadence .annual .cad-note { color:var(--sun); }
+    .plan-fam .cadence .pop { color:#f5b73d; } .plan-pro .cadence .pop { color:#2f93ff; }
+    .plan ul li em { font-style:normal; color:var(--grey-dim); }
+    .annual-note { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; margin:-14px auto 30px; font-size:14px; color:var(--grey-dim); }
+    .annual-note span::before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--sun); margin-right:8px; vertical-align:2px; }
+  </style>
+  <section class="section pricing" id="pricing">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow" style="justify-content:center">Two products, one loop</p>
-        <h2>Pick your side of the mountain.</h2>
+        <p class="eyebrow" style="justify-content:center">Pricing</p>
+        <h2>Built for families. Open to everyone.</h2>
+        <p class="lede"><b>Every plan is the full app — Izzy Snow and Izzy Sun.</b> Ride by the week, the month, or the whole year: annual is twelve months of Izzy for less than the price of ten. Go Max when you want triple the Izzy.</p>
       </div>
-      <div class="fork-cards">
-        <a class="fork-card" href="app.html">
-          <p class="eyebrow">For skiers &amp; riders</p>
-          <h3>Izzy — your AI skibud</h3>
-          <p class="fork-sub">A hands-free voice companion that rides with you all day, all year — plus the safety net your family actually wants.</p>
-          <ul>
-            <li>Ask anything, gloves on — conditions, grooming, lifts, lunch</li>
-            <li>Izzy Vision: snap a photo, talk it through with Izzy</li>
-            <li>Izzy Snow + Izzy Sun: same resorts, both seasons</li>
-            <li>SOS with live GPS, breadcrumb trail &amp; fall detection</li>
-            <li>Family plan: kid SOS, shared live map, end-of-day recaps</li>
-            <li>Free to start · 91 IKON, EPIC &amp; independent resorts</li>
-          </ul>
-          <span class="fork-cta">Meet Izzy →</span>
-        </a>
-        <a class="fork-card" href="resort.html">
-          <p class="eyebrow">For resorts &amp; patrol</p>
-          <h3>Izzy Resort — mountain ops, live</h3>
-          <p class="fork-sub">A real-time dispatch console and a resort app for all staff that replace paper sweep logs, whiteboards, and radio roll‑calls.</p>
-          <ul>
-            <li>Live incident queue — skier SOS lands directly in dispatch</li>
-            <li>Resort app for every role: patrol, lift ops &amp; guest services</li>
-            <li>Coverage heatmap, lift &amp; trail board, staff comms</li>
-            <li>Every action audit-logged · updates in under a second</li>
-          </ul>
-          <span class="fork-cta">See Izzy Resort →</span>
-        </a>
+      <div class="annual-note">
+        <span>Every plan includes Izzy Snow and Izzy Sun</span>
+        <span>Same daily caps on every billing cadence</span>
+        <span>SOS &amp; fall detection free on every plan</span>
+      </div>
+
+      <div class="price-seg" role="group" aria-label="Choose plan type">
+        <button type="button" class="seg-base" id="segBase" aria-pressed="true">Base</button>
+        <button type="button" class="seg-fam" id="segFam" aria-pressed="false">For families</button>
+        <button type="button" class="seg-pro" id="segPro" aria-pressed="false">Going solo</button>
+      </div>
+
+      <div class="price-panels">
+        <div class="price-panel solo-card on" id="panelBase">
+          <div class="plan">
+            <h3 style="color:#f6f8fb">Base</h3>
+            <div class="price">Free</div>
+            <p class="plan-sub">Everything you need to ride with Izzy — and the baseline every paid plan builds on.</p>
+            <ul>
+              <li><span>Safety SOS &amp; fall detection — <em>Izzy has your back</em></span></li>
+              <li><span>Izzy Snow and Izzy Sun — both seasons, one app</span></li>
+              <li><span>10 minutes of Izzy voice a day</span></li>
+              <li><span>Text chat with Izzy, on and off the mountain — <em>Izzy doesn&rsquo;t sleep</em></span></li>
+              <li><span>Izzy Vision — 5 snaps a day — <em>Izzy has vision power</em></span></li>
+              <li><span>Conditions at IKON, EPIC &amp; independent resorts — <em>Izzy is a snow-pert. That&rsquo;s a snow expert&hellip; dad joke.</em></span></li>
+              <li><span>Limited memory — <em>Izzy may not have had enough blueberries, but Izzy&rsquo;ll know your name and a few things</em></span></li>
+              <li><span>Limited thinking — <em>Izzy IQ: chilled</em></span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#get">Get Izzy free</a>
+          </div>
+        </div>
+
+        <div class="price-panel plan-fam" id="panelFam">
+          <div class="plan featured">
+            <span class="tag">Built for families</span>
+            <h3 style="color:#f5b73d">Family</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$20</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$40</span><span class="cad-note">most popular</span></div>
+              <div class="annual"><span class="cad-label">Annual</span><span class="cad-price">$369</span><span class="cad-note">save $111 vs monthly</span></div>
+            </div>
+            <p class="plan-sub">Everything in Pro for both adults, plus the whole family stack — year-round.</p>
+            <ul>
+              <li><span>Pro for both adults — up to 60 minutes of Izzy a day, each</span></li>
+              <li><span>Izzy Vision — 25 snaps a day, each adult</span></li>
+              <li><span>Up to 4 parent-managed kid accounts — <em>Izzy loves kids and always keeps them safe</em></span></li>
+              <li><span>Find My Family live map &amp; Kid SOS routed to parents — <em>Izzy tracks the crew</em></span></li>
+              <li><span>Family chat &amp; end-of-day recap</span></li>
+              <li><span>Expanded memory — <em>Izzy knows your fam</em></span></li>
+              <li><span>Higher thinking — <em>Izzy can be your kids&rsquo; tutor</em></span></li>
+            </ul>
+            <a class="btn btn-primary" href="#get">Set up Family</a>
+          </div>
+          <div class="plan">
+            <span class="tag">3&times; the Izzy</span>
+            <h3 style="color:#f5b73d">Family Max</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$40</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$80</span></div>
+              <div class="annual"><span class="cad-label">Annual</span><span class="cad-price">$700</span><span class="cad-note">save $260 vs monthly</span></div>
+            </div>
+            <p class="plan-sub">The Family plan, tripled — for crews that live on the mountain.</p>
+            <ul>
+              <li><span>Everything in Family</span></li>
+              <li><span>Up to 180 minutes of Izzy a day, each adult</span></li>
+              <li><span>Izzy Vision — 100 snaps a day, each adult</span></li>
+              <li><span>Max memory — <em>should Izzy remember this much?</em></span></li>
+              <li><span>Deepest thinking — <em>your kids may end up at Harvard</em></span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#get">Go Family Max</a>
+          </div>
+        </div>
+
+        <div class="price-panel plan-pro" id="panelPro">
+          <div class="plan">
+            <h3 style="color:#2f93ff">Pro</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$10</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$20</span><span class="cad-note">most popular</span></div>
+              <div class="annual"><span class="cad-label">Annual</span><span class="cad-price">$190</span><span class="cad-note">save $50 vs monthly</span></div>
+            </div>
+            <p class="plan-sub">The full Izzy — voice, Izzy Vision on the mountain, live mountain answers, every season.</p>
+            <ul>
+              <li><span>Everything in Base</span></li>
+              <li><span>Up to 60 minutes of Izzy voice every day</span></li>
+              <li><span>Live conditions, lift status, trip planning and anything you can think of — <em>powered by Gemini</em></span></li>
+              <li><span>Izzy Vision — 25 snaps a day. Snap a trail map or anything else and talk to Izzy about it</span></li>
+              <li><span>Expanded memory — <em>Izzy knows how you ride. Blueberry overload.</em></span></li>
+              <li><span>Higher thinking — <em>Izzy IQ: lifted</em></span></li>
+              <li><span>See every Izzy rider, find Skibuds &amp; post on the resort bulletin</span></li>
+            </ul>
+            <a class="btn btn-primary" style="background:var(--blue);color:#fff" href="#get">Go Pro</a>
+          </div>
+          <div class="plan">
+            <span class="tag" style="background:#2f93ff;color:var(--navy)">3&times; the Izzy</span>
+            <h3 style="color:#2f93ff">Pro Max</h3>
+            <div class="cadence">
+              <div><span class="cad-label">Weekly</span><span class="cad-price">$20</span></div>
+              <div class="pop"><span class="cad-label">Monthly</span><span class="cad-price">$40</span></div>
+              <div class="annual"><span class="cad-label">Annual</span><span class="cad-price">$369</span><span class="cad-note">save $111 vs monthly</span></div>
+            </div>
+            <p class="plan-sub">Pro, tripled — for riders who never stop talking lines.</p>
+            <ul>
+              <li><span>Everything in Pro</span></li>
+              <li><span>Up to 180 minutes of Izzy voice every day</span></li>
+              <li><span>Izzy Vision — 100 snaps a day</span></li>
+              <li><span>Max memory — <em>Izzy just knows you. Barfing blueberries.</em></span></li>
+              <li><span>Deepest thinking — <em>Izzy IQ: propelled</em></span></li>
+            </ul>
+            <a class="btn btn-ghost" href="#get">Go Pro Max</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="pricing-foot">Coming soon to iPhone &amp; Android — free on the App&nbsp;Store and Google&nbsp;Play. Prices in USD; your store shows your own currency. Subscriptions renew until cancelled; cancel anytime. Annual savings compared with twelve months at the monthly price. Izzy Sun is a preview until resorts open for summer.</p>
+    </div>
+  </section>
+  <script>
+    (function(){
+      var segs=[['segBase','panelBase'],['segFam','panelFam'],['segPro','panelPro']];
+      segs.forEach(function(pair,i){
+        document.getElementById(pair[0]).addEventListener('click',function(){
+          segs.forEach(function(q,j){
+            document.getElementById(q[0]).setAttribute('aria-pressed', i===j?'true':'false');
+            document.getElementById(q[1]).classList.toggle('on', i===j);
+          });
+        });
+      });
+    })();
+  </script>
+
+  <!-- ============================ FAQ ============================ -->
+  <section class="section faq" id="faq">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Good to know</p>
+        <h2>Questions, answered.</h2>
+      </div>
+      <div class="faq-grid">
+        <details>
+          <summary>Is Izzy free to try?</summary>
+          <p>Yes. Base is free, with no account required to start: safety SOS and fall detection, 10 minutes of Izzy voice a day, text chat, 5 Izzy Vision snaps a day, and conditions at every resort Izzy covers — in Izzy Snow and Izzy Sun. Pro, Family and Max add minutes, snaps, memory and the family stack on top. <a href="#pricing" style="color:var(--blue-bright)">See the plans →</a></p>
+        </details>
+        <details>
+          <summary>How do I talk to Izzy?</summary>
+          <p>Tap Izzy and ask — Izzy answers out loud, then it's quiet until your next tap. Base gives you 10 minutes of Izzy a day; Pro and Family give each adult up to 60, and Max up to 180. No wake word, no menus, gloves stay on.</p>
+        </details>
+        <details>
+          <summary>What is Izzy Sun?</summary>
+          <p>Izzy Sun is summer mode — the same app, the same resorts you already ride, with summer art, a summer map and summer answers: hiking, biking, ziplining, camping, what's open at the lodge. Izzy follows your mountain's calendar, so Sun becomes the default when winter ends and Snow is always one look away. At launch, Sun is a <b>preview</b> until resorts open for summer: you can look around any time from your profile, and live summer conditions arrive when resort activities do. SOS, fall detection and the family map work exactly the same in both.</p>
+        </details>
+        <details>
+          <summary>Which resorts does Izzy work at?</summary>
+          <p>91 mountains across the US and Canada today — the IKON and EPIC resorts, plus a growing set of select independents. Pick yours in the app and Izzy answers with that mountain's lifts, trails, grooming and conditions; SOS and the family map work wherever you ride. <a href="resorts.html" style="color:var(--blue-bright)">See every resort →</a> Not there yet? Ask us and we'll add it.</p>
+        </details>
+        <details>
+          <summary>What is Izzy Vision?</summary>
+          <p>Tap Izzy's eyes on the home screen and the camera lens opens. Snap a trail map, a sign, a lift board or a menu and the photo goes straight to Izzy, who looks at it and talks it through with you in voice. Base includes 5 snaps a day, Pro and Family 25, Max 100. It's photos only (no video), it works in Izzy Snow and Izzy Sun, and it stays off for kid accounts.</p>
+        </details>
+        <details>
+          <summary>What does Izzy know?</summary>
+          <p>Izzy is built for the mountain — live conditions, trail and lift status, grooming, resort info, and where to grab a bite. On Pro and Family, Izzy goes further with live web search, so you can ask about current events, nearby spots, and just about anything beyond the slopes.</p>
+        </details>
+        <details>
+          <summary>How does fall detection work?</summary>
+          <p>Fall detection is included free on every plan. Switch it on in the Safety tab and set the sensitivity yourself — Low, Medium, or High. When it's on, Izzy watches for a hard impact followed by a spell of stillness, then auto-fires your SOS with your last GPS — texting your emergency contact and, at partner resorts, alerting ski patrol — unless you tap "I'm OK" first.</p>
+        </details>
+        <details>
+          <summary>Can I call for help with my voice?</summary>
+          <p>Yes, on Pro and Family — just say "Izzy, I need ski patrol." Izzy texts your emergency contact your live GPS and offers to call patrol, hands on your poles. Base gets a one-tap SOS button.</p>
+        </details>
+        <details>
+          <summary>How does Kid SOS work?</summary>
+          <p>Kids fire SOS from a tap, their voice, or a lock-screen widget. Every parent gets a time-sensitive push, elevated above normal notifications, with the kid's live GPS and a one-tap "Call Patrol" button built right in — parents acknowledge so the kid sees "Mom's on the way," or tap through to reach patrol directly.</p>
+        </details>
+        <details>
+          <summary>What's the difference between Pro and Family?</summary>
+          <p>Pro covers one rider. Family covers up to 6 (2 adults + 4 kids) — full Pro for both adults, kid accounts built for safety — and adds the family stack: live Find My Family map, family chat, Kid SOS, end-of-day recap, and COPPA kid mode for under-13s. Solo rider → Pro; household → Family. <a href="#pricing" style="color:var(--blue-bright)">See the plans →</a></p>
+        </details>
       </div>
     </div>
   </section>
 
   <!-- ============================ FINAL CTA ============================ -->
-  <section class="section final-cta">
+  <section class="section final-cta" id="get">
     <div class="wrap">
-      <h2>Ride a connected mountain.</h2>
-      <p class="lede">Skiing with the family this winter? Riding the same hill in July? Running a mountain? Either way, the loop starts here.</p>
+      <h2>Your buddy's waiting at the base. Every season.</h2>
+      <p class="lede">Download Izzy, tap to ask, and ride the mountain like you've got a local in your pocket — in January and in July.</p>
       <div class="cta-row">
         <span class="appstore is-soon">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.5c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.7-.8 1.9-1.4 2.8-1.4Zm3.2 16c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1-2 0-2.5 1-3.9 1-1.7 0-3-1.6-3.9-3C-.1 16.4-.5 11 1.8 8.2 2.9 6.8 4.6 6 6.2 6c1.6 0 2.6 1 3.9 1 1.3 0 2-1 3.9-1 1.4 0 2.9.8 4 2.1-3.5 1.9-3 6.9 1.7 9.4Z"></path></svg>
@@ -266,7 +562,7 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.156l11.04 10.95zm0 2.022l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
           <span class="lab"><small>Coming soon to</small><b>Google Play</b></span>
         </span>
-        <a class="btn btn-ghost" href="resort.html">Bring Izzy to your resort</a>
+        <span class="soon-pill"><span class="dot"></span>In TestFlight now</span>
       </div>
     </div>
   </section>
@@ -282,22 +578,26 @@
           <img src="assets/app-icon.png" alt="" width="38" height="38">
           Izzy
         </a>
-        <p>One connected safety loop for the mountain — an AI companion for skiers in Snow and Sun, a live ops platform for resorts.</p>
+        <p>Your AI skibud for Snow and Sun. Built for the mountain — hands-free, all day, all year.</p>
       </div>
       <div class="foot-col">
         <h4>Product</h4>
         <ul>
-          <li><a href="app.html">Izzy for skiers</a></li>
-          <li><a href="resort.html">Izzy Resort</a></li>
-          <li><a href="#loop">How the loop works</a></li>
-          <li><a href="#yearround">Izzy Snow &amp; Sun</a></li>
-          <li><a href="app.html#pricing">Pricing</a></li>
+          <li><a href="#voice">Voice companion</a></li>
+          <li><a href="#vision">Izzy Vision</a></li>
+          <li><a href="#sun">Izzy Sun</a></li>
+          <li><a href="#safety">Safety &amp; SOS</a></li>
+          <li><a href="#family">Family</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="resorts.html">Resorts</a></li>
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
+        <h4>Izzy</h4>
         <ul>
-          <li><a href="app.html#get">Get Izzy</a></li>
+          <li><a href="mountain.html">The connected mountain</a></li>
+          <li><a href="resort.html">Izzy Resort</a></li>
+          <li><a href="#get">Get Izzy</a></li>
           <li><a href="press.html">Press &amp; partnerships</a></li>
           <li><a href="./support.html">Support</a></li>
           <li><a href="./privacy.html">Privacy Policy</a></li>
@@ -307,9 +607,20 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 Izzy. All rights reserved.</span>
-      <span><a href="mailto:support@izzywolf.com">support@izzywolf.com</a></span>
+      <span>iPhone · <a href="mailto:support@izzywolf.com">support@izzywolf.com</a></span>
     </div>
   </div>
 </footer>
 
+
+
+<script>
+  // Pricing cards: click one to reveal its accent border (mutually exclusive).
+  document.querySelectorAll('.plans .plan').forEach(function (p) {
+    p.addEventListener('click', function () {
+      document.querySelectorAll('.plans .plan').forEach(function (x) { x.classList.remove('sel'); });
+      p.classList.add('sel');
+    });
+  });
+</script>
 </body></html>
