@@ -1463,7 +1463,8 @@ p { margin: 0; text-wrap: pretty; }
   font: 700 11px/1.5 var(--body); letter-spacing: .1em;
   background: rgba(47,147,255,.18); color: var(--blue-bright); border: 1px solid transparent;
 }
-.is-epic .r-badge, .r-badge.is-epic { background: rgba(246,248,251,.14); color: var(--white); }
+.is-ikon .r-badge, .r-badge.is-ikon { background: rgba(255,179,71,.18); color: var(--sun); }
+.is-epic .r-badge, .r-badge.is-epic { background: rgba(47,147,255,.18); color: var(--blue-bright); }
 .is-independent .r-badge, .r-badge.is-independent { background: transparent; color: var(--grey); border-color: var(--navy-line); }
 .resort-empty { margin-top: 24px; color: var(--grey); }
 .resorts-note { margin-top: clamp(28px, 5vw, 44px); }
