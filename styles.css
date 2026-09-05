@@ -1413,3 +1413,57 @@ p { margin: 0; text-wrap: pretty; }
 .story .art-side .sun-scene { width: min(460px, 88vw); }
 @media (min-width: 880px) { .story .art-side:has(.sun-scene) { width: min(460px, 42vw); } }
 .story .art-side:has(.sun-scene) { width: min(460px, 88vw); }
+
+/* ---- resorts directory page (2026-09-05) --------------------------------- */
+.resorts-page .head { max-width: 720px; margin: 0 0 clamp(24px, 4vw, 36px); }
+.resorts-page .head h1 { font-size: clamp(30px, 5.2vw, 46px); margin-bottom: 16px; }
+.resorts-page .head .lede { margin-inline: 0; max-width: none; }
+.pass-key { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 18px; }
+.pass-key-note { font-size: 13px; color: var(--grey-dim); margin-left: 4px; }
+.trust-row a { color: inherit; text-decoration: underline; text-decoration-color: rgba(141,156,180,.5); text-underline-offset: 3px; }
+.trust-row a:hover { color: var(--white); text-decoration-color: var(--blue-bright); }
+
+.resort-tools { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; justify-content: space-between; }
+.pass-filter { display: inline-flex; flex-wrap: wrap; gap: 6px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid var(--navy-line); }
+.pass-filter button {
+  font: 600 14px/1 var(--body); color: var(--grey); background: transparent; border: 0; cursor: pointer;
+  min-height: 40px; padding: 0 16px; border-radius: 999px; letter-spacing: .02em;
+  transition: background .15s var(--ease), color .15s var(--ease);
+}
+.pass-filter button b { font-weight: 600; color: var(--grey-dim); margin-left: 4px; }
+.pass-filter button:hover { color: var(--white); }
+.pass-filter button[aria-pressed="true"] { background: var(--blue); color: var(--white); }
+.pass-filter button[aria-pressed="true"] b { color: rgba(246,248,251,.8); }
+.pass-filter button:focus-visible, .resort-search input:focus-visible { outline: 3px solid var(--blue-bright); outline-offset: 2px; }
+.resort-search { flex: 1 1 240px; max-width: 360px; }
+.resort-search input {
+  width: 100%; min-height: 44px; padding: 0 16px; border-radius: 999px;
+  font: 500 16px var(--body); color: var(--white);
+  background: rgba(255,255,255,.05); border: 1px solid var(--navy-line);
+}
+.resort-search input::placeholder { color: var(--grey-dim); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.resort-status { font-size: 14px; color: var(--grey-dim); margin: 14px 0 6px; }
+
+.region { margin-top: clamp(22px, 3.5vw, 30px); }
+.region h3 { font-size: 15px; letter-spacing: .06em; text-transform: uppercase; color: var(--grey-dim); margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
+.region h3::after { content: ""; flex: 1; height: 1px; background: rgba(52,84,125,.5); }
+.region .r-count { font-family: var(--body); font-weight: 600; color: var(--grey-faint); letter-spacing: 0; }
+.resort-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 10px; }
+@media (min-width: 600px)  { .resort-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px)  { .resort-grid { grid-template-columns: repeat(3, 1fr); } }
+.resort {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 52px; padding: 12px 14px 12px 16px; border-radius: 14px;
+  background: rgba(255,255,255,.035); border: 1px solid rgba(52,84,125,.6);
+}
+.resort .r-name { font-family: var(--display); font-weight: 600; font-size: 16px; color: var(--white); }
+.r-badge {
+  flex: none; display: inline-block; padding: 3px 9px; border-radius: 999px;
+  font: 700 11px/1.5 var(--body); letter-spacing: .1em;
+  background: rgba(47,147,255,.18); color: var(--blue-bright); border: 1px solid transparent;
+}
+.is-epic .r-badge, .r-badge.is-epic { background: rgba(246,248,251,.14); color: var(--white); }
+.is-independent .r-badge, .r-badge.is-independent { background: transparent; color: var(--grey); border-color: var(--navy-line); }
+.resort-empty { margin-top: 24px; color: var(--grey); }
+.resorts-note { margin-top: clamp(28px, 5vw, 44px); }
