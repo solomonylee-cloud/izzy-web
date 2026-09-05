@@ -1264,6 +1264,9 @@ p { margin: 0; text-wrap: pretty; }
 
 .eyebrow.is-sun { color: var(--sun); }
 .eyebrow.is-sun::before { background: var(--sun); }
+/* hero eyebrow "Izzy — Snow and Sun": Snow reads white, Sun reads in the sun accent */
+.eyebrow .w-snow { color: var(--white); }
+.eyebrow .w-sun  { color: var(--sun); }
 
 .new-pill {
   display: inline-block;
@@ -1339,7 +1342,7 @@ p { margin: 0; text-wrap: pretty; }
 }
 .lens-caption {
   position: absolute;
-  left: 50%; bottom: 2.5%;
+  left: 50%; bottom: 0.9%; /* sits clear of the shutter ring (2026-09-05) */
   transform: translateX(-50%);
   z-index: 3;
   font-family: var(--display); font-weight: 600; font-size: 12px;
@@ -1396,8 +1399,8 @@ p { margin: 0; text-wrap: pretty; }
 .sun-scene { position: relative; width: min(460px, 88vw); justify-self: center; padding-bottom: 80px; }
 .sun-scene .halo { background: radial-gradient(55% 45% at 50% 40%, rgba(255,179,71,.4) 0%, transparent 65%); }
 .sun-scene .shot { position: relative; z-index: 1; }
-.sun-scene .shot { aspect-ratio: 1 / 1; }
-.sun-scene .shot img { object-position: 50% 58%; }
+.sun-scene .shot { aspect-ratio: 3 / 4; } /* matches the 800×1066 source so the whole scene (dog included) shows */
+.sun-scene .shot img { object-position: 50% 50%; }
 .sun-scene-phone {
   position: absolute; left: -4%; bottom: 0;
   width: 40%;
