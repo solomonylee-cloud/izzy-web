@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Illustrated summer trail map">
+  <defs><clipPath id="m"><rect width="200" height="200" rx="8"/></clipPath></defs>
+  <g clip-path="url(#m)" font-family="Quicksand, ui-rounded, system-ui, sans-serif" font-weight="700">
+    <rect width="200" height="200" fill="#f3efc9"/>
+    <!-- sky band + sun -->
+    <rect width="200" height="70" fill="#9fd9f2"/>
+    <circle cx="160" cy="34" r="17" fill="#ffd44a" stroke="#1f1a17" stroke-width="2.4"/>
+    <g stroke="#ffd44a" stroke-width="3" stroke-linecap="round"><path d="M160 8v6M160 54v6M134 34h6M180 34h6M142 16l4 4M174 48l4 4M178 16l-4 4M146 48l-4 4"/></g>
+    <!-- peaks -->
+    <path d="M-10 92 L38 34 L86 92 Z" fill="#8fa9b8" stroke="#1f1a17" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M38 34 L52 51 L46 49 L40 56 L32 48 L26 52 Z" fill="#ffffff"/>
+    <path d="M56 92 L108 22 L160 92 Z" fill="#6f8ea3" stroke="#1f1a17" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M108 22 L124 44 L116 40 L108 50 L100 41 L92 45 Z" fill="#ffffff"/>
+    <path d="M132 92 L178 46 L224 92 Z" fill="#8fa9b8" stroke="#1f1a17" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M178 46 L190 60 L184 57 L178 64 L172 57 L166 60 Z" fill="#ffffff"/>
+    <!-- meadow -->
+    <path d="M-10 92 Q100 70 210 92 L210 210 L-10 210 Z" fill="#a9d66a"/>
+    <path d="M-10 118 Q60 100 120 122 T210 118 L210 210 L-10 210 Z" fill="#8cc456"/>
+    <!-- trees -->
+    <g fill="#3f8f4a" stroke="#1f1a17" stroke-width="1.8" stroke-linejoin="round">
+      <path d="M16 118 l8 -16 l8 16 z M12 132 l12 -20 l12 20 z"/>
+      <path d="M40 110 l7 -14 l7 14 z M36 122 l11 -18 l11 18 z"/>
+      <path d="M150 112 l7 -14 l7 14 z M146 124 l11 -18 l11 18 z"/>
+      <path d="M176 128 l8 -16 l8 16 z M172 142 l12 -20 l12 20 z"/>
+      <path d="M20 176 l8 -16 l8 16 z M16 190 l12 -20 l12 20 z"/>
+      <path d="M182 176 l8 -16 l8 16 z M178 190 l12 -20 l12 20 z"/>
+    </g>
+    <!-- lake -->
+    <path d="M112 150 C126 138 158 140 168 154 C178 168 160 184 138 182 C118 180 100 162 112 150 Z" fill="#59b7e6" stroke="#1f1a17" stroke-width="2.4"/>
+    <path d="M124 160 q8 -4 16 0 M136 170 q8 -4 16 0" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <!-- chairlift -->
+    <path d="M34 186 L108 26" stroke="#1f1a17" stroke-width="3"/>
+    <g fill="#ff5c8a" stroke="#1f1a17" stroke-width="1.6"><rect x="60" y="120" width="9" height="9" rx="2"/><rect x="82" y="72" width="9" height="9" rx="2"/></g>
+    <!-- hiking trail (dashed brown, comic outline) -->
+    <path d="M22 196 C42 172 30 150 58 138 S88 118 102 96 S110 60 108 30" fill="none" stroke="#1f1a17" stroke-width="6" stroke-linecap="round" stroke-dasharray="6 5"/>
+    <path d="M22 196 C42 172 30 150 58 138 S88 118 102 96 S110 60 108 30" fill="none" stroke="#b6702e" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="6 5"/>
+    <!-- bike flow trail (orange) -->
+    <path d="M186 196 C168 184 156 174 146 158 C132 138 124 120 118 100 C112 82 114 62 108 30" fill="none" stroke="#1f1a17" stroke-width="6" stroke-linecap="round"/>
+    <path d="M186 196 C168 184 156 174 146 158 C132 138 124 120 118 100 C112 82 114 62 108 30" fill="none" stroke="#ff8a1f" stroke-width="3.2" stroke-linecap="round"/>
+    <!-- summit flag -->
+    <path d="M108 30 v-14" stroke="#1f1a17" stroke-width="2.2"/><path d="M108 16 l12 4 l-12 4 z" fill="#ef3b2d" stroke="#1f1a17" stroke-width="1.6"/>
+    <!-- you are here pin -->
+    <path d="M40 176 c0 -9 -12 -10 -12 -1 c0 6 12 15 12 15 s12 -9 12 -15 c0 -9 -12 -8 -12 1 z" fill="#ef3b2d" stroke="#1f1a17" stroke-width="2"/>
+    <circle cx="40" cy="174" r="3.2" fill="#ffffff"/>
+    <!-- labels -->
+    <g fill="#1f1a17" font-size="8.5">
+      <text x="64" y="150" transform="rotate(-44 64 150)">RIDGE LOOP</text>
+      <text x="126" y="118" transform="rotate(50 126 118)" fill="#c2500a">FLOW LINE</text>
+      <text x="138" y="165" text-anchor="middle" fill="#ffffff" stroke="#1f1a17" stroke-width="2" paint-order="stroke">MIRROR LAKE</text>
+    </g>
+    <!-- north arrow -->
+    <g transform="translate(184 88)"><path d="M0 -10 L5 6 L0 2 L-5 6 Z" fill="#1f1a17"/><text y="17" font-size="9" fill="#1f1a17" text-anchor="middle">N</text></g>
+    <!-- title strip -->
+    <rect x="0" y="0" width="200" height="16" fill="#1f6b46"/>
+    <text x="7" y="11.5" font-size="9.5" fill="#f6f8fb" letter-spacing=".6">SUMMER TRAIL MAP</text>
+    <text x="193" y="11.3" font-size="7.5" fill="#dff1e4" text-anchor="end">hike · bike · lift</text>
+  </g>
+</svg>
