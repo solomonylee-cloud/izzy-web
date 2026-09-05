@@ -1267,6 +1267,8 @@ p { margin: 0; text-wrap: pretty; }
 /* hero eyebrow "Izzy — Snow and Sun": Snow reads white, Sun reads in the sun accent */
 .eyebrow .w-snow { color: var(--white); }
 .eyebrow .w-sun  { color: var(--sun); }
+/* hero h1: pass names read white inside the blue em */
+.hero h1 em .w-pass { color: var(--white); }
 
 .new-pill {
   display: inline-block;
