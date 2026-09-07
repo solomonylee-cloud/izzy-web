@@ -17,6 +17,14 @@
   <img class="confirm-logo" src="assets/app-icon.png" alt="Izzy">
   <h1 id="title">Confirming…</h1>
   <p id="msg" class="muted">One moment while we confirm your account.</p>
+  <form id="resetForm" style="display:none;margin-top:16px;text-align:left" autocomplete="off">
+    <label class="muted" for="pw1">New password</label>
+    <input id="pw1" type="password" minlength="6" autocomplete="new-password" required style="width:100%;padding:12px 14px;margin:6px 0 14px;border-radius:12px;border:1px solid #cbd5e0;font-size:16px">
+    <label class="muted" for="pw2">Confirm password</label>
+    <input id="pw2" type="password" minlength="6" autocomplete="new-password" required style="width:100%;padding:12px 14px;margin:6px 0 8px;border-radius:12px;border:1px solid #cbd5e0;font-size:16px">
+    <p id="formErr" class="muted" style="color:#DC2626;min-height:18px"></p>
+    <button id="saveBtn" type="submit" class="confirm-btn" style="border:0;cursor:pointer;width:100%">Save password</button>
+  </form>
   <a id="openApp" class="confirm-btn" style="display:none" href="#">Open Izzy</a>
 </div>
 <!-- Vendored @supabase/supabase-js@2.110.7 UMD build (official npm dist/umd/supabase.js,
@@ -32,32 +40,13 @@ const PROJECTS = {
 const p = new URLSearchParams(location.search);
 const token_hash = p.get('token_hash');
 const type = p.get('type') || 'signup';
-const project = PROJECTS[p.get('project')] ? p.get('project') : 'prod';
+const projectKey = p.get('project');
+// Object.hasOwn, not PROJECTS[key] truthiness: a `?project=constructor` (or __proto__,
+// toString, …) resolves on the prototype chain and would read as a known project.
+const project = (projectKey && Object.prototype.hasOwnProperty.call(PROJECTS, projectKey)) ? projectKey : 'prod';
 const title = document.getElementById('title'), msg = document.getElementById('msg'), openApp = document.getElementById('openApp');
 (async () => {
   if (!token_hash) { title.textContent = 'Link incomplete'; msg.textContent = 'This confirmation link is missing its token. Request a new email from the app.'; return; }
-  try {
-    const { url, anon } = PROJECTS[project];
-    // persistSession/autoRefreshToken/detectSessionInUrl all default to true in
-    // the vendored client, which would let a crafted #access_token=... fragment
-    // plant a session in this origin's localStorage on page load. This page
-    // never reads a session back — it only calls verifyOtp() below with the
-    // token_hash it parsed from the query string — so none of those defaults
-    // are needed, and disabling them closes that off. detectSessionInUrl only
-    // gates the client's own automatic URL-scanning during construction; it has
-    // no effect on the explicit verifyOtp() call.
-    const supabase = createClient(url, anon, {
-      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
-    });
-    const { error } = await supabase.auth.verifyOtp({ type, token_hash });
-    if (error) throw error;
-    title.textContent = '✅ Email confirmed!';
-    msg.textContent = 'Your Izzy account is verified. Open the app to log in.';
-  } catch (e) {
-    title.textContent = 'Link expired';
-    msg.textContent = 'This confirmation link has already been used or expired. Open Izzy and request a new one.';
-  }
-  openApp.style.display = 'inline-block';
 
   // DEEP LINK FIRST, store only as a fallback.
   //
@@ -73,6 +62,12 @@ const title = document.getElementById('title'), msg = document.getElementById('m
   // (SkiBuddyGemini app.json "scheme"; routes in App.tsx deepLinkConfig).
   // Opening it hands off to the app if installed and does nothing visible if
   // not — which is why the store fallback below is still needed.
+  //
+  // Hoisted here (before the verifyOtp try/catch below) so the button is fully
+  // wired — real href, click handler — regardless of which branch reveals it:
+  // signup success, the error/expired-link path, or the recovery form's
+  // save-success handler. Only `openApp.style.display` toggling stays
+  // per-branch; the wiring itself must not depend on which branch runs.
   const STORE_URL = /Android/i.test(navigator.userAgent)
     ? 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
     : 'https://apps.apple.com/app/id6761801986';
@@ -100,6 +95,108 @@ const title = document.getElementById('title'), msg = document.getElementById('m
       if (!handedOff && !document.hidden) window.location.href = STORE_URL;
     }, 1200);
   });
+
+  try {
+    const { url, anon } = PROJECTS[project];
+    // persistSession/autoRefreshToken/detectSessionInUrl all default to true in
+    // the vendored client, which would let a crafted #access_token=... fragment
+    // plant a session in this origin's localStorage on page load. This page
+    // never reads a session back on the signup path — it only calls verifyOtp()
+    // below with the token_hash it parsed from the query string — so none of
+    // those defaults are needed there, and disabling them closes that off.
+    // detectSessionInUrl only gates the client's own automatic URL-scanning
+    // during construction; it has no effect on the explicit verifyOtp() call.
+    // The recovery branch below relies on the same client: its verifyOtp runs
+    // inside the SUBMIT handler (not on load — see that branch), and the session
+    // it returns is held in memory only, then signed out once the password is
+    // saved. No explicit setSession is needed: verifyOtp already installs the
+    // session it minted on this client instance.
+    const supabase = createClient(url, anon, {
+      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+    });
+    if (type === 'recovery') {
+      // 🔴 DO NOT verifyOtp ON LOAD for a recovery link. A recovery token is
+      // SINGLE-USE and is spent the moment verifyOtp runs, so verifying here
+      // meant: a reload or a back-navigation spent the token with no password
+      // ever set (and no way back except requesting another email), and a
+      // failing session install painted "Link expired" over a form the user
+      // could still see and type into. The token is spent inside the submit
+      // handler instead — one tap, one spend, immediately followed by the
+      // updateUser it exists for.
+      //
+      // If the Universal Link had reached the app this page would never have
+      // loaded, so this IS the fallback path (Gmail webview, desktop, no app).
+      document.title = 'Reset your Izzy password';
+      title.textContent = 'Choose a new password';
+      msg.textContent = 'At least 6 characters.';
+      const form = document.getElementById('resetForm'), pw1 = document.getElementById('pw1'),
+            pw2 = document.getElementById('pw2'), formErr = document.getElementById('formErr'),
+            saveBtn = document.getElementById('saveBtn');
+      // Attach the submit listener before the form is ever shown, so a submit
+      // can never fall through to a native (unhandled) form submission.
+      //
+      // The token is single-use, but updateUser can still fail after a
+      // successful verify (GoTrue same_password/weak_password, a network
+      // throw). That re-enables the Save button, and a retry must NOT
+      // re-spend the already-consumed token — that would paint "Link
+      // expired" over a page that still holds a perfectly good in-memory
+      // session. `verified` makes the verifyOtp call run at most once.
+      let verified = false;
+      form.addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        formErr.textContent = '';
+        if (pw1.value.trim().length === 0) { formErr.textContent = 'Enter a new password.'; return; }
+        if (pw1.value.length < 6) { formErr.textContent = 'Use at least 6 characters.'; return; }
+        if (pw1.value !== pw2.value) { formErr.textContent = "Passwords don't match yet."; return; }
+        saveBtn.disabled = true;
+        try {
+          if (!verified) {
+            // Spend the token HERE — the client holds the resulting session in
+            // memory (persistSession:false) for the updateUser immediately below.
+            const { error: vErr } = await supabase.auth.verifyOtp({ type, token_hash });
+            if (vErr) {
+              // Now — and only now — is "expired" the right thing to say. Hide
+              // the form so no one is left typing into a dead one. `verified`
+              // stays false, matching today's behavior on a failed verify.
+              form.style.display = 'none';
+              title.textContent = 'Link expired';
+              msg.textContent = 'This reset link has already been used or expired. Open Izzy, tap "Forgot password?" and request a new one.';
+              openApp.style.display = 'inline-block';
+              return;
+            }
+            verified = true;
+          }
+          const { error: upErr } = await supabase.auth.updateUser({ password: pw1.value });
+          if (upErr) { formErr.textContent = upErr.message; saveBtn.disabled = false; return; }
+          // Show success immediately — don't gate it on signOut, which is
+          // fire-and-forget below. This page only ever held an in-memory
+          // session (persistSession:false), so nothing persists either way.
+          form.style.display = 'none';
+          title.textContent = '✅ Password updated';
+          msg.textContent = 'Open Izzy and sign in with your new password.';
+          openApp.style.display = 'inline-block';
+          supabase.auth.signOut().catch(() => {});
+        } catch (e) {
+          formErr.textContent = 'Something went wrong. Try again.';
+          saveBtn.disabled = false;
+        }
+      });
+      form.style.display = 'block';
+      return; // do not show the Open-app button until the password is saved
+    }
+
+    const { data, error } = await supabase.auth.verifyOtp({ type, token_hash });
+    if (error) throw error;
+
+    title.textContent = '✅ Email confirmed!';
+    msg.textContent = 'Your Izzy account is verified. Open the app to log in.';
+  } catch (e) {
+    title.textContent = 'Link expired';
+    msg.textContent = type === 'recovery'
+      ? 'This reset link has already been used or expired. Open Izzy, tap "Forgot password?" and request a new one.'
+      : 'This confirmation link has already been used or expired. Open Izzy and request a new one.';
+  }
+  openApp.style.display = 'inline-block';
 })();
 </script>
 </body></html>
