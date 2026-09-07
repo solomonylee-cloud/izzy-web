@@ -43,7 +43,7 @@ const type = p.get('type') || 'signup';
 const projectKey = p.get('project');
 // Object.hasOwn, not PROJECTS[key] truthiness: a `?project=constructor` (or __proto__,
 // toString, …) resolves on the prototype chain and would read as a known project.
-const project = (projectKey && Object.hasOwn(PROJECTS, projectKey)) ? projectKey : 'prod';
+const project = (projectKey && Object.prototype.hasOwnProperty.call(PROJECTS, projectKey)) ? projectKey : 'prod';
 const title = document.getElementById('title'), msg = document.getElementById('msg'), openApp = document.getElementById('openApp');
 (async () => {
   if (!token_hash) { title.textContent = 'Link incomplete'; msg.textContent = 'This confirmation link is missing its token. Request a new email from the app.'; return; }
@@ -134,6 +134,14 @@ const title = document.getElementById('title'), msg = document.getElementById('m
             saveBtn = document.getElementById('saveBtn');
       // Attach the submit listener before the form is ever shown, so a submit
       // can never fall through to a native (unhandled) form submission.
+      //
+      // The token is single-use, but updateUser can still fail after a
+      // successful verify (GoTrue same_password/weak_password, a network
+      // throw). That re-enables the Save button, and a retry must NOT
+      // re-spend the already-consumed token — that would paint "Link
+      // expired" over a page that still holds a perfectly good in-memory
+      // session. `verified` makes the verifyOtp call run at most once.
+      let verified = false;
       form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
         formErr.textContent = '';
@@ -142,17 +150,21 @@ const title = document.getElementById('title'), msg = document.getElementById('m
         if (pw1.value !== pw2.value) { formErr.textContent = "Passwords don't match yet."; return; }
         saveBtn.disabled = true;
         try {
-          // Spend the token HERE — the client holds the resulting session in
-          // memory (persistSession:false) for the updateUser immediately below.
-          const { error: vErr } = await supabase.auth.verifyOtp({ type, token_hash });
-          if (vErr) {
-            // Now — and only now — is "expired" the right thing to say. Hide the
-            // form so no one is left typing into a dead one.
-            form.style.display = 'none';
-            title.textContent = 'Link expired';
-            msg.textContent = 'This reset link has already been used or expired. Open Izzy, tap "Forgot password?" and request a new one.';
-            openApp.style.display = 'inline-block';
-            return;
+          if (!verified) {
+            // Spend the token HERE — the client holds the resulting session in
+            // memory (persistSession:false) for the updateUser immediately below.
+            const { error: vErr } = await supabase.auth.verifyOtp({ type, token_hash });
+            if (vErr) {
+              // Now — and only now — is "expired" the right thing to say. Hide
+              // the form so no one is left typing into a dead one. `verified`
+              // stays false, matching today's behavior on a failed verify.
+              form.style.display = 'none';
+              title.textContent = 'Link expired';
+              msg.textContent = 'This reset link has already been used or expired. Open Izzy, tap "Forgot password?" and request a new one.';
+              openApp.style.display = 'inline-block';
+              return;
+            }
+            verified = true;
           }
           const { error: upErr } = await supabase.auth.updateUser({ password: pw1.value });
           if (upErr) { formErr.textContent = upErr.message; saveBtn.disabled = false; return; }
