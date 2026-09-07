@@ -40,7 +40,10 @@ const PROJECTS = {
 const p = new URLSearchParams(location.search);
 const token_hash = p.get('token_hash');
 const type = p.get('type') || 'signup';
-const project = PROJECTS[p.get('project')] ? p.get('project') : 'prod';
+const projectKey = p.get('project');
+// Object.hasOwn, not PROJECTS[key] truthiness: a `?project=constructor` (or __proto__,
+// toString, …) resolves on the prototype chain and would read as a known project.
+const project = (projectKey && Object.hasOwn(PROJECTS, projectKey)) ? projectKey : 'prod';
 const title = document.getElementById('title'), msg = document.getElementById('msg'), openApp = document.getElementById('openApp');
 (async () => {
   if (!token_hash) { title.textContent = 'Link incomplete'; msg.textContent = 'This confirmation link is missing its token. Request a new email from the app.'; return; }
@@ -103,28 +106,34 @@ const title = document.getElementById('title'), msg = document.getElementById('m
     // those defaults are needed there, and disabling them closes that off.
     // detectSessionInUrl only gates the client's own automatic URL-scanning
     // during construction; it has no effect on the explicit verifyOtp() call.
-    // The recovery branch below still keeps persistSession:false — it holds
-    // the post-verifyOtp session in memory only, via an explicit setSession(),
-    // and signs out immediately after the password is saved.
+    // The recovery branch below relies on the same client: its verifyOtp runs
+    // inside the SUBMIT handler (not on load — see that branch), and the session
+    // it returns is held in memory only, then signed out once the password is
+    // saved. No explicit setSession is needed: verifyOtp already installs the
+    // session it minted on this client instance.
     const supabase = createClient(url, anon, {
       auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
     });
-    const { data, error } = await supabase.auth.verifyOtp({ type, token_hash });
-    if (error) throw error;
-
     if (type === 'recovery') {
-      // The token is now spent and this tab holds an IN-MEMORY session (persistSession:false).
-      // Let the user set a password here — if the Universal Link had reached the app this page
-      // would never have loaded, so this IS the fallback path (Gmail webview, desktop, no app).
+      // 🔴 DO NOT verifyOtp ON LOAD for a recovery link. A recovery token is
+      // SINGLE-USE and is spent the moment verifyOtp runs, so verifying here
+      // meant: a reload or a back-navigation spent the token with no password
+      // ever set (and no way back except requesting another email), and a
+      // failing session install painted "Link expired" over a form the user
+      // could still see and type into. The token is spent inside the submit
+      // handler instead — one tap, one spend, immediately followed by the
+      // updateUser it exists for.
+      //
+      // If the Universal Link had reached the app this page would never have
+      // loaded, so this IS the fallback path (Gmail webview, desktop, no app).
       document.title = 'Reset your Izzy password';
       title.textContent = 'Choose a new password';
       msg.textContent = 'At least 6 characters.';
       const form = document.getElementById('resetForm'), pw1 = document.getElementById('pw1'),
             pw2 = document.getElementById('pw2'), formErr = document.getElementById('formErr'),
             saveBtn = document.getElementById('saveBtn');
-      // Attach the submit listener before the form is ever shown or the
-      // setSession await runs below, so a submit can never fall through to a
-      // native (unhandled) form submission in the gap.
+      // Attach the submit listener before the form is ever shown, so a submit
+      // can never fall through to a native (unhandled) form submission.
       form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
         formErr.textContent = '';
@@ -133,6 +142,18 @@ const title = document.getElementById('title'), msg = document.getElementById('m
         if (pw1.value !== pw2.value) { formErr.textContent = "Passwords don't match yet."; return; }
         saveBtn.disabled = true;
         try {
+          // Spend the token HERE — the client holds the resulting session in
+          // memory (persistSession:false) for the updateUser immediately below.
+          const { error: vErr } = await supabase.auth.verifyOtp({ type, token_hash });
+          if (vErr) {
+            // Now — and only now — is "expired" the right thing to say. Hide the
+            // form so no one is left typing into a dead one.
+            form.style.display = 'none';
+            title.textContent = 'Link expired';
+            msg.textContent = 'This reset link has already been used or expired. Open Izzy, tap "Forgot password?" and request a new one.';
+            openApp.style.display = 'inline-block';
+            return;
+          }
           const { error: upErr } = await supabase.auth.updateUser({ password: pw1.value });
           if (upErr) { formErr.textContent = upErr.message; saveBtn.disabled = false; return; }
           // Show success immediately — don't gate it on signOut, which is
@@ -149,10 +170,11 @@ const title = document.getElementById('title'), msg = document.getElementById('m
         }
       });
       form.style.display = 'block';
-      // Belt and braces: make sure the client is holding the session verifyOtp returned.
-      if (data && data.session) await supabase.auth.setSession({ access_token: data.session.access_token, refresh_token: data.session.refresh_token });
       return; // do not show the Open-app button until the password is saved
     }
+
+    const { data, error } = await supabase.auth.verifyOtp({ type, token_hash });
+    if (error) throw error;
 
     title.textContent = '✅ Email confirmed!';
     msg.textContent = 'Your Izzy account is verified. Open the app to log in.';
