@@ -44,6 +44,55 @@ const project = PROJECTS[p.get('project')] ? p.get('project') : 'prod';
 const title = document.getElementById('title'), msg = document.getElementById('msg'), openApp = document.getElementById('openApp');
 (async () => {
   if (!token_hash) { title.textContent = 'Link incomplete'; msg.textContent = 'This confirmation link is missing its token. Request a new email from the app.'; return; }
+
+  // DEEP LINK FIRST, store only as a fallback.
+  //
+  // Whoever taps this just created their account INSIDE the app, so they
+  // already have it installed — a store page is the wrong destination for the
+  // overwhelmingly common case. It was also, as of 2026-07-26, a DEAD
+  // destination on BOTH platforms: there is no Play listing yet, and
+  // apps.apple.com/app/id6761801986 is an App Store Connect record for an app
+  // that has not shipped, so it returns "App Not Available". Sending a user who
+  // has the app to a 404 for an app they already own is the worst of both.
+  //
+  // `skibuddy://` is the production scheme registered in the app
+  // (SkiBuddyGemini app.json "scheme"; routes in App.tsx deepLinkConfig).
+  // Opening it hands off to the app if installed and does nothing visible if
+  // not — which is why the store fallback below is still needed.
+  //
+  // Hoisted here (before the verifyOtp try/catch below) so the button is fully
+  // wired — real href, click handler — regardless of which branch reveals it:
+  // signup success, the error/expired-link path, or the recovery form's
+  // save-success handler. Only `openApp.style.display` toggling stays
+  // per-branch; the wiring itself must not depend on which branch runs.
+  const STORE_URL = /Android/i.test(navigator.userAgent)
+    ? 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
+    : 'https://apps.apple.com/app/id6761801986';
+
+  // Keep a real href so the control stays a working link for keyboard users,
+  // middle-click, and any browser that blocks the scripted scheme handoff.
+  openApp.href = STORE_URL;
+
+  openApp.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    // If the scheme handoff succeeds the browser is backgrounded, so this page
+    // is hidden by the time the timer fires — that is the signal to NOT bounce
+    // the user to a store they do not need. pagehide covers Safari, which can
+    // background without firing visibilitychange.
+    let handedOff = false;
+    const markHandedOff = () => { handedOff = true; };
+    document.addEventListener('visibilitychange', () => { if (document.hidden) markHandedOff(); }, { once: true });
+    window.addEventListener('pagehide', markHandedOff, { once: true });
+
+    window.location.href = 'skibuddy://';
+
+    // 1200ms: long enough for the OS scheme prompt/handoff on a slow device,
+    // short enough not to feel broken when the app genuinely is not installed.
+    window.setTimeout(() => {
+      if (!handedOff && !document.hidden) window.location.href = STORE_URL;
+    }, 1200);
+  });
+
   try {
     const { url, anon } = PROJECTS[project];
     // persistSession/autoRefreshToken/detectSessionInUrl all default to true in
@@ -73,9 +122,9 @@ const title = document.getElementById('title'), msg = document.getElementById('m
       const form = document.getElementById('resetForm'), pw1 = document.getElementById('pw1'),
             pw2 = document.getElementById('pw2'), formErr = document.getElementById('formErr'),
             saveBtn = document.getElementById('saveBtn');
-      form.style.display = 'block';
-      // Belt and braces: make sure the client is holding the session verifyOtp returned.
-      if (data && data.session) await supabase.auth.setSession({ access_token: data.session.access_token, refresh_token: data.session.refresh_token });
+      // Attach the submit listener before the form is ever shown or the
+      // setSession await runs below, so a submit can never fall through to a
+      // native (unhandled) form submission in the gap.
       form.addEventListener('submit', async (ev) => {
         ev.preventDefault();
         formErr.textContent = '';
@@ -83,14 +132,25 @@ const title = document.getElementById('title'), msg = document.getElementById('m
         if (pw1.value.length < 6) { formErr.textContent = 'Use at least 6 characters.'; return; }
         if (pw1.value !== pw2.value) { formErr.textContent = "Passwords don't match yet."; return; }
         saveBtn.disabled = true;
-        const { error: upErr } = await supabase.auth.updateUser({ password: pw1.value });
-        if (upErr) { formErr.textContent = upErr.message; saveBtn.disabled = false; return; }
-        await supabase.auth.signOut();
-        form.style.display = 'none';
-        title.textContent = '✅ Password updated';
-        msg.textContent = 'Open Izzy and sign in with your new password.';
-        openApp.style.display = 'inline-block';
+        try {
+          const { error: upErr } = await supabase.auth.updateUser({ password: pw1.value });
+          if (upErr) { formErr.textContent = upErr.message; saveBtn.disabled = false; return; }
+          // Show success immediately — don't gate it on signOut, which is
+          // fire-and-forget below. This page only ever held an in-memory
+          // session (persistSession:false), so nothing persists either way.
+          form.style.display = 'none';
+          title.textContent = '✅ Password updated';
+          msg.textContent = 'Open Izzy and sign in with your new password.';
+          openApp.style.display = 'inline-block';
+          supabase.auth.signOut().catch(() => {});
+        } catch (e) {
+          formErr.textContent = 'Something went wrong. Try again.';
+          saveBtn.disabled = false;
+        }
       });
+      form.style.display = 'block';
+      // Belt and braces: make sure the client is holding the session verifyOtp returned.
+      if (data && data.session) await supabase.auth.setSession({ access_token: data.session.access_token, refresh_token: data.session.refresh_token });
       return; // do not show the Open-app button until the password is saved
     }
 
@@ -103,48 +163,6 @@ const title = document.getElementById('title'), msg = document.getElementById('m
       : 'This confirmation link has already been used or expired. Open Izzy and request a new one.';
   }
   openApp.style.display = 'inline-block';
-
-  // DEEP LINK FIRST, store only as a fallback.
-  //
-  // Whoever taps this just created their account INSIDE the app, so they
-  // already have it installed — a store page is the wrong destination for the
-  // overwhelmingly common case. It was also, as of 2026-07-26, a DEAD
-  // destination on BOTH platforms: there is no Play listing yet, and
-  // apps.apple.com/app/id6761801986 is an App Store Connect record for an app
-  // that has not shipped, so it returns "App Not Available". Sending a user who
-  // has the app to a 404 for an app they already own is the worst of both.
-  //
-  // `skibuddy://` is the production scheme registered in the app
-  // (SkiBuddyGemini app.json "scheme"; routes in App.tsx deepLinkConfig).
-  // Opening it hands off to the app if installed and does nothing visible if
-  // not — which is why the store fallback below is still needed.
-  const STORE_URL = /Android/i.test(navigator.userAgent)
-    ? 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
-    : 'https://apps.apple.com/app/id6761801986';
-
-  // Keep a real href so the control stays a working link for keyboard users,
-  // middle-click, and any browser that blocks the scripted scheme handoff.
-  openApp.href = STORE_URL;
-
-  openApp.addEventListener('click', (ev) => {
-    ev.preventDefault();
-    // If the scheme handoff succeeds the browser is backgrounded, so this page
-    // is hidden by the time the timer fires — that is the signal to NOT bounce
-    // the user to a store they do not need. pagehide covers Safari, which can
-    // background without firing visibilitychange.
-    let handedOff = false;
-    const markHandedOff = () => { handedOff = true; };
-    document.addEventListener('visibilitychange', () => { if (document.hidden) markHandedOff(); }, { once: true });
-    window.addEventListener('pagehide', markHandedOff, { once: true });
-
-    window.location.href = 'skibuddy://';
-
-    // 1200ms: long enough for the OS scheme prompt/handoff on a slow device,
-    // short enough not to feel broken when the app genuinely is not installed.
-    window.setTimeout(() => {
-      if (!handedOff && !document.hidden) window.location.href = STORE_URL;
-    }, 1200);
-  });
 })();
 </script>
 </body></html>
