@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Izzy — Snow and Sun</title>
+<meta name="description" content="Download Izzy — your AI skibud, year-round. iPhone and Android.">
+<meta name="referrer" content="strict-origin">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .get-wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 20px;gap:18px}
+  .get-wrap h1{font-size:2rem;margin:0}
+  .get-wrap p{max-width:34rem;margin:0;opacity:.85}
+  .get-btn{display:inline-block;min-width:16rem;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.35)}
+  .get-btn.primary{background:#FF6B35;color:#fff;border-color:#FF6B35}
+  .get-note{font-size:.85rem;opacity:.7}
+</style>
+</head>
+<body>
+<main class="get-wrap">
+  <h1>Get Izzy — Snow and Sun</h1>
+  <p id="get-lead">Your AI skibud, year-round. Tap and talk on the mountain, one-tap SOS, family tools.</p>
+  <a id="get-ios" class="get-btn primary" href="#">Get it for iPhone</a>
+  <a id="get-android" class="get-btn" href="#">Get it for Android</a>
+  <p id="get-note" class="get-note"></p>
+</main>
+<script>
+  // ─── THE ONLY THING TO EDIT AT GO-LIVE ──────────────────────────────────────────
+  // This page is the stable target of every "Download Izzy" link the app sends (check-in SMS,
+  // SafetyScreen). Flip LIVE to true and the store URLs take over; nothing in the app changes.
+  var LIVE = false;
+  var STORE = {
+    ios:     'https://apps.apple.com/app/id6761801986',
+    android: 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
+  };
+  var PRELAUNCH = {
+    ios:     'TESTFLIGHT_PUBLIC_LINK_TBD',   // App Store Connect → TestFlight → SkiBuddyGemini Beta → Public Link
+    android: null                             // no public Android channel before launch
+  };
+  // ────────────────────────────────────────────────────────────────────────────────
+  var links = LIVE ? STORE : PRELAUNCH;
+  var ios = document.getElementById('get-ios'), android = document.getElementById('get-android'), note = document.getElementById('get-note');
+  if (links.ios) { ios.href = links.ios; } else { ios.style.display = 'none'; }
+  if (links.android) { android.href = links.android; } else { android.style.display = 'none'; note.textContent = 'Android is coming to Google Play soon.'; }
+  if (!LIVE && links.ios) { ios.textContent = 'Join the iPhone beta (TestFlight)'; }
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua), isAndroid = /Android/.test(ua);
+  var target = isIOS ? links.ios : isAndroid ? links.android : null;
+  if (target) { window.location.replace(target); }
+</script>
+</body>
+</html>
