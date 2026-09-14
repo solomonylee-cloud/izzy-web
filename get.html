@@ -7,47 +7,58 @@
 <meta name="description" content="Download Izzy — your AI skibud, year-round. iPhone and Android.">
 <meta name="referrer" content="strict-origin">
 <meta name="robots" content="noindex">
+<link rel="icon" href="assets/app-icon.png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .get-wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px 20px;gap:18px}
-  .get-wrap h1{font-size:2rem;margin:0}
-  .get-wrap p{max-width:34rem;margin:0;opacity:.85}
-  .get-btn{display:inline-block;min-width:16rem;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid rgba(255,255,255,.35)}
-  .get-btn.primary{background:#FF6B35;color:#fff;border-color:#FF6B35}
-  .get-note{font-size:.85rem;opacity:.7}
+  .get-wrap{max-width:620px;min-height:100vh;margin:0 auto;padding:12vh 24px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+  .get-logo{width:88px;height:88px;border-radius:22px;box-shadow:0 8px 28px rgba(0,0,0,.35)}
+  .get-wrap h1{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1.15;margin:0;color:var(--white)}
+  .get-pill{display:inline-block;padding:6px 14px;border-radius:999px;font-family:var(--display);font-weight:700;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.08);border:1px solid var(--navy-line);color:var(--white)}
+  .get-lead{max-width:34rem;margin:0;font-size:1.05rem}
+  .get-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
+  .get-note{font-size:.9rem;opacity:.75;margin:0}
+  .get-note a{color:var(--white)}
+  [hidden]{display:none !important}
 </style>
 </head>
 <body>
 <main class="get-wrap">
+  <img class="get-logo" src="assets/app-icon.png" alt="Izzy">
+  <span id="get-pill" class="get-pill">Coming October 15</span>
   <h1>Get Izzy — Snow and Sun</h1>
-  <p id="get-lead">Your AI skibud, year-round. Tap and talk on the mountain, one-tap SOS, family tools.</p>
-  <a id="get-ios" class="get-btn primary" href="#">Get it for iPhone</a>
-  <a id="get-android" class="get-btn" href="#">Get it for Android</a>
-  <p id="get-note" class="get-note"></p>
+  <p id="get-lead" class="get-lead">Your AI skibud, year-round: tap and talk on the mountain, one-tap SOS, and family tools — free to start on iPhone and Android.</p>
+  <div id="get-actions" class="get-actions" hidden>
+    <a id="get-ios" class="btn btn-primary" href="#">Get it for iPhone</a>
+    <a id="get-android" class="btn btn-ghost" href="#">Get it for Android</a>
+  </div>
+  <p id="get-note" class="get-note">Izzy arrives on the App Store and Google Play on October 15, 2026. Someone sent you this link from inside Izzy — they'll be able to see you on their map once you're in.</p>
+  <p class="get-note"><a href="/">izzywolf.com</a> · <a href="support.html">Support</a></p>
 </main>
 <script>
   // ─── THE ONLY THING TO EDIT AT GO-LIVE ──────────────────────────────────────────
-  // This page is the stable target of every "Download Izzy" link the app sends (check-in SMS,
-  // SafetyScreen). Flip LIVE to true and the store URLs take over; nothing in the app changes.
+  // This page is the stable target of every "Download Izzy" link the app sends (the check-in
+  // SMS in SafetyScreen and the Skibud invite email). Flip LIVE to true when both stores have
+  // released the app; the store buttons appear and phones auto-redirect. Nothing in the app changes.
   var LIVE = false;
   var STORE = {
     ios:     'https://apps.apple.com/app/id6761801986',
     android: 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
   };
-  var PRELAUNCH = {
-    ios:     'TESTFLIGHT_PUBLIC_LINK_TBD',   // App Store Connect → TestFlight → SkiBuddyGemini Beta → Public Link
-    android: null                             // no public Android channel before launch
-  };
   // ────────────────────────────────────────────────────────────────────────────────
-  var links = LIVE ? STORE : PRELAUNCH;
-  var ios = document.getElementById('get-ios'), android = document.getElementById('get-android'), note = document.getElementById('get-note');
-  if (links.ios) { ios.href = links.ios; } else { ios.style.display = 'none'; }
-  if (links.android) { android.href = links.android; } else { android.style.display = 'none'; note.textContent = 'Android is coming to Google Play soon.'; }
-  if (!LIVE && links.ios) { ios.textContent = 'Join the iPhone beta (TestFlight)'; }
-  var ua = navigator.userAgent || '';
-  var isIOS = /iPhone|iPad|iPod/.test(ua), isAndroid = /Android/.test(ua);
-  var target = isIOS ? links.ios : isAndroid ? links.android : null;
-  if (target) { window.location.replace(target); }
+  if (LIVE) {
+    document.getElementById('get-pill').hidden = true;
+    document.getElementById('get-actions').hidden = false;
+    document.getElementById('get-ios').href = STORE.ios;
+    document.getElementById('get-android').href = STORE.android;
+    document.getElementById('get-note').textContent = 'Free to download. Someone sent you this link from inside Izzy — they\'ll be able to see you on their map once you\'re in.';
+    var ua = navigator.userAgent || '';
+    var target = /iPhone|iPad|iPod/.test(ua) ? STORE.ios : /Android/.test(ua) ? STORE.android : null;
+    if (target) { window.location.replace(target); }
+  }
 </script>
 </body>
 </html>
