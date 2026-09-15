@@ -136,7 +136,7 @@ page = f'''<!DOCTYPE html><html lang="en"><head>
           <img src="assets/app-icon.png" alt="" width="38" height="38">
           Izzy
         </a>
-        <p>Your AI skibud for Snow and Sun. Built for the mountain — hands-free, all day, all year.</p>
+        <p>Your AI snobud for Snow and Sun. Built for the mountain — hands-free, all day, all year.</p>
       </div>
       <div class="foot-col">
         <h4>Product</h4>
