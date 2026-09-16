@@ -65,22 +65,23 @@
   <p class="e-more"><b>More about Izzy</b> — voice, Izzy Vision, safety, family and pricing at
   <a href="https://izzywolf.com">izzywolf.com</a>.</p>
 
-  <form class="e-card" id="e-form" novalidate>
+  <form class="e-card" id="e-form" method="post" action="" novalidate>
     <h2>Be first on the mountain</h2>
     <p class="e-sub">Izzy arrives in October. Tell us where to reach you.</p>
 
     <label class="e-field">
       <span>Email address</span>
       <input type="email" id="e-email" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+      <input type="hidden" name="name" id="e-name" value="">
     </label>
 
     <label class="e-check">
-      <input type="checkbox" id="e-launch" name="launch" checked>
+      <input type="checkbox" id="e-launch" name="l" value="" checked>
       <span class="e-ctext"><b>Tell me when Izzy launches.</b> One email, when the app goes live. That's it.</span>
     </label>
 
     <label class="e-check">
-      <input type="checkbox" id="e-lift" name="liftline">
+      <input type="checkbox" id="e-lift" name="l" value="">
       <span class="e-ctext"><b>Send me The Lift Line.</b> One email a month — what shipped, mountain notes, live events on the hill, family and childcare, and the honest version of building this. Unsubscribe any time.</span>
     </label>
 
@@ -114,53 +115,41 @@
 </main>
 
 <script>
-  // ─── SET THIS WHEN LISTMONK IS UP ───────────────────────────────────────────────
-  // Listmonk's public subscription endpoint. Until news.izzywolf.com exists this stays
-  // empty and the form tells the user honestly that signups are not open yet, rather
-  // than silently dropping their address.
-  var LISTMONK = '';                       // e.g. 'https://news.izzywolf.com/subscription/form'
-  var LIST_LAUNCH = '';                    // Listmonk list UUID — "Launch notice"
-  var LIST_LIFTLINE = '';                  // Listmonk list UUID — "The Lift Line"
+  // ─── SET THESE THREE WHEN LISTMONK IS UP ────────────────────────────────────────
+  // This is a PLAIN FORM POST, not fetch(). Browsers do not apply CORS to form
+  // navigation, so there is nothing to configure on the Listmonk side and no
+  // silent-failure mode. The visitor is navigated to Listmonk's own confirmation
+  // page on news.izzywolf.com — standard Listmonk behaviour.
+  var LISTMONK      = 'https://news.izzywolf.com/subscription/form';
+  var LIST_LAUNCH   = '61550b90-3fcb-46b9-862c-c8bec8f4ccbb';   // Listmonk list UUID — "Launch notice" (single opt-in)
+  var LIST_LIFTLINE = 'a1251ccf-e279-4e30-b5b5-2e5bb22ae110';   // Listmonk list UUID — "The Lift Line" (double opt-in)
   // ────────────────────────────────────────────────────────────────────────────────
 
-  var form = document.getElementById('e-form');
-  var msg  = document.getElementById('e-msg');
+  var form   = document.getElementById('e-form');
+  var msg    = document.getElementById('e-msg');
+  var launch = document.getElementById('e-launch');
+  var lift   = document.getElementById('e-lift');
+
+  form.action     = LISTMONK;
+  launch.value    = LIST_LAUNCH;
+  lift.value      = LIST_LIFTLINE;
 
   function say(text, kind) { msg.textContent = text; msg.className = 'e-msg ' + kind; }
 
   form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var email  = document.getElementById('e-email').value.trim();
-    var launch = document.getElementById('e-launch').checked;
-    var lift   = document.getElementById('e-lift').checked;
-    var age    = document.getElementById('e-age').checked;
+    var email = document.getElementById('e-email').value.trim();
+    var age   = document.getElementById('e-age').checked;
 
-    if (!email || email.indexOf('@') < 1) { return say('Please enter a valid email address.', 'err'); }
-    if (!age)                { return say('Please confirm you are 18 or older.', 'err'); }
-    if (!launch && !lift)    { return say('Pick at least one thing to receive.', 'err'); }
-    if (!LISTMONK)           { return say('Signups open shortly — please try again soon.', 'err'); }
+    // Validate before letting the navigation happen.
+    if (!email || email.indexOf('@') < 1) { ev.preventDefault(); return say('Please enter a valid email address.', 'err'); }
+    if (!age)                             { ev.preventDefault(); return say('Please confirm you are 18 or older.', 'err'); }
+    if (!launch.checked && !lift.checked) { ev.preventDefault(); return say('Pick at least one thing to receive.', 'err'); }
+    if (!LISTMONK)                        { ev.preventDefault(); return say('Signups open shortly — please try again soon.', 'err'); }
 
-    var lists = [];
-    if (launch && LIST_LAUNCH)   { lists.push(LIST_LAUNCH); }
-    if (lift   && LIST_LIFTLINE) { lists.push(LIST_LIFTLINE); }
-
-    var body = new FormData();
-    body.append('email', email);
-    body.append('name', email.split('@')[0]);
-    lists.forEach(function (uuid) { body.append('l', uuid); });
-
-    document.getElementById('e-submit').disabled = true;
+    // Listmonk wants a name; derive one rather than asking for it.
+    document.getElementById('e-name').value = email.split('@')[0];
     say('Sending…', 'ok');
-
-    fetch(LISTMONK, { method: 'POST', body: body, mode: 'cors' })
-      .then(function () {
-        form.reset();
-        say('Check your inbox — click the link in the confirmation email to finish.', 'ok');
-      })
-      .catch(function () {
-        say('Something went wrong. Please try again in a moment.', 'err');
-      })
-      .finally(function () { document.getElementById('e-submit').disabled = false; });
+    // Not prevented: the browser now POSTs and navigates. No CORS involved.
   });
 </script>
 </body>
