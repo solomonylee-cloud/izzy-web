@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Izzy — Snow and Sun · Be first on the mountain</title>
+<meta name="description" content="Izzy is a voice-first AI snow and sunbud. Get the launch notice, and The Lift Line — one email a month from the build.">
+<meta name="referrer" content="strict-origin">
+<link rel="icon" href="assets/app-icon.png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .e-wrap{max-width:640px;margin:0 auto;padding:8vh 24px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+  .e-logo{width:80px;height:80px;border-radius:20px;box-shadow:0 8px 28px rgba(0,0,0,.35)}
+  .e-wrap h1{font-family:var(--display);font-weight:700;font-size:clamp(1.75rem,6vw,2.25rem);line-height:1.15;margin:0;color:var(--white)}
+  .e-lead{max-width:34rem;margin:0;font-size:1.05rem;color:var(--grey)}
+  .e-card{width:100%;margin-top:10px;padding:clamp(20px,5vw,28px);background:var(--navy-deep);border:1px solid var(--navy-line);border-radius:var(--r-card);text-align:left}
+  .e-card h2{font-family:var(--display);font-weight:700;font-size:1.15rem;margin:0 0 4px;color:var(--white)}
+  .e-card .e-sub{margin:0 0 18px;font-size:.95rem;color:var(--grey-dim)}
+  .e-field{display:block;margin-bottom:16px}
+  .e-field span{display:block;font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:6px}
+  .e-field input[type=email]{width:100%;box-sizing:border-box;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--navy-line);background:var(--navy-darker);color:var(--white);font-family:var(--body);font-size:1rem}
+  .e-field input[type=email]:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+  .e-check{display:flex;gap:11px;align-items:flex-start;margin-bottom:14px;cursor:pointer}
+  .e-check input{margin:2px 0 0;width:19px;height:19px;flex:0 0 auto;accent-color:var(--blue);cursor:pointer}
+  .e-check .e-ctext{font-size:.95rem;color:var(--grey);line-height:1.45}
+  .e-check .e-ctext b{color:var(--white);font-weight:600}
+  .e-rule{border:0;border-top:1px solid var(--navy-line);margin:18px 0}
+  .e-fine{font-size:.82rem;color:var(--grey-faint);line-height:1.5;margin:14px 0 0}
+  .e-fine a{color:var(--grey-dim)}
+  .e-card .btn{width:100%;margin-top:6px}
+  .e-msg{margin:14px 0 0;font-size:.95rem;display:none}
+  .e-msg.ok{display:block;color:#7fd4a2}
+  .e-msg.err{display:block;color:#ff9b91}
+  .e-foot{font-size:.9rem;color:var(--grey-dim);margin:4px 0 0}
+  .e-foot a{color:var(--grey)}
+  .e-what{width:100%;text-align:left;margin-top:6px;color:var(--grey);font-size:.98rem;line-height:1.6}
+  .e-what li{margin-bottom:6px}
+  .e-eco{width:100%;text-align:left;margin-top:22px;padding:18px 20px;border-left:3px solid var(--blue);background:rgba(22,58,99,.35);border-radius:0 12px 12px 0}
+  .e-eco h3{font-family:var(--display);font-weight:700;font-size:1rem;margin:0 0 8px;color:var(--white)}
+  .e-eco p{margin:0 0 8px;font-size:.95rem;color:var(--grey);line-height:1.55}
+  .e-eco p:last-child{margin-bottom:0}
+</style>
+</head>
+<body>
+<main class="e-wrap">
+  <img class="e-logo" src="assets/app-icon.png" alt="Izzy">
+  <h1>Your mountain bestie at all IKON/EPIC resorts in North America.</h1>
+  <p class="e-lead">Izzy is a voice-first year-round AI snow and sunbud. Ask about conditions, where to grub, or the fastest way back to the base — Izzy has your back.</p>
+
+  <ul class="e-what">
+    <li>Voice on the mountain, so your phone stays in your pocket.</li>
+    <li><b>100+ resorts</b> across the US and Canada.</li>
+    <li>Safety tools — a one-tap SOS, and verified ski patrol numbers at 90+ of them.</li>
+    <li>Family tools — see your group on a live map.</li>
+    <li>Free to start, on iPhone and Android.</li>
+  </ul>
+
+  <form class="e-card" id="e-form" novalidate>
+    <h2>Be first on the mountain</h2>
+    <p class="e-sub">Izzy arrives in October. Tell us where to reach you.</p>
+
+    <label class="e-field">
+      <span>Email address</span>
+      <input type="email" id="e-email" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+    </label>
+
+    <label class="e-check">
+      <input type="checkbox" id="e-launch" name="launch" checked>
+      <span class="e-ctext"><b>Tell me when Izzy launches.</b> One email, when the app goes live. That's it.</span>
+    </label>
+
+    <label class="e-check">
+      <input type="checkbox" id="e-lift" name="liftline">
+      <span class="e-ctext"><b>Send me The Lift Line.</b> One email a month — what shipped, mountain notes, live events on the hill, family and childcare, and the honest version of building this. Unsubscribe any time.</span>
+    </label>
+
+    <hr class="e-rule">
+
+    <label class="e-check">
+      <input type="checkbox" id="e-age" name="age" required>
+      <span class="e-ctext">I'm 18 or older.</span>
+    </label>
+
+    <button class="btn btn-primary" type="submit" id="e-submit">Sign me up</button>
+    <p class="e-msg" id="e-msg" role="status" aria-live="polite"></p>
+
+    <p class="e-fine">
+      We'll only send what you ticked, and you can unsubscribe from any email with one click.
+      We don't sell or share your address. See our <a href="privacy.html">Privacy Policy</a>.
+      Izzy Wolf · <span id="e-addr">3332 Breton Ct NE, Brookhaven, GA 30319</span>
+    </p>
+  </form>
+
+  <section class="e-eco">
+    <h3>Two halves of the same mountain</h3>
+    <p>Izzy Snow and Sun is the half you carry. The other half is <b>Izzy Resorts</b> — a resort command center for
+    patrol, operations and the resort at large.</p>
+    <p>Izzy works today wherever you ride. As resorts come online with Izzy Resorts, Izzy gains superpowers at those
+    mountains: an SOS that reaches that mountain's patrol directly, and conditions, alerts, and all guest comms sent
+    straight from the people running the hill. Izzy is a companion on the mountain, not a replacement for calling 911.</p>
+  </section>
+
+  <p class="e-foot"><a href="/">izzywolf.com</a> · <a href="support.html">Support</a></p>
+</main>
+
+<script>
+  // ─── SET THIS WHEN LISTMONK IS UP ───────────────────────────────────────────────
+  // Listmonk's public subscription endpoint. Until news.izzywolf.com exists this stays
+  // empty and the form tells the user honestly that signups are not open yet, rather
+  // than silently dropping their address.
+  var LISTMONK = '';                       // e.g. 'https://news.izzywolf.com/subscription/form'
+  var LIST_LAUNCH = '';                    // Listmonk list UUID — "Launch notice"
+  var LIST_LIFTLINE = '';                  // Listmonk list UUID — "The Lift Line"
+  // ────────────────────────────────────────────────────────────────────────────────
+
+  var form = document.getElementById('e-form');
+  var msg  = document.getElementById('e-msg');
+
+  function say(text, kind) { msg.textContent = text; msg.className = 'e-msg ' + kind; }
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var email  = document.getElementById('e-email').value.trim();
+    var launch = document.getElementById('e-launch').checked;
+    var lift   = document.getElementById('e-lift').checked;
+    var age    = document.getElementById('e-age').checked;
+
+    if (!email || email.indexOf('@') < 1) { return say('Please enter a valid email address.', 'err'); }
+    if (!age)                { return say('Please confirm you are 18 or older.', 'err'); }
+    if (!launch && !lift)    { return say('Pick at least one thing to receive.', 'err'); }
+    if (!LISTMONK)           { return say('Signups open shortly — please try again soon.', 'err'); }
+
+    var lists = [];
+    if (launch && LIST_LAUNCH)   { lists.push(LIST_LAUNCH); }
+    if (lift   && LIST_LIFTLINE) { lists.push(LIST_LIFTLINE); }
+
+    var body = new FormData();
+    body.append('email', email);
+    body.append('name', email.split('@')[0]);
+    lists.forEach(function (uuid) { body.append('l', uuid); });
+
+    document.getElementById('e-submit').disabled = true;
+    say('Sending…', 'ok');
+
+    fetch(LISTMONK, { method: 'POST', body: body, mode: 'cors' })
+      .then(function () {
+        form.reset();
+        say('Check your inbox — click the link in the confirmation email to finish.', 'ok');
+      })
+      .catch(function () {
+        say('Something went wrong. Please try again in a moment.', 'err');
+      })
+      .finally(function () { document.getElementById('e-submit').disabled = false; });
+  });
+</script>
+</body>
+</html>
