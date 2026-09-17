@@ -134,6 +134,22 @@
   launch.value    = LIST_LAUNCH;
   lift.value      = LIST_LIFTLINE;
 
+  // ─── SOURCE CAPTURE (2026-09-17) ─────────────────────────────────────────────
+  // Ads land here as /early?src=meta-a (b, c, d). Listmonk's public form binds
+  // ONLY name / email / l (cmd/public.go processSubForm, v6.2.0) — no attribs —
+  // so the tag rides in the name as "<local-part> src:<tag>".
+  // Listmonk's FirstName() returns the first space-separated token LONGER THAN 2
+  // chars, so opt-in mail still greets "<local-part>". The tag is appended only
+  // when the local part is 3+ chars; for "jo@…" it would BECOME the greeting.
+  // Campaign bodies must use {{ .Subscriber.FirstName }}, never .Name/.LastName.
+  // Read back: GET /api/subscribers?query=subscribers.name LIKE '%src:meta-a%'
+  var SRC_RE = /^[a-z0-9][a-z0-9_-]{0,31}$/;
+  var src = '';
+  try {
+    var q = (new URLSearchParams(location.search).get('src') || '').trim().toLowerCase();
+    if (SRC_RE.test(q)) src = q;
+  } catch (e) { /* no URLSearchParams: no tag, signup still works */ }
+
   function say(text, kind) { msg.textContent = text; msg.className = 'e-msg ' + kind; }
 
   form.addEventListener('submit', function (ev) {
@@ -146,8 +162,10 @@
     if (!launch.checked && !lift.checked) { ev.preventDefault(); return say('Pick at least one thing to receive.', 'err'); }
     if (!LISTMONK)                        { ev.preventDefault(); return say('Signups open shortly — please try again soon.', 'err'); }
 
-    // Listmonk wants a name; derive one rather than asking for it.
-    document.getElementById('e-name').value = email.split('@')[0];
+    // Listmonk wants a name; derive one rather than asking for it, and carry
+    // the ad-set tag in it (see SOURCE CAPTURE above).
+    var local = email.split('@')[0];
+    document.getElementById('e-name').value = (src && local.length > 2) ? local + ' src:' + src : local;
     say('Sending…', 'ok');
     // Not prevented: the browser now POSTs and navigates. No CORS involved.
   });
