@@ -85,13 +85,6 @@
       <span class="e-ctext"><b>Send me The Lift Line.</b> One email a month — what shipped, mountain notes, live events on the hill, family and childcare, and the honest version of building this. Unsubscribe any time.</span>
     </label>
 
-    <hr class="e-rule">
-
-    <label class="e-check">
-      <input type="checkbox" id="e-age" name="age" required>
-      <span class="e-ctext">I'm 18 or older.</span>
-    </label>
-
     <button class="btn btn-primary" type="submit" id="e-submit">Sign me up</button>
     <p class="e-msg" id="e-msg" role="status" aria-live="polite"></p>
 
@@ -154,11 +147,9 @@
 
   form.addEventListener('submit', function (ev) {
     var email = document.getElementById('e-email').value.trim();
-    var age   = document.getElementById('e-age').checked;
 
     // Validate before letting the navigation happen.
     if (!email || email.indexOf('@') < 1) { ev.preventDefault(); return say('Please enter a valid email address.', 'err'); }
-    if (!age)                             { ev.preventDefault(); return say('Please confirm you are 18 or older.', 'err'); }
     if (!launch.checked && !lift.checked) { ev.preventDefault(); return say('Pick at least one thing to receive.', 'err'); }
     if (!LISTMONK)                        { ev.preventDefault(); return say('Signups open shortly — please try again soon.', 'err'); }
 
