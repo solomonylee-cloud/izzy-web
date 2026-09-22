@@ -110,7 +110,8 @@
     error, the app version, and the device model and operating system — with no name, account or
     device identifier and no activity trail, and we use it only to fix the App (the "support for
     internal operations" purpose COPPA permits). Motion and fall-detection diagnostics from a child's
-    device are not sent at all.</li>
+    device are sent only in a stripped-down form: the motion readings around a possible fall and how
+    the detector decided, with no name, account, device identifier or free text attached.</li>
     <li><strong>A child's data ages out faster.</strong> See the retention table below.</li>
     <li><strong>Age checks fail closed.</strong> If we cannot confirm that someone is 13 or over, they
     receive the protections of a minor.</li>
@@ -137,7 +138,7 @@
     <tr><td>Google (Maps)</td><td>Displaying the map</td></tr>
     <tr><td>Apple Push Notification service / Firebase Cloud Messaging, via Expo</td><td>Delivering notifications</td></tr>
     <tr><td>Apple App Store / Google Play, and RevenueCat</td><td>Subscription status. Children are not charged and do not purchase</td></tr>
-    <tr><td>Sentry</td><td>Crash and error diagnostics — for children, identifier-free crash reports only, see above</td></tr>
+    <tr><td>Sentry</td><td>Crash and error diagnostics — for children, identifier-free crash reports and scrubbed fall-detection diagnostics only, see above</td></tr>
   </table>
   <p>Voice sent to Google's Gemini AI on our paid tier is <strong>not used to train Google's models
   and is not read by human reviewers</strong>. It is retained by Google for a limited period solely
