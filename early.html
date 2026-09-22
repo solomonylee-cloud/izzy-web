@@ -167,9 +167,18 @@
     var local = email.split('@')[0];
     document.getElementById('e-name').value = (src && local.length > 2) ? local + ' src:' + src : local;
     say('Sending…', 'ok');
+    // Opt-in Meta pixel (assets/consent.js): only if the visitor said OK. Count the signup as a Lead,
+    // give the pixel a moment to send, then submit. Without consent nothing changes.
+    if (window.izzyAds && window.izzyAds.enabled()) {
+      ev.preventDefault();
+      window.izzyAds.lead();
+      setTimeout(function () { HTMLFormElement.prototype.submit.call(form); }, 350);
+      return;
+    }
     // Not prevented: the browser now POSTs and navigates. No CORS involved.
   });
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "56c60675ad0f4614a66a525648e74f14"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="assets/consent.js" defer></script>
 </body>
 </html>
