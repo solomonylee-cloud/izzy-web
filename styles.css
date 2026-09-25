@@ -12,6 +12,12 @@
      --red   #D52B1E  Swiss     · SOS ONLY, never a general accent
    ========================================================================= */
 
+/* The HTML `hidden` attribute must always hide. Author rules like `.ev{display:grid}` or `.resort{display:flex}`
+   otherwise beat the browser's own [hidden]{display:none}, so JS filters (events chips/toggles, resort search)
+   updated their counts while every card stayed on screen. Found 2026-09-24 on the live events page. */
+[hidden]{display:none !important}
+
+
 :root {
   /* brand surfaces */
   --navy:        #21426B;
