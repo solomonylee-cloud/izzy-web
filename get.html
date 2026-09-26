@@ -49,6 +49,14 @@
     android: 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
   };
   // ────────────────────────────────────────────────────────────────────────────────
+  // Ad attribution (2026-09-26): pass utm_* from the ad link through to Google Play's install referrer, so
+  // Play Console shows which ad drove each install. The Meta pixel cannot see this: phones redirect before the
+  // consent banner can appear. Apple needs a provider token for campaign links, so the App Store URL is unchanged.
+  (function () {
+    var q = new URLSearchParams(location.search), keep = [];
+    q.forEach(function (v, k) { if (/^utm_(source|medium|campaign|content|term)$/.test(k)) keep.push(k + '=' + encodeURIComponent(v)); });
+    if (keep.length) STORE.android += '&referrer=' + encodeURIComponent(keep.join('&'));
+  })();
   if (LIVE) {
     document.getElementById('get-pill').hidden = true;
     document.getElementById('get-actions').hidden = false;
