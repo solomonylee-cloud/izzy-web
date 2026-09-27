@@ -39,11 +39,14 @@
   <p class="get-note"><a href="/">izzywolf.com</a> · <a href="support.html">Support</a></p>
 </main>
 <script>
-  // ─── THE ONLY THING TO EDIT AT GO-LIVE ──────────────────────────────────────────
+  // ─── THE ONLY TWO LINES TO EDIT AT GO-LIVE ─────────────────────────────────────
   // This page is the stable target of every "Download Izzy" link the app sends (the check-in
-  // SMS in SafetyScreen and the Snobud invite email). Flip LIVE to true when both stores have
-  // released the app; the store buttons appear and phones auto-redirect. Nothing in the app changes.
-  var LIVE = true;
+  // SMS in SafetyScreen and the Snobud invite email). ONE SWITCH PER STORE: set a store's line
+  // to true the day THAT store's listing is public. Its button appears and its phones
+  // auto-redirect; the other store keeps saying "coming" until its own line is flipped.
+  // Nothing in the app changes. Check the listing URL opens in a browser BEFORE flipping.
+  var LIVE_IOS = false;
+  var LIVE_ANDROID = false;
   var STORE = {
     ios:     'https://apps.apple.com/app/id6761801986',
     android: 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
@@ -57,16 +60,32 @@
     q.forEach(function (v, k) { if (/^utm_(source|medium|campaign|content|term)$/.test(k)) keep.push(k + '=' + encodeURIComponent(v)); });
     if (keep.length) STORE.android += '&referrer=' + encodeURIComponent(keep.join('&'));
   })();
-  if (LIVE) {
-    document.getElementById('get-pill').hidden = true;
-    document.getElementById('get-actions').hidden = false;
-    document.getElementById('get-ios').href = STORE.ios;
-    document.getElementById('get-android').href = STORE.android;
-    document.getElementById('get-note').textContent = 'Free to download. Someone sent you this link from inside Izzy — they\'ll be able to see you on their map once you\'re in.';
+  (function () {
+    if (!LIVE_IOS && !LIVE_ANDROID) return;            // pre-launch: the page stays exactly as written above
+    var $ = function (id) { return document.getElementById(id); };
+    var SENT = 'Someone sent you this link from inside Izzy — they\'ll be able to see you on their map once you\'re in.';
+    $('get-actions').hidden = false;
+    $('get-ios').hidden = !LIVE_IOS;
+    $('get-android').hidden = !LIVE_ANDROID;
+    if (LIVE_IOS) $('get-ios').href = STORE.ios;
+    if (LIVE_ANDROID) $('get-android').href = STORE.android;
+    if (LIVE_IOS && LIVE_ANDROID) {
+      $('get-pill').hidden = true;
+      $('get-note').textContent = 'Free to download. ' + SENT;
+    } else if (LIVE_ANDROID) {
+      $('get-pill').textContent = 'iPhone: coming October';
+      $('get-note').textContent = 'Izzy is on Google Play now and arrives on the App Store in October 2026. ' + SENT;
+    } else {
+      $('get-pill').textContent = 'Android: coming October';
+      $('get-note').textContent = 'Izzy is on the App Store now and arrives on Google Play in October 2026. ' + SENT;
+    }
+    // A phone is redirected ONLY to a store that is live. A phone whose store is not live yet
+    // stays on this page and reads when its version arrives.
     var ua = navigator.userAgent || '';
-    var target = /iPhone|iPad|iPod/.test(ua) ? STORE.ios : /Android/.test(ua) ? STORE.android : null;
+    var target = /iPhone|iPad|iPod/.test(ua) ? (LIVE_IOS ? STORE.ios : null)
+               : /Android/.test(ua) ? (LIVE_ANDROID ? STORE.android : null) : null;
     if (target) { window.location.replace(target); }
-  }
+  })();
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "56c60675ad0f4614a66a525648e74f14"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="assets/consent.js" defer></script>
