@@ -1,54 +1,6 @@
 {
-  "generated": "2026-09-26",
+  "generated": "2026-09-30",
   "events": [
-    {
-      "resort": "Mammoth Mountain",
-      "handle": "mammothmountain",
-      "source_type": "resort",
-      "name": "Mammoth Trailfest",
-      "start_date": "2026-09-24",
-      "end_date": "2026-09-27",
-      "category": "Competitions",
-      "family_friendly": true,
-      "free": false,
-      "adults_only": false,
-      "where": "The Village at Mammoth",
-      "permalink": "https://www.instagram.com/p/Ddpe-LwGSm2/",
-      "evidence": "50K/26K trail races plus Woolly's 1K Kids Run",
-      "confidence": "high"
-    },
-    {
-      "resort": "Whistler Blackcomb",
-      "handle": "whistlerblackcomb",
-      "source_type": "resort",
-      "name": "UCI Mountain Bike World Series",
-      "start_date": "2026-09-24",
-      "end_date": "2026-09-27",
-      "category": "Competitions",
-      "family_friendly": false,
-      "free": false,
-      "adults_only": false,
-      "where": "Creekside, Whistler Mountain Bike Park",
-      "permalink": "https://www.instagram.com/reel/DdrkJvyk6Hk/",
-      "evidence": "UCI downhill mountain bike World Cup at purpose-built track 1199",
-      "confidence": "high"
-    },
-    {
-      "resort": "Aspen Snowmass",
-      "handle": "aspensnowmass",
-      "source_type": "resort",
-      "name": "Sightseeing Brunch via Coney Express",
-      "start_date": "2026-09-26",
-      "end_date": "2026-09-27",
-      "category": "Specials",
-      "family_friendly": false,
-      "free": false,
-      "adults_only": false,
-      "where": "The Cabin, Aspen Snowmass (via Coney Express gondola)",
-      "permalink": "https://www.instagram.com/p/DdthLeCEy2O/",
-      "evidence": "Gondola-access brunch at The Cabin; $20 sightseeing ticket, walk-ins welcome",
-      "confidence": "high"
-    },
     {
       "resort": "Brighton",
       "handle": "brightonresort",
@@ -64,38 +16,6 @@
       "permalink": "https://www.instagram.com/reel/DdolO4Zhfpw/",
       "evidence": "Weekend fall fest: foodie wars, bouncy houses, beer; ~3 weekends left per 9/23 post",
       "confidence": "medium"
-    },
-    {
-      "resort": "Jackson Hole",
-      "handle": "jacksonhole",
-      "source_type": "resort",
-      "name": "Bavarian beer & music festival",
-      "start_date": "2026-09-26",
-      "end_date": "2026-09-27",
-      "category": "Festivals & holidays",
-      "family_friendly": true,
-      "free": true,
-      "adults_only": false,
-      "where": "Teton Village",
-      "permalink": "https://www.instagram.com/p/DdkEDf7kv8f/",
-      "evidence": "Bavarian craft beer, live music, family-friendly fun, free general admission",
-      "confidence": "medium"
-    },
-    {
-      "resort": "Killington",
-      "handle": "killingtonmtn",
-      "source_type": "resort",
-      "name": "Killington Brewfest",
-      "start_date": "2026-09-26",
-      "end_date": null,
-      "category": "Festivals & holidays",
-      "family_friendly": true,
-      "free": false,
-      "adults_only": false,
-      "where": "Pico Mountain",
-      "permalink": "https://www.instagram.com/p/DdeMYWynFK8/",
-      "evidence": "30th annual craft beer/cider fest at Pico: 100+ beers, food vendors, family activities, live music",
-      "confidence": "high"
     },
     {
       "resort": "Mammoth Mountain",
@@ -146,102 +66,6 @@
       "confidence": "high"
     },
     {
-      "resort": "Mt. Bachelor",
-      "handle": "mtbachelor",
-      "source_type": "resort",
-      "name": "Lady Laps Sausage Party",
-      "start_date": "2026-09-26",
-      "end_date": null,
-      "category": "Community",
-      "family_friendly": false,
-      "free": false,
-      "adults_only": false,
-      "where": "Mt. Bachelor Bike Park",
-      "permalink": "https://www.instagram.com/reel/DdmoJgmScoZ/",
-      "evidence": "Last Lady Laps group ride of the summer, hot dogs and drink token, registration required",
-      "confidence": "medium"
-    },
-    {
-      "resort": "Northstar",
-      "handle": "northstar_california",
-      "source_type": "resort",
-      "name": "Northstar Summer Sendoff",
-      "start_date": "2026-09-26",
-      "end_date": null,
-      "category": "Festivals & holidays",
-      "family_friendly": true,
-      "free": false,
-      "adults_only": false,
-      "where": "The Village at Northstar (Overlook / Northstar Stage)",
-      "permalink": "https://www.instagram.com/p/DdkVthKDU9H/",
-      "evidence": "Season-end party: beer garden, two live bands, Family Fun Zone with basketball and axe throwing",
-      "confidence": "high"
-    },
-    {
-      "resort": "Solitude",
-      "handle": "solitudemountain",
-      "source_type": "resort",
-      "name": "Bike Park Whip Off & Winter Welcome",
-      "start_date": "2026-09-26",
-      "end_date": null,
-      "category": "Competitions",
-      "family_friendly": true,
-      "free": true,
-      "adults_only": false,
-      "where": "Pyrite Plunge / Link Chairlift, Solitude Bike Park",
-      "permalink": "https://www.instagram.com/reel/DdelKzRpW7B/",
-      "evidence": "Judged whip-off + mini bike comp, Adult/U18 boys/girls divisions, free registration, films after",
-      "confidence": "high"
-    },
-    {
-      "resort": "Steamboat",
-      "handle": "steamboatresort",
-      "source_type": "resort",
-      "name": "Motors on the Mountain",
-      "start_date": "2026-09-26",
-      "end_date": null,
-      "category": "Community",
-      "family_friendly": true,
-      "free": true,
-      "adults_only": false,
-      "where": "Skeeter's Lawn, Steamboat Resort",
-      "permalink": "https://www.instagram.com/p/Dcow8Ahn-zD/",
-      "evidence": "Car show, classics/exotics/off-road, free entry, family fun on Skeeter's Lawn",
-      "confidence": "high"
-    },
-    {
-      "resort": "Mt. Bachelor",
-      "handle": "mtbachelor",
-      "source_type": "resort",
-      "name": "Burn Bootcamp pop-up class",
-      "start_date": "2026-09-27",
-      "end_date": "2026-09-27",
-      "category": "Community",
-      "family_friendly": false,
-      "free": true,
-      "adults_only": false,
-      "where": "Trailhead Lodge Lawn, Mt. Bachelor",
-      "permalink": "https://www.instagram.com/reel/DduX9AQBzIn/",
-      "evidence": "Free outdoor bodyweight fitness class, all fitness levels, no equipment needed",
-      "confidence": "high"
-    },
-    {
-      "resort": "Solitude",
-      "handle": "solitudemountain",
-      "source_type": "resort",
-      "name": "St. Bernard's Dinner & Wine Pairing Series: Italian Dinner",
-      "start_date": "2026-09-27",
-      "end_date": null,
-      "category": "Specials",
-      "family_friendly": false,
-      "free": false,
-      "adults_only": false,
-      "where": "St. Bernard's, Solitude Mountain Resort",
-      "permalink": "https://www.instagram.com/p/DbES_3eidGt/",
-      "evidence": "Curated multi-course dinner with wine pairings, reserved seating",
-      "confidence": "high"
-    },
-    {
       "resort": "Park City",
       "handle": "pcski",
       "source_type": "resort",
@@ -256,6 +80,22 @@
       "permalink": "https://www.instagram.com/p/DdrkRvHDeTV/",
       "evidence": "Wine festival returns to Canyons Village: wines, culinary experiences, autumn scenery",
       "confidence": "high"
+    },
+    {
+      "resort": "Killington",
+      "handle": "killingtonmtn",
+      "source_type": "resort",
+      "name": "Pico Ski Club Annual Swap & Sale",
+      "start_date": "2026-10-02",
+      "end_date": "2026-10-04",
+      "category": "Community",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Pico Ski Club, Killington Resort (venue per event name)",
+      "permalink": "https://www.instagram.com/reel/Ddy-HSgKe68/",
+      "evidence": "Gear swap and sale listed on fall event lineup, Oct 2-4",
+      "confidence": "medium"
     },
     {
       "resort": "Mt. Bachelor",
@@ -304,6 +144,70 @@
       "permalink": "https://www.instagram.com/reel/DdMZNn8CkjR/",
       "evidence": "Free trail clean-up; registration, lunch, giveaways, live music afterparty",
       "confidence": "high"
+    },
+    {
+      "resort": "Killington",
+      "handle": "killingtonmtn",
+      "source_type": "resort",
+      "name": "Mountain Bike Season Passholder Appreciation Party",
+      "start_date": "2026-10-04",
+      "end_date": null,
+      "category": "Festivals & holidays",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Killington Resort",
+      "permalink": "https://www.instagram.com/p/Ddww9EZFw6p/",
+      "evidence": "Thank-you party for bike passholders: BBQ lunch, live music, prizes",
+      "confidence": "medium"
+    },
+    {
+      "resort": "Killington",
+      "handle": "killingtonmtn",
+      "source_type": "resort",
+      "name": "KSC Monster Ski and Bike Sale & Swap",
+      "start_date": "2026-10-09",
+      "end_date": "2026-10-11",
+      "category": "Community",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Killington Resort",
+      "permalink": "https://www.instagram.com/reel/Ddy-HSgKe68/",
+      "evidence": "Ski and bike gear sale and swap on the fall lineup, Oct 9-11",
+      "confidence": "medium"
+    },
+    {
+      "resort": "Whistler Blackcomb",
+      "handle": "whistlerblackcomb",
+      "source_type": "resort",
+      "name": "HOME film premiere at Whistler Outdoor Festival",
+      "start_date": "2026-10-09",
+      "end_date": "2026-10-09",
+      "category": "Community",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Whistler Outdoor Festival (venue not named in post)",
+      "permalink": "https://www.instagram.com/reel/Dd2A0UUS1BB/",
+      "evidence": "Premiere of resort's second ski/snowboard film, ticketed, at the outdoor festival Oct 9",
+      "confidence": "medium"
+    },
+    {
+      "resort": "Killington",
+      "handle": "killingtonmtn",
+      "source_type": "resort",
+      "name": "Harvest Faire",
+      "start_date": "2026-10-10",
+      "end_date": null,
+      "category": "Festivals & holidays",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Killington Resort",
+      "permalink": "https://www.instagram.com/reel/Ddy-HSgKe68/",
+      "evidence": "Harvest Faire listed on the fall event lineup for Oct 10; no other detail",
+      "confidence": "medium"
     },
     {
       "resort": "Revelstoke",
@@ -521,18 +425,11 @@
       "permalink": "https://www.instagram.com/reel/DdrpZRyyy05/"
     },
     {
-      "resort": "Whistler Blackcomb",
-      "handle": "whistlerblackcomb",
-      "text": "New Showcase quad chairlift on Blackcomb: tower foundations done, install planned this fall",
-      "posted_date": "2026-08-27",
-      "permalink": "https://www.instagram.com/p/DcjUh0HFc73/"
-    },
-    {
       "resort": "Aspen Snowmass",
       "handle": "aspensnowmass",
-      "text": "New Nell Bell chairlift on Aspen Mountain: terminal gantry set, construction progressing",
-      "posted_date": "2026-09-24",
-      "permalink": "https://www.instagram.com/reel/DdrtBzKB_9-/"
+      "text": "New Nell Bell chairlift on Aspen Mountain: tower-by-tower construction underway",
+      "posted_date": "2026-09-28",
+      "permalink": "https://www.instagram.com/reel/Dd2ExzDkjaS/"
     },
     {
       "resort": "Aspen Snowmass",
@@ -547,13 +444,6 @@
       "text": "Piloting snow-retention blankets to speed early-season snowmaking, a new climate-resilience tool",
       "posted_date": "2026-09-19",
       "permalink": "https://www.instagram.com/reel/DdetnRiD-qt/"
-    },
-    {
-      "resort": "Vail",
-      "handle": "vailmtn",
-      "text": "Vail Mountain open daily through Labor Day, then shifts to Friday-Sunday summer ops through Sept 27",
-      "posted_date": "2026-09-04",
-      "permalink": "https://www.instagram.com/reel/Dc4WbFazGgt/"
     },
     {
       "resort": "Palisades Tahoe",
@@ -575,6 +465,13 @@
       "text": "Snow Summit and Snow Valley Bike Parks move to weekend-only (Fri-Sun) schedule",
       "posted_date": "2026-09-08",
       "permalink": "https://www.instagram.com/p/DdCCx1wm8Ma/"
+    },
+    {
+      "resort": "Big Bear Mountain Resort",
+      "handle": "bigbearmountainresort",
+      "text": "Snow Summit bike park closing weekend starts Fri Oct 2; Snow Valley bike park weekends until Oct 25",
+      "posted_date": "2026-09-27",
+      "permalink": "https://www.instagram.com/reel/DdzfsL7SzRV/"
     },
     {
       "resort": "Deer Valley",
@@ -622,8 +519,8 @@
       "resort": "Copper Mountain",
       "handle": "coppermtn",
       "text": "Copper Creek Golf Course stays open for fall play through October 4",
-      "posted_date": "2026-09-13",
-      "permalink": "https://www.instagram.com/p/Ddg9wk2D60g/"
+      "posted_date": "2026-09-28",
+      "permalink": "https://www.instagram.com/p/Dd2VMs0uHQs/"
     },
     {
       "resort": "Keystone",
@@ -631,6 +528,20 @@
       "text": "First flakes of winter seen at Keystone",
       "posted_date": "2026-09-17",
       "permalink": "https://www.instagram.com/reel/DdXvFedxhyt/"
+    },
+    {
+      "resort": "Keystone",
+      "handle": "keystoneresort",
+      "text": "My Epic app adds lesson check-in and real-time updates for group lessons",
+      "posted_date": "2026-09-28",
+      "permalink": "https://www.instagram.com/reel/Dd2Ga01HKdx/"
+    },
+    {
+      "resort": "Brighton",
+      "handle": "brightonresort",
+      "text": "Mountain biking, disc golf and scenic lift rides run through Oct 11",
+      "posted_date": "2026-09-26",
+      "permalink": "https://www.instagram.com/reel/DdwSF8OoZAz/"
     },
     {
       "resort": "Brighton",
@@ -647,18 +558,11 @@
       "permalink": "https://www.instagram.com/reel/DdC1DoCIEbQ/"
     },
     {
-      "resort": "Brighton",
-      "handle": "brightonresort",
-      "text": "New black diamond trail Wittke Way opened, featuring granite slab roll-downs",
-      "posted_date": "2026-09-03",
-      "permalink": "https://www.instagram.com/p/Dc1zruqFAx6/"
-    },
-    {
       "resort": "Killington",
       "handle": "killingtonmtn",
-      "text": "FIS inspected Superstar for Nov World Cup; new Superstar Six lift + 50 new snow guns added for race prep",
-      "posted_date": "2026-09-16",
-      "permalink": "https://www.instagram.com/p/DdW-ganIwM3/"
+      "text": "Upper Wildfire snowmaking upgraded from 30 to 50 hydrant sets; trail should open in about 2-4 days of snowmaking",
+      "posted_date": "2026-09-29",
+      "permalink": "https://www.instagram.com/p/Dd4PYuIl6MP/"
     },
     {
       "resort": "Killington",
@@ -677,16 +581,16 @@
     {
       "resort": "Park City",
       "handle": "pcski",
-      "text": "Canyons Village Skyway gondola construction progresses: terminals pieced together, towers installed",
-      "posted_date": "2026-09-04",
-      "permalink": "https://www.instagram.com/p/Dc4YpvuD7hh/"
+      "text": "Canyons Village Skyway gondola: haul rope splice completed, project nearing completion",
+      "posted_date": "2026-09-26",
+      "permalink": "https://www.instagram.com/p/DdwjaWqlHIJ/"
     },
     {
       "resort": "Park City",
       "handle": "pcski",
-      "text": "Summer operations wind down; final two weekends before mountain closes for the season",
-      "posted_date": "2026-09-17",
-      "permalink": "https://www.instagram.com/reel/DdZq6ZUDJwm/"
+      "text": "Summer operations have closed for the season; winter opening expected in November",
+      "posted_date": "2026-09-28",
+      "permalink": "https://www.instagram.com/reel/Ddz37rgEWwQ/"
     },
     {
       "resort": "Park City",
@@ -724,13 +628,6 @@
       "permalink": "https://www.instagram.com/p/DdpONAMRo01/"
     },
     {
-      "resort": "Beaver Creek",
-      "handle": "beavercreek",
-      "text": "Summer schedule shifts to weekends-only starting Sept 8; final operating weekend Sept 26-27",
-      "posted_date": "2026-09-03",
-      "permalink": "https://www.instagram.com/p/Dc1lv41n33Q/"
-    },
-    {
       "resort": "Steamboat",
       "handle": "steamboatresort",
       "text": "Opening day confirmed for November 21, 2026",
@@ -764,13 +661,6 @@
       "text": "Summer operations officially wrapped; winter opening date not yet set",
       "posted_date": "2026-09-21",
       "permalink": "https://www.instagram.com/reel/Ddj_PCYy-sw/"
-    },
-    {
-      "resort": "Lake Louise",
-      "handle": "skilouise",
-      "text": "First snowfall of the season reported",
-      "posted_date": "2026-08-30",
-      "permalink": "https://www.instagram.com/p/Dcq3k4Ym89r/"
     },
     {
       "resort": "Lake Louise",
@@ -845,9 +735,9 @@
     {
       "resort": "Stowe",
       "handle": "stowemt",
-      "text": "Gondola SkyRide fall hours extended on select dates: 9/26, 10/2-3, 10/9-11, last tickets 5:15pm",
-      "posted_date": "2026-09-24",
-      "permalink": "https://www.instagram.com/p/DdrnviZDOg9/"
+      "text": "Gondola SkyRide fall hours: 8:30-4:30 daily through Oct 12, then 9:30-4:30 daily Oct 13-18",
+      "posted_date": "2026-09-28",
+      "permalink": "https://www.instagram.com/reel/Dd14nsjjrjc/"
     },
     {
       "resort": "Stowe",
@@ -878,20 +768,6 @@
       "permalink": "https://www.instagram.com/p/Ddbk1IRFTOA/"
     },
     {
-      "resort": "Northstar",
-      "handle": "northstar_california",
-      "text": "Bike Park closing day set for Sunday, September 27, ending the summer season",
-      "posted_date": "2026-09-18",
-      "permalink": "https://www.instagram.com/p/DdaJIhNlzfE/"
-    },
-    {
-      "resort": "Revelstoke",
-      "handle": "revelstokemtnresort",
-      "text": "Bike Park 2026 season closes this weekend (Sept 26-27); last chance for lift-served laps",
-      "posted_date": "2026-09-26",
-      "permalink": "https://www.instagram.com/p/DdwNBlGF2aK/"
-    },
-    {
       "resort": "Winter Park",
       "handle": "winterparkresort",
       "text": "First dusting of snow spotted on the mountain, an early sign of the coming season",
@@ -905,16 +781,16 @@
       "handle": "mammothmountain",
       "opening_date": "2026-11-13",
       "closing_date": null,
-      "posted_date": "2026-08-05",
-      "permalink": "https://www.instagram.com/reel/DbqtS4FycU7/"
+      "posted_date": "2026-09-27",
+      "permalink": "https://www.instagram.com/reel/DdxjGBcSmMS/"
     },
     {
       "resort": "Whistler Blackcomb",
       "handle": "whistlerblackcomb",
       "opening_date": "2026-11-20",
       "closing_date": null,
-      "posted_date": "2026-09-18",
-      "permalink": "https://www.instagram.com/p/DdccYSNl_j9/"
+      "posted_date": "2026-09-30",
+      "permalink": "https://www.instagram.com/p/Dd5bB9TF0fk/"
     },
     {
       "resort": "Aspen Snowmass",
@@ -961,8 +837,8 @@
       "handle": "bigskyresort",
       "opening_date": "2026-11-25",
       "closing_date": null,
-      "posted_date": "2026-09-14",
-      "permalink": "https://www.instagram.com/p/DdP58oMFVSq/"
+      "posted_date": "2026-09-27",
+      "permalink": "https://www.instagram.com/p/DdznGL0Fxjk/"
     },
     {
       "resort": "Copper Mountain",
