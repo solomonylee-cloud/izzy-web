@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-30",
+  "generated": "2026-10-04",
   "events": [
     {
       "resort": "Brighton",
@@ -66,22 +66,6 @@
       "confidence": "high"
     },
     {
-      "resort": "Park City",
-      "handle": "pcski",
-      "source_type": "resort",
-      "name": "Park City Wine Festival",
-      "start_date": "2026-10-01",
-      "end_date": "2026-10-03",
-      "category": "Festivals & holidays",
-      "family_friendly": false,
-      "free": false,
-      "adults_only": false,
-      "where": "Canyons Village, Park City Mountain",
-      "permalink": "https://www.instagram.com/p/DdrkRvHDeTV/",
-      "evidence": "Wine festival returns to Canyons Village: wines, culinary experiences, autumn scenery",
-      "confidence": "high"
-    },
-    {
       "resort": "Killington",
       "handle": "killingtonmtn",
       "source_type": "resort",
@@ -98,51 +82,19 @@
       "confidence": "medium"
     },
     {
-      "resort": "Mt. Bachelor",
-      "handle": "mtbachelor",
+      "resort": "Aspen Snowmass",
+      "handle": "aspensnowmass",
       "source_type": "resort",
-      "name": "Movies in the Mountains: Jurassic Park",
-      "start_date": "2026-10-02",
-      "end_date": null,
-      "category": "Community",
-      "family_friendly": false,
-      "free": false,
-      "adults_only": false,
-      "where": "Mt. Bachelor",
-      "permalink": "https://www.instagram.com/reel/DdpAyAEhfWg/",
-      "evidence": "Outdoor movie screening, sold out, blankets/popcorn night under the stars",
-      "confidence": "high"
-    },
-    {
-      "resort": "Big Bear Mountain Resort",
-      "handle": "bigbearmountainresort",
-      "source_type": "resort",
-      "name": "Summit Series: Best Whip",
+      "name": "Free Makaha hike park (summer-closing snow day)",
       "start_date": "2026-10-03",
-      "end_date": "2026-10-03",
-      "category": "Competitions",
+      "end_date": "2026-10-04",
+      "category": "Festivals & holidays",
       "family_friendly": false,
       "free": true,
       "adults_only": false,
-      "where": "Snow Summit, Big Bear",
-      "permalink": "https://www.instagram.com/p/DdmWorQGOxH/",
-      "evidence": "Freestyle best-whip bike contest, free onsite registration, cash purse",
-      "confidence": "high"
-    },
-    {
-      "resort": "Killington",
-      "handle": "killingtonmtn",
-      "source_type": "resort",
-      "name": "Pepsi Mountain Clean-Up",
-      "start_date": "2026-10-03",
-      "end_date": null,
-      "category": "Community",
-      "family_friendly": false,
-      "free": true,
-      "adults_only": false,
-      "where": "Killington Resort",
-      "permalink": "https://www.instagram.com/reel/DdMZNn8CkjR/",
-      "evidence": "Free trail clean-up; registration, lunch, giveaways, live music afterparty",
+      "where": "Makaha snow pile, reached from Coney Express mid-station, Snowmass",
+      "permalink": "https://www.instagram.com/reel/DeAj3t1tgRz/",
+      "evidence": "Hike-in snow park with 7-8 features on stored snow, free, Sat and Sun 10am-2pm",
       "confidence": "high"
     },
     {
@@ -160,6 +112,22 @@
       "permalink": "https://www.instagram.com/p/Ddww9EZFw6p/",
       "evidence": "Thank-you party for bike passholders: BBQ lunch, live music, prizes",
       "confidence": "medium"
+    },
+    {
+      "resort": "Solitude",
+      "handle": "solitudemountain",
+      "source_type": "resort",
+      "name": "Closing day karaoke and drink specials at the Thirsty Squirrel",
+      "start_date": "2026-10-04",
+      "end_date": "2026-10-04",
+      "category": "Specials",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Thirsty Squirrel, Solitude Mountain Resort",
+      "permalink": "https://www.instagram.com/reel/DeALlq2pmQz/",
+      "evidence": "Summer closing day Oct 4, karaoke and drink specials 5-8pm",
+      "confidence": "high"
     },
     {
       "resort": "Killington",
@@ -188,10 +156,10 @@
       "family_friendly": false,
       "free": false,
       "adults_only": false,
-      "where": "Whistler Outdoor Festival (venue not named in post)",
-      "permalink": "https://www.instagram.com/reel/Dd2A0UUS1BB/",
-      "evidence": "Premiere of resort's second ski/snowboard film, ticketed, at the outdoor festival Oct 9",
-      "confidence": "medium"
+      "where": "Whistler Conference Centre",
+      "permalink": "https://www.instagram.com/reel/DeALEokj928/",
+      "evidence": "Premiere of resort's ski/snowboard film HOME, ticketed, Oct 9 at 7pm as part of the outdoor festival",
+      "confidence": "high"
     },
     {
       "resort": "Killington",
@@ -446,20 +414,6 @@
       "permalink": "https://www.instagram.com/reel/DdetnRiD-qt/"
     },
     {
-      "resort": "Palisades Tahoe",
-      "handle": "palisadestahoe",
-      "text": "Aerial Tram closes for summer maintenance beginning Sept 8, returns for opening day Nov 25",
-      "posted_date": "2026-09-02",
-      "permalink": "https://www.instagram.com/reel/Dcw5k4duBFL/"
-    },
-    {
-      "resort": "Big Bear Mountain Resort",
-      "handle": "bigbearmountainresort",
-      "text": "Annual pre-owned bike sale runs through Oct 4 at Snow Summit",
-      "posted_date": "2026-09-02",
-      "permalink": "https://www.instagram.com/p/DczIArZkq71/"
-    },
-    {
       "resort": "Big Bear Mountain Resort",
       "handle": "bigbearmountainresort",
       "text": "Snow Summit and Snow Valley Bike Parks move to weekend-only (Fri-Sun) schedule",
@@ -609,13 +563,6 @@
     {
       "resort": "Banff Sunshine",
       "handle": "sunshinevillage",
-      "text": "August snowfall hit the resort (The Dive, Goat's Eye, Standish) ahead of ski season",
-      "posted_date": "2026-08-31",
-      "permalink": "https://www.instagram.com/p/DctVq2mlsvf/"
-    },
-    {
-      "resort": "Banff Sunshine",
-      "handle": "sunshinevillage",
       "text": "New vintage-style film photo booth (Vintist) opens at Creekside base",
       "posted_date": "2026-09-16",
       "permalink": "https://www.instagram.com/p/DdXAgKYj7RA/"
@@ -640,6 +587,13 @@
       "text": "Bike Park entering its last two weekends of the summer season",
       "posted_date": "2026-09-23",
       "permalink": "https://www.instagram.com/p/DdpGkbeiSFC/"
+    },
+    {
+      "resort": "Steamboat",
+      "handle": "steamboatresort",
+      "text": "New Yonder Hiking Trail now links the base area to Wild Blue Mid Station",
+      "posted_date": "2026-10-01",
+      "permalink": "https://www.instagram.com/p/Dd9s0HrCeH3/"
     },
     {
       "resort": "Arapahoe Basin",
@@ -707,16 +661,16 @@
     {
       "resort": "Mt. Bachelor",
       "handle": "mtbachelor",
-      "text": "First snow flurries of the season reported on the mountain",
-      "posted_date": "2026-09-02",
-      "permalink": "https://www.instagram.com/reel/DczTKS4ShuO/"
-    },
-    {
-      "resort": "Mt. Bachelor",
-      "handle": "mtbachelor",
       "text": "Bike park moved to Thursday-Sunday operating schedule for fall",
       "posted_date": "2026-09-07",
       "permalink": "https://www.instagram.com/reel/DdAE3KoyhOe/"
+    },
+    {
+      "resort": "Revelstoke",
+      "handle": "revelstokemtnresort",
+      "text": "Two bonus weekends of summer operations: gondola, Skywalk and Pipe Mountain Coaster open",
+      "posted_date": "2026-10-02",
+      "permalink": "https://www.instagram.com/p/Dd_weTBDPcm/"
     },
     {
       "resort": "Heavenly",
@@ -749,13 +703,6 @@
     {
       "resort": "Mont Tremblant",
       "handle": "monttremblant",
-      "text": "New Timber Summit area confirmed: 62 acres, 8 trails, new high-speed lift by winter 2027/28",
-      "posted_date": "2026-09-01",
-      "permalink": "https://www.instagram.com/reel/DcwQYXepH1O/"
-    },
-    {
-      "resort": "Mont Tremblant",
-      "handle": "monttremblant",
       "text": "Opening day for 2026/27 ski season confirmed for November 26",
       "posted_date": "2026-09-11",
       "permalink": "https://www.instagram.com/reel/DdKHPnYJxRP/"
@@ -766,6 +713,13 @@
       "text": "Fall-colours traffic plan: free shuttle, paid P1-P5 weekend parking, North Side lot open Oct 3 & 10 only",
       "posted_date": "2026-09-18",
       "permalink": "https://www.instagram.com/p/Ddbk1IRFTOA/"
+    },
+    {
+      "resort": "Mont Tremblant",
+      "handle": "monttremblant",
+      "text": "Colour-peak weekend: all resort parking paid, carpooling urged, North Side lot shuttle from 9am",
+      "posted_date": "2026-10-02",
+      "permalink": "https://www.instagram.com/p/Dd_tEdNjD8C/"
     },
     {
       "resort": "Winter Park",
@@ -813,8 +767,8 @@
       "handle": "breckenridgemtn",
       "opening_date": "2026-11-06",
       "closing_date": null,
-      "posted_date": "2026-09-16",
-      "permalink": "https://www.instagram.com/p/DdWwKQUkbJN/"
+      "posted_date": "2026-10-01",
+      "permalink": "https://www.instagram.com/p/Dd9Hv-wF9kG/"
     },
     {
       "resort": "Palisades Tahoe",
