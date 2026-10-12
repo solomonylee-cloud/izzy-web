@@ -45,6 +45,7 @@
       <li><strong>Purchase information:</strong> subscription and purchase status (processed by the app stores and our subscription provider; we do not receive your full payment card details).</li>
       <li><strong>Device and diagnostic data:</strong> device push-notification tokens, app version, and crash/diagnostic logs used to keep the App working.</li>
       <li><strong>Device identifier (subscription device limit):</strong> on paid plans, we read a vendor-scoped device identifier (Apple's identifierForVendor on iOS, Android's SSAID) to enforce how many devices can be signed into one subscription at a time, which helps prevent account sharing. This is not an advertising identifier — it is not Apple's IDFA or Google's Advertising ID, and we do not use it for ad tracking or ad attribution.</li>
+      <li><strong>Free-week eligibility check (voice trial):</strong> when an adult starts the 7-day Izzy voice trial, the App stores a one-way hash (SHA-256) of a device identifier so the free week is given once per device and once per account; the identifier itself is not stored. On iOS the App also asks Apple's DeviceCheck, and on Android Google's Play Integrity, to confirm the request comes from a genuine device running our App; those services return a verdict to our servers and we keep the outcome and the time of the check, not your personal data. These checks are used only to prevent repeat free weeks and abuse.</li>
     </ul>
 
     <h2>How we use information</h2>
