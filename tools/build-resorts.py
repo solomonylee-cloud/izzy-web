@@ -6,7 +6,7 @@
 The catalog is the source of truth for "where Izzy can be used" (the app bundles it). Re-run this
 whenever the catalog changes, then commit resorts.html. MERGE rule: the catalog lists Boston Mills
 and Brandywine as two rows (split 2026-09-01); Vail markets them as one resort, so the site shows
-one card — that is why the site says 91 while the catalog has 92 rows.
+one card — so the site always shows one card fewer than the catalog has rows.
 """
 import html, json, re, sys
 from collections import Counter, OrderedDict
@@ -136,7 +136,7 @@ page = f'''<!DOCTYPE html><html lang="en"><head>
           <img src="assets/app-icon.png" alt="" width="38" height="38">
           Izzy
         </a>
-        <p>Your AI snobud for Snow and Sun. Built for the mountain — hands-free, all day, all year.</p>
+        <p>Your bestie on the mountain for Snow and Sun. All day, all year.</p>
       </div>
       <div class="foot-col">
         <h4>Product</h4>
@@ -197,6 +197,8 @@ page = f'''<!DOCTYPE html><html lang="en"><head>
     input.addEventListener('input', apply);
   }})();
 </script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "56c60675ad0f4614a66a525648e74f14"}}'></script><!-- End Cloudflare Web Analytics -->
+<script src="assets/consent.js" defer></script>
 </body></html>
 '''
 open('resorts.html', 'w', encoding='utf-8').write(page)
