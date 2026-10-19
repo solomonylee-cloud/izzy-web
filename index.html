@@ -359,6 +359,13 @@
     .plan ul li em { font-style:normal; color:var(--grey-dim); }
     .annual-note { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; margin:-14px auto 30px; font-size:14px; color:var(--grey-dim); }
     .annual-note span::before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--sun); margin-right:8px; vertical-align:2px; }
+    .trial-box { margin:0 0 20px; padding:14px 16px; border-radius:14px; border:1px solid rgba(47,147,255,.45); background:linear-gradient(180deg, rgba(47,147,255,.12), rgba(245,183,61,.06)); font-size:14.5px; color:var(--grey-dim); }
+    .trial-box .trial-head { display:flex; align-items:center; gap:8px; margin:0 0 6px; font-family:var(--display); font-weight:700; font-size:16px; color:var(--white); }
+    .trial-box .trial-head svg { color:var(--blue-bright); flex:none; }
+    .trial-box p { margin:0; } .trial-box b { color:var(--white); font-weight:600; } .trial-box em { font-style:normal; color:#f5b73d; }
+    .plan-keeps { margin:0 0 12px; font-size:12px; letter-spacing:1.2px; text-transform:uppercase; color:var(--grey-dim); font-weight:600; }
+    .plan-foot { margin:-8px 0 20px; font-size:14px; color:var(--grey-dim); }
+    .plan-foot a { color:var(--blue-bright); }
   </style>
   <section class="section pricing" id="pricing">
     <div class="wrap">
@@ -384,16 +391,20 @@
           <div class="plan">
             <h3 style="color:#f6f8fb">Base</h3>
             <div class="price">Free</div>
-            <p class="plan-sub">Everything you need to ride with Izzy — and the baseline every paid plan builds on.</p>
+            <p class="plan-sub">Safety and chat, free forever — and it starts with a week of full Izzy voice.</p>
+            <div class="trial-box">
+              <p class="trial-head"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/></svg>Your first week: full Izzy voice, free</p>
+              <p>7 days from your first conversation, with <b>every voice mode</b>: Brainfartable, Skibummable, Like Totally, and even <b>Gnarly</b>, which is otherwise Max-only. Izzy Vision and live answers are included too. <em>Izzy goes full send.</em></p>
+            </div>
+            <p class="plan-keeps">After the free week, Base keeps:</p>
             <ul>
-              <li><span>Safety SOS &amp; fall detection — <em>Izzy has your back</em></span></li>
+              <li><span>Safety SOS to your family and ski patrol at partner resorts — <em>Izzy has your back</em></span></li>
+              <li><span>Fall detection with a one-tap &ldquo;I&rsquo;m OK&rdquo; — <em>Izzy checks on you, even when the phone&rsquo;s in your pocket</em></span></li>
+              <li><span>Text chat with Izzy, on and off the mountain — <em>Izzy doesn&rsquo;t sleep</em></span></li>
+              <li><span>Limited access to the resort card and bulletin — <em>read conditions only; reading and posting on the bulletin comes with Pro</em></span></li>
               <li><span>Izzy Snow and Izzy Sun — both seasons, one app</span></li>
-              <li><span>7 days of Izzy voice, free, starting the first time you talk to Izzy</span></li>
-              <li><span>Then text chat with Izzy, on and off the mountain — <em>Izzy doesn&rsquo;t sleep</em></span></li>
-              <li><span>Conditions at IKON, EPIC &amp; independent resorts — <em>Izzy is a snow-pert. That&rsquo;s a snow expert&hellip; dad joke.</em></span></li>
-              <li><span>Limited memory — <em>Izzy may not have had enough blueberries, but Izzy&rsquo;ll know your name and a few things</em></span></li>
-              <li><span>Limited thinking — <em>Izzy IQ: chilled</em></span></li>
             </ul>
+            <p class="plan-foot">Want to keep talking? Voice continues on <a href="#pricing" data-seg="segPro">Pro</a> and <a href="#pricing" data-seg="segFam">Family</a>.</p>
             <a class="btn btn-ghost" href="#get">Get Izzy free</a>
           </div>
         </div>
@@ -491,6 +502,9 @@
             document.getElementById(q[1]).classList.toggle('on', i===j);
           });
         });
+      });
+      document.querySelectorAll('[data-seg]').forEach(function(a){
+        a.addEventListener('click',function(){ document.getElementById(a.getAttribute('data-seg')).click(); });
       });
     })();
   </script>
