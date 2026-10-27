@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Izzy — Snow and Sun</title>
-<meta name="description" content="Download Izzy — your bestie on the mountain, year-round. iPhone and Android.">
+<title>Get Izzy — Live on iPhone and Android</title>
+<meta name="description" content="Izzy is live on the App Store and Google Play. Free to start. Plus The Lift Line, one email a month from the build.">
 <meta name="referrer" content="strict-origin">
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/app-icon.png">
@@ -14,78 +14,186 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .get-wrap{max-width:620px;min-height:100vh;margin:0 auto;padding:12vh 24px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+  .get-wrap{max-width:640px;margin:0 auto;padding:8vh 16px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
   .get-logo{width:88px;height:88px;border-radius:22px;box-shadow:0 8px 28px rgba(0,0,0,.35)}
-  .get-wrap h1{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1.15;margin:0;color:var(--white)}
+  .get-wrap h1{font-family:var(--display);font-weight:700;font-size:clamp(1.75rem,7vw,2.25rem);line-height:1.15;margin:0;color:var(--white)}
   .get-pill{display:inline-block;padding:6px 14px;border-radius:999px;font-family:var(--display);font-weight:700;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.08);border:1px solid var(--navy-line);color:var(--white)}
   .get-lead{max-width:34rem;margin:0;font-size:1.05rem}
-  .get-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
   .get-note{font-size:.9rem;opacity:.75;margin:0}
   .get-note a{color:var(--white)}
+  /* store buttons: both equal by default (desktop); on a phone the matching store is the big primary */
+  .get-stores{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center;width:100%;margin-top:8px}
+  .get-stores .appstore{justify-content:center;min-width:220px}
+  .get-stores[data-platform="ios"],.get-stores[data-platform="android"]{flex-direction:column;flex-wrap:nowrap}
+  .get-stores[data-platform="ios"] .appstore,.get-stores[data-platform="android"] .appstore{width:100%;max-width:340px}
+  .get-stores[data-platform="ios"] #get-ios{order:1}
+  .get-stores[data-platform="ios"] #get-android{order:2}
+  .get-stores[data-platform="android"] #get-android{order:1}
+  .get-stores[data-platform="android"] #get-ios{order:2}
+  .get-stores[data-platform="ios"] .appstore.is-primary,.get-stores[data-platform="android"] .appstore.is-primary{min-height:72px}
+  .appstore.is-secondary{background:transparent;color:var(--white);border:1px solid var(--navy-line);box-shadow:none;min-height:48px}
+  .appstore.is-secondary:hover{background:rgba(255,255,255,.09);border-color:#4a6da0}
+  .appstore.is-secondary .lab small{display:none}
+  .appstore.is-secondary .lab b{font-size:16px}
+  .e-card{width:100%;margin-top:18px;padding:clamp(20px,5vw,28px);background:var(--navy-deep);border:1px solid var(--navy-line);border-radius:var(--r-card);text-align:left;box-sizing:border-box}
+  .e-card h2{font-family:var(--display);font-weight:700;font-size:1.15rem;margin:0 0 4px;color:var(--white)}
+  .e-card .e-sub{margin:0 0 18px;font-size:.95rem;color:var(--grey-dim)}
+  .e-field{display:block;margin-bottom:16px}
+  .e-field span{display:block;font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:6px}
+  .e-field input[type=email]{width:100%;box-sizing:border-box;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid var(--navy-line);background:var(--navy-darker);color:var(--white);font-family:var(--body);font-size:1rem}
+  .e-field input[type=email]:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+  .e-check{display:flex;gap:11px;align-items:flex-start;margin-bottom:14px;cursor:pointer}
+  .e-check input{margin:2px 0 0;width:19px;height:19px;flex:0 0 auto;accent-color:var(--blue);cursor:pointer}
+  .e-check .e-ctext{font-size:.95rem;color:var(--grey);line-height:1.45}
+  .e-check .e-ctext b{color:var(--white);font-weight:600}
+  .e-fine{font-size:.82rem;color:var(--grey-faint);line-height:1.5;margin:14px 0 0}
+  .e-fine a{color:var(--grey-dim)}
+  .e-card .btn{width:100%;margin-top:6px}
+  .e-msg{margin:14px 0 0;font-size:.95rem;display:none}
+  .e-msg.ok{display:block;color:#7fd4a2}
+  .e-msg.err{display:block;color:#ff9b91}
   [hidden]{display:none !important}
 </style>
 </head>
 <body>
 <main class="get-wrap">
   <img class="get-logo" src="assets/app-icon.png" alt="Izzy">
-  <span id="get-pill" class="get-pill">Coming October</span>
-  <h1>Get Izzy — Snow and Sun</h1>
+  <span id="get-pill" class="get-pill">Live now</span>
+  <h1>Izzy is live on iPhone and Android</h1>
   <p id="get-lead" class="get-lead">Your mountain bestie at all IKON/EPIC resorts in North America, tap and talk on the mountain, one-tap SOS, family tools and more — free to start on iPhone and Android.</p>
-  <div id="get-actions" class="get-actions" hidden>
-    <a id="get-ios" class="btn btn-primary" href="#">Get it for iPhone</a>
-    <a id="get-android" class="btn btn-ghost" href="#">Get it for Android</a>
+
+  <div id="get-stores" class="get-stores" data-platform="desktop">
+    <a id="get-ios" class="appstore is-primary" href="https://apps.apple.com/app/id6761801986" rel="noopener">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 1.5c.1 1-.3 2-1 2.8-.7.8-1.8 1.4-2.8 1.3-.1-1 .4-2 1-2.7.7-.8 1.9-1.4 2.8-1.4Zm3.2 16c-.5 1.2-.8 1.7-1.5 2.7-1 1.4-2.3 3.1-4 3.1-1.5 0-1.9-1-3.9-1-2 0-2.5 1-3.9 1-1.7 0-3-1.6-3.9-3C-.1 16.4-.5 11 1.8 8.2 2.9 6.8 4.6 6 6.2 6c1.6 0 2.6 1 3.9 1 1.3 0 2-1 3.9-1 1.4 0 2.9.8 4 2.1-3.5 1.9-3 6.9 1.7 9.4Z"></path></svg>
+      <span class="lab"><small>Download on the</small><b>App Store</b></span>
+    </a>
+    <a id="get-android" class="appstore is-primary" href="https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini" rel="noopener">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.156l11.04 10.95zm0 2.022l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"></path></svg>
+      <span class="lab"><small>Get it on</small><b>Google Play</b></span>
+    </a>
   </div>
-  <p id="get-note" class="get-note">Izzy arrives on the App Store and Google Play in October 2026. Someone sent you this link from inside Izzy — they'll be able to see you on their map once you're in.</p>
+  <p id="get-note" class="get-note">Free to download. Someone sent you this link from inside Izzy — they'll be able to see you on their map once you're in.</p>
+
+  <form class="e-card" id="liftline" method="post" action="" novalidate>
+    <h2>The Lift Line</h2>
+    <p class="e-sub">One email a month, from the people building Izzy.</p>
+
+    <label class="e-field">
+      <span>Email address</span>
+      <input type="email" id="e-email" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+      <input type="hidden" name="name" id="e-name" value="">
+    </label>
+
+    <label class="e-check">
+      <input type="checkbox" id="e-lift" name="l" value="" checked>
+      <span class="e-ctext"><b>Send me The Lift Line.</b> One email a month — what shipped, mountain notes, live events on the hill, family and childcare, and the honest version of building this. Unsubscribe any time.</span>
+    </label>
+
+    <button class="btn btn-primary" type="submit" id="e-submit">Sign me up</button>
+    <p class="e-msg" id="e-msg" role="status" aria-live="polite"></p>
+
+    <p class="e-fine">
+      We'll only send what you ticked, and you can unsubscribe from any email with one click.
+      We don't sell or share your address. See our <a href="privacy.html">Privacy Policy</a>.
+      Izzy Wolf · <span id="e-addr">3332 Breton Ct NE, Brookhaven, GA 30319</span>
+    </p>
+  </form>
+
   <p class="get-note"><a href="/">izzywolf.com</a> · <a href="support.html">Support</a></p>
 </main>
 <script>
-  // ─── THE ONLY TWO LINES TO EDIT AT GO-LIVE ─────────────────────────────────────
-  // This page is the stable target of every "Download Izzy" link the app sends (the check-in
-  // SMS in SafetyScreen and the Snobud invite email). ONE SWITCH PER STORE: set a store's line
-  // to true the day THAT store's listing is public. Its button appears and its phones
-  // auto-redirect; the other store keeps saying "coming" until its own line is flipped.
-  // Nothing in the app changes. Check the listing URL opens in a browser BEFORE flipping.
-  var LIVE_IOS = false;
-  var LIVE_ANDROID = false;
+  // ─── STORE SWITCHES ────────────────────────────────────────────────────────────
+  // This page is the stable target of every "Download Izzy" link: the Meta ads, the video end cards,
+  // the check-in SMS in SafetyScreen and the Snobud invite email. GO-LIVE STATE (2026-10-31): both
+  // stores are live. A store whose switch is false has its button hidden (use that to pull one back).
+  // There is NO auto-redirect any more: the Lift Line opt-in below the buttons must be seen.
+  var LIVE_IOS = true;
+  var LIVE_ANDROID = true;
   var STORE = {
     ios:     'https://apps.apple.com/app/id6761801986',
     android: 'https://play.google.com/store/apps/details?id=com.solomonylee.SkiBuddyGemini'
   };
   // ────────────────────────────────────────────────────────────────────────────────
   // Ad attribution (2026-09-26): pass utm_* from the ad link through to Google Play's install referrer, so
-  // Play Console shows which ad drove each install. The Meta pixel cannot see this: phones redirect before the
-  // consent banner can appear. Apple needs a provider token for campaign links, so the App Store URL is unchanged.
+  // Play Console shows which ad drove each install. Apple needs a provider token for campaign links, so the
+  // App Store URL is unchanged.
   (function () {
     var q = new URLSearchParams(location.search), keep = [];
     q.forEach(function (v, k) { if (/^utm_(source|medium|campaign|content|term)$/.test(k)) keep.push(k + '=' + encodeURIComponent(v)); });
     if (keep.length) STORE.android += '&referrer=' + encodeURIComponent(keep.join('&'));
   })();
+  // Store buttons: hrefs, visibility, and which one leads on a phone.
   (function () {
-    if (!LIVE_IOS && !LIVE_ANDROID) return;            // pre-launch: the page stays exactly as written above
     var $ = function (id) { return document.getElementById(id); };
-    var SENT = 'Someone sent you this link from inside Izzy — they\'ll be able to see you on their map once you\'re in.';
-    $('get-actions').hidden = false;
-    $('get-ios').hidden = !LIVE_IOS;
-    $('get-android').hidden = !LIVE_ANDROID;
-    if (LIVE_IOS) $('get-ios').href = STORE.ios;
-    if (LIVE_ANDROID) $('get-android').href = STORE.android;
-    if (LIVE_IOS && LIVE_ANDROID) {
-      $('get-pill').hidden = true;
-      $('get-note').textContent = 'Free to download. ' + SENT;
-    } else if (LIVE_ANDROID) {
-      $('get-pill').textContent = 'iPhone: coming October';
-      $('get-note').textContent = 'Izzy is on Google Play now and arrives on the App Store in October 2026. ' + SENT;
-    } else {
-      $('get-pill').textContent = 'Android: coming October';
-      $('get-note').textContent = 'Izzy is on the App Store now and arrives on Google Play in October 2026. ' + SENT;
-    }
-    // A phone is redirected ONLY to a store that is live. A phone whose store is not live yet
-    // stays on this page and reads when its version arrives.
+    var ios = $('get-ios'), and = $('get-android'), box = $('get-stores');
+    ios.href = STORE.ios;
+    and.href = STORE.android;
+    ios.hidden = !LIVE_IOS;
+    and.hidden = !LIVE_ANDROID;
+    // The "someone sent you this link from inside Izzy" line is for the in-app check-in SMS / invite email,
+    // which carry no utm_*. Ad traffic always carries utm_*, so it just reads "Free to download."
+    if (/[?&]utm_/.test(location.search)) $('get-note').textContent = 'Free to download.';
     var ua = navigator.userAgent || '';
-    var target = /iPhone|iPad|iPod/.test(ua) ? (LIVE_IOS ? STORE.ios : null)
-               : /Android/.test(ua) ? (LIVE_ANDROID ? STORE.android : null) : null;
-    if (target) { window.location.replace(target); }
+    var plat = /iPhone|iPad|iPod/.test(ua) ? 'ios' : /Android/.test(ua) ? 'android' : 'desktop';
+    if (plat === 'ios' && !LIVE_IOS) plat = 'desktop';
+    if (plat === 'android' && !LIVE_ANDROID) plat = 'desktop';
+    box.setAttribute('data-platform', plat);
+    if (plat !== 'desktop') {
+      (plat === 'ios' ? and : ios).classList.replace('is-primary', 'is-secondary');
+    }
   })();
+  // ─── LIFT LINE OPT-IN (moved here from /early, 2026-10-27) ─────────────────────
+  // A PLAIN FORM POST, not fetch(). Browsers do not apply CORS to form navigation, so there is nothing to
+  // configure on the Listmonk side and no silent-failure mode. The visitor is navigated to Listmonk's own
+  // confirmation page on news.izzywolf.com. The old "Launch notice" list is no longer offered or posted.
+  var LISTMONK      = 'https://news.izzywolf.com/subscription/form';
+  var LIST_LIFTLINE = 'a1251ccf-e279-4e30-b5b5-2e5bb22ae110';   // Listmonk list UUID — "The Lift Line" (double opt-in)
+
+  var form = document.getElementById('liftline');
+  var msg  = document.getElementById('e-msg');
+  var lift = document.getElementById('e-lift');
+
+  form.action = LISTMONK;
+  lift.value  = LIST_LIFTLINE;
+
+  // ─── SOURCE CAPTURE (2026-09-17) ─────────────────────────────────────────────
+  // Links may carry ?src=meta-a (b, c, d). Listmonk's public form binds ONLY name / email / l
+  // (cmd/public.go processSubForm, v6.2.0) — no attribs — so the tag rides in the name as
+  // "<local-part> src:<tag>". Listmonk's FirstName() returns the first space-separated token LONGER THAN
+  // 2 chars, so opt-in mail still greets "<local-part>". The tag is appended only when the local part is
+  // 3+ chars; for "jo@…" it would BECOME the greeting. Campaign bodies must use
+  // {{ .Subscriber.FirstName }}, never .Name/.LastName.
+  // Read back: GET /api/subscribers?query=subscribers.name LIKE '%src:meta-a%'
+  var SRC_RE = /^[a-z0-9][a-z0-9_-]{0,31}$/;
+  var src = '';
+  try {
+    var q = (new URLSearchParams(location.search).get('src') || '').trim().toLowerCase();
+    if (SRC_RE.test(q)) src = q;
+  } catch (e) { /* no URLSearchParams: no tag, signup still works */ }
+
+  function say(text, kind) { msg.textContent = text; msg.className = 'e-msg ' + kind; }
+
+  form.addEventListener('submit', function (ev) {
+    var email = document.getElementById('e-email').value.trim();
+
+    // Validate before letting the navigation happen.
+    if (!email || email.indexOf('@') < 1) { ev.preventDefault(); return say('Please enter a valid email address.', 'err'); }
+    if (!lift.checked)                    { ev.preventDefault(); return say('Tick the box to get The Lift Line.', 'err'); }
+
+    // Listmonk wants a name; derive one rather than asking for it, and carry the ad-set tag in it.
+    var local = email.split('@')[0];
+    document.getElementById('e-name').value = (src && local.length > 2) ? local + ' src:' + src : local;
+    say('Sending…', 'ok');
+    // Opt-in Meta pixel (assets/consent.js): only if the visitor said OK. Count the signup as a Lead,
+    // give the pixel a moment to send, then submit. Without consent nothing changes.
+    if (window.izzyAds && window.izzyAds.enabled()) {
+      ev.preventDefault();
+      window.izzyAds.lead();
+      setTimeout(function () { HTMLFormElement.prototype.submit.call(form); }, 350);
+      return;
+    }
+    // Not prevented: the browser now POSTs and navigates. No CORS involved.
+  });
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "56c60675ad0f4614a66a525648e74f14"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="assets/consent.js" defer></script>
