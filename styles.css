@@ -500,7 +500,7 @@ p { margin: 0; text-wrap: pretty; }
   transition: transform .15s var(--ease);
 }
 .sos-btn:active { transform: scale(.97); }
-/* Same art as the app's Safety-tab SOS button (SkiBuddyGemini assets/images/sos-button.jpg).
+/* App Safety-tab SOS art (SkiBuddyGemini assets/images/sos-button.jpg) with the lower third evened out to the top shading (founder 2026-10-27).
    The app clips a 266pt image to a 250pt circle (offset -10); same ratio here: 106.4% at -3.2%. */
 .sos-btn img { position: absolute; width: 106.4%; height: 106.4%; left: -3.2%; top: -3.2%; max-width: none; display: block; }
 .sos-btn small {
