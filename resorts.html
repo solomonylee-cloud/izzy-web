@@ -53,6 +53,12 @@
           <span class="r-badge is-ikon">IKON</span><span class="r-badge is-epic">EPIC</span><span class="r-badge is-independent">INDY</span>
           <span class="pass-key-note">Badges show the pass the resort belongs to. INDY = an independent, on its own pass.</span>
         </div>
+        <p class="season-key" id="seasonKey">
+          <span class="r-open is-open">Open now</span>
+          <span class="r-open is-projected">Projected Nov 20</span>
+          <span class="r-open is-tbd">Projected: TBD</span>
+          <span class="season-key-note">Opening days come from each resort&#x27;s own posts and refresh every few days. <a href="events.html">Sources →</a></span>
+        </p>
       </div>
 
       <div class="resort-tools">
@@ -359,6 +365,38 @@
   </div>
 </footer>
 
+<script>
+  // Season markers (2026-10-30): every row gets "Open now" / "Projected <date>" / "Projected: TBD".
+  // Dates come from data/events.json → season[] (Scout refresh, every ~3 days), matched by resort name,
+  // so this page needs no regeneration when a resort announces. Rows start as TBD and upgrade on fetch.
+  (function () {
+    var ALIAS = { 'mont tremblant': 'tremblant' };
+    var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var rows = {};
+    document.querySelectorAll('.resort').forEach(function (li) {
+      var name = li.querySelector('.r-name');
+      var wrap = document.createElement('span'); wrap.className = 'r-text';
+      var mark = document.createElement('span'); mark.className = 'r-open is-tbd'; mark.textContent = 'Projected: TBD';
+      name.parentNode.insertBefore(wrap, name); wrap.appendChild(name); wrap.appendChild(mark);
+      rows[li.dataset.name] = mark;
+    });
+    function fmt(iso) { var d = iso.split('-'); return MONTHS[+d[1] - 1] + ' ' + (+d[2]); }
+    var t = new Date(), today = t.getFullYear() + '-' + ('0' + (t.getMonth() + 1)).slice(-2) + '-' + ('0' + t.getDate()).slice(-2);
+    fetch('data/events.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
+      (d.season || []).forEach(function (e) {
+        var key = (e.resort || '').toLowerCase(); key = ALIAS[key] || key;
+        var mark = rows[key]; if (!mark) return;
+        var o = e.opening_date, c = e.closing_date, cls, txt;
+        if (c && c < today)            { cls = 'is-tbd';       txt = 'Closed for the season'; }
+        else if (o && o <= today)      { cls = 'is-open';      txt = 'Open now'; }
+        else if (o)                    { cls = 'is-projected'; txt = 'Projected ' + fmt(o); }
+        else return;
+        mark.className = 'r-open ' + cls; mark.textContent = txt;
+        if (e.posted_date) mark.title = 'From the resort\u2019s own post, ' + fmt(e.posted_date);
+      });
+    }).catch(function () {});
+  })();
+</script>
 <script>
   // Pass filter + name search. The list is static HTML, so it reads fine without JS.
   (function () {
