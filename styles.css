@@ -478,12 +478,14 @@ p { margin: 0; text-wrap: pretty; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 58%;
+  width: 66%;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  background: radial-gradient(circle at 38% 32%, var(--red-bright) 0%, var(--red) 60%, #a81f15 100%);
+  background: #1a0b10;
+  overflow: hidden;
+  padding: 0;
   color: #fff;
   font-family: var(--display);
   font-weight: 700;
@@ -498,6 +500,9 @@ p { margin: 0; text-wrap: pretty; }
   transition: transform .15s var(--ease);
 }
 .sos-btn:active { transform: scale(.97); }
+/* App Safety-tab SOS art (SkiBuddyGemini assets/images/sos-button.jpg) with the lower third evened out to the top shading (founder 2026-10-27).
+   The app clips a 266pt image to a 250pt circle (offset -10); same ratio here: 106.4% at -3.2%. */
+.sos-btn img { position: absolute; width: 106.4%; height: 106.4%; left: -3.2%; top: -3.2%; max-width: none; display: block; }
 .sos-btn small {
   display: block;
   font-family: var(--body);
