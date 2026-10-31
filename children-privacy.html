@@ -32,7 +32,7 @@
   <h1>Children's Privacy (COPPA) and Families</h1>
   <p class="lead">Izzy is a general-audience app with an optional family feature. This page explains
   what that means for a child under 13 added to a family.</p>
-  <p class="updated">Last updated: September 21, 2026</p>
+  <p class="updated">Last updated: October 31, 2026</p>
 
   <p>Izzy is a general-audience ski-safety app. It is not directed to children under 13, and children
   under 13 cannot create an Izzy account for themselves. This page explains the one circumstance in
@@ -121,10 +121,17 @@
   </ul>
 
   <h2>No advertising, no behavioural profiling, no tracking</h2>
-  <p>Izzy contains <strong>no advertising SDK, no analytics SDK, and no attribution or
-  ad-measurement SDK of any kind</strong> — not for children and not for adults. There is no
-  advertising identifier, no App Tracking Transparency prompt, and no cross-app or cross-site
-  tracking, because there is nothing in the app that would do it.</p>
+  <p>Izzy contains <strong>no advertising SDK and no attribution or ad-measurement SDK of any
+  kind</strong> — not for children and not for adults. There is no advertising identifier, no App
+  Tracking Transparency prompt, and no cross-app or cross-site tracking.</p>
+  <p>Izzy does use one product-analytics tool, PostHog, <strong>for signed-in adults only</strong>
+  (people whose date of birth on file shows they are 18 or older). It is <strong>never switched on
+  for a child</strong>: not for a child under 13 in a family, not for anyone added to a family as a
+  child, not for a teenager under 18, and not for any account where age is unknown. It is off in kid
+  mode, and it stays off if the app cannot tell. It records no session replay and no taps or
+  typing, never reads an advertising identifier, and sends no location, name, message or voice
+  content. It is also never used in the SOS, fall-detection or incident screens. Details are in our
+  <a href="privacy.html#analytics">Privacy Policy</a>.</p>
   <p>We do not serve advertising to anyone. We do not show behavioural or interest-based advertising
   to children. We do not build advertising profiles, and we do not sell or rent personal information.
   We do not use a child's information to market to them, and we do not send children promotional or
@@ -142,6 +149,7 @@
     <tr><td>Apple Push Notification service / Firebase Cloud Messaging, via Expo</td><td>Delivering notifications</td></tr>
     <tr><td>Apple App Store / Google Play, and RevenueCat</td><td>Subscription status. Children are not charged and do not purchase</td></tr>
     <tr><td>Sentry</td><td>Crash and error diagnostics — for children, identifier-free crash reports and scrubbed fall-detection diagnostics only, see above</td></tr>
+    <tr><td>PostHog</td><td>Nothing. Product analytics is switched off for children (and for everyone under 18); see above</td></tr>
   </table>
   <p>Voice sent to Google's Gemini AI on our paid tier is <strong>not used to train Google's models
   and is not read by human reviewers</strong>. It is retained by Google for a limited period solely

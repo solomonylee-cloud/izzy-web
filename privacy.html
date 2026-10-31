@@ -26,7 +26,7 @@
   <main class="wrap">
     <a class="back" href="./index.html">← Back to Izzy</a>
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: September 22, 2026</div>
+    <div class="updated">Last updated: October 31, 2026</div>
 
     <p>This Privacy Policy explains how Izzy ("Izzy," "we," "us") collects, uses, and shares
       information when you use the Izzy mobile application (the "App") or sign up for email from us
@@ -44,6 +44,7 @@
       <li><strong>Emergency contacts:</strong> contact details you choose to add for the SOS feature.</li>
       <li><strong>Purchase information:</strong> subscription and purchase status (processed by the app stores and our subscription provider; we do not receive your full payment card details).</li>
       <li><strong>Device and diagnostic data:</strong> device push-notification tokens, app version, and crash/diagnostic logs used to keep the App working.</li>
+      <li><strong>Product usage (adults only):</strong> if you are signed in and your date of birth on file shows you are 18 or older, the App counts a few basic actions so we can see what is used and what is not: which main tab you open (Voice, Map, Social or Profile), when the plan screen is shown, when a plan upgrade completes (and which plan), and when you start a voice session with Izzy. Each count is sent with a random ID the App makes up on your phone, plus the App version, operating system and device model. It is not your name, email, account ID, location, messages, or anything you say or type, and it never comes from the SOS, fall-detection or incident screens. See "Product analytics" below.</li>
       <li><strong>Device identifier (subscription device limit):</strong> on paid plans, we read a vendor-scoped device identifier (Apple's identifierForVendor on iOS, Android's SSAID) to enforce how many devices can be signed into one subscription at a time, which helps prevent account sharing. This is not an advertising identifier — it is not Apple's IDFA or Google's Advertising ID, and we do not use it for ad tracking or ad attribution.</li>
       <li><strong>Free-week eligibility check (voice trial):</strong> when an adult starts the 7-day Izzy voice trial, the App stores a one-way hash (SHA-256) of a device identifier so the free week is given once per device and once per account; the identifier itself is not stored. On iOS the App also asks Apple's DeviceCheck, and on Android Google's Play Integrity, to confirm the request comes from a genuine device running our App; those services return a verdict to our servers and we keep the outcome and the time of the check, not your personal data. These checks are used only to prevent repeat free weeks and abuse.</li>
     </ul>
@@ -66,6 +67,7 @@
       <li><strong>RevenueCat</strong> and the <strong>Apple App Store / Google Play</strong> — subscription processing.</li>
       <li><strong>Cloudflare Turnstile</strong> — verifying you're human when you sign up or sign in.</li>
       <li><strong>Sentry</strong> — crash and error diagnostics.</li>
+      <li><strong>PostHog (PostHog Inc., US cloud)</strong> — product usage counts for signed-in adults, described under "Product analytics" below. PostHog acts as our processor under a signed data processing agreement and may not use the data for its own purposes.</li>
       <li><strong>Expo / Apple Push Notification service / Firebase Cloud Messaging</strong> — delivering push notifications.</li>
       <li><strong>Listmonk (self-hosted on Fly.io)</strong> — stores the email addresses and list choices of people who sign up for email on izzywolf.com, and sends those emails.</li>
       <li><strong>Google Workspace</strong> — relays the email we send and receives bounce notifications.</li>
@@ -73,9 +75,29 @@
     <p>These providers process data under their own privacy policies. We do not sell your personal information.</p>
 
     <h2>Tracking and advertising</h2>
-    <p>Izzy does not include any advertising SDK, analytics SDK, or attribution SDK, and the App
-      does not show Apple's App Tracking Transparency prompt because it does not track you across
-      other companies' apps or websites.</p>
+    <p>Izzy does not include any advertising SDK or attribution SDK, and the App does not show
+      Apple's App Tracking Transparency prompt because it does not track you across other companies'
+      apps or websites. The App has one product-analytics tool, PostHog, described next.</p>
+    <p id="analytics"><strong>Product analytics.</strong> To learn which parts of Izzy are used, the App
+      uses PostHog (US cloud) for a short, fixed list of counts (see "Product usage" above).
+      It is switched on only for a signed-in person whose date of birth on file shows they are 18 or
+      older. It is off for everyone else: anyone under 18, any family member added as a child, any
+      account where we cannot confirm age, and anyone signed out. Where age is unknown it stays off.
+      It is never used in kid mode.</p>
+    <ul>
+      <li>No session replay, no screen recording, no tracking of taps or typing, and no automatic
+        capture of anything outside that fixed list.</li>
+      <li>No advertising identifier. The random ID is made by the App, is not tied to your name,
+        email or account, and is not shared with advertisers or used for ads.</li>
+      <li>Your IP address is not kept: our PostHog project is set to discard it, and the App asks
+        PostHog not to look up your location from it.</li>
+      <li>Nothing about your position on the mountain, your messages, your family, your safety
+        contacts, or what you say to Izzy is sent to PostHog.</li>
+      <li>PostHog keeps these counts for up to 12 months. Because they are not linked to your name or
+        account, we cannot pick out one person's counts later, so deleting your account does not
+        delete them; they age out on their own. There is no in-app switch for this yet; questions or
+        requests go to <a href="mailto:support@izzywolf.com">support@izzywolf.com</a>.</li>
+    </ul>
     <p><strong>Our website.</strong> izzywolf.com uses Cloudflare Web Analytics to count visits and
       page views in aggregate (for example, which pages are read and which link brought a visitor
       here). It does not use cookies, does not store anything on your device, and does not identify
@@ -124,7 +146,8 @@
       <a href="mailto:support@izzywolf.com">support@izzywolf.com</a> from the address on your
       account with the subject "Delete my account" and we will confirm and complete the deletion.
       We will delete or anonymize your data except where we must retain it for legal or security
-      reasons. For a complete breakdown of what is deleted, what is retained and why, and what
+      reasons. Product-analytics counts (see above) are not linked to your account and age out of
+      PostHog within 12 months. For a complete breakdown of what is deleted, what is retained and why, and what
       happens to a family, see our <a href="account-deletion.html">account deletion page</a>.</p>
 
     <h2>Your choices</h2>
