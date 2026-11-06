@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Izzy</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/app-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<script>
+  // GitHub Pages serves /get from get.html but returns this page for /get/ (trailing slash), so a link someone
+  // shared or typed with a slash used to dead-end. Send a trailing-slash path for a known page to that page,
+  // keeping the query string (utm_* / src= ad attribution) and hash. 2026-11-06.
+  (function () {
+    var PAGES = ['get', 'app', 'early', 'events', 'mountain', 'press', 'privacy', 'resort', 'resorts',
+                 'support', 'terms', 'children-privacy', 'account-deletion'];
+    var m = location.pathname.match(/^\/([a-z-]+)\/?(?:index\.html)?$/);
+    if (m && PAGES.indexOf(m[1]) !== -1) {
+      location.replace('/' + m[1] + '.html' + location.search + location.hash);
+    }
+  })();
+</script>
+</head>
+<body>
+<main style="max-width:560px;margin:0 auto;padding:12vh 16px;text-align:center">
+  <h1>That page isn't here.</h1>
+  <p><a href="/">Go to izzywolf.com</a> or <a href="/get.html">get the app</a>.</p>
+</main>
+</body>
+</html>
