@@ -159,6 +159,12 @@
     var q = new URLSearchParams(location.search), keep = [];
     q.forEach(function (v, k) { if (/^utm_(source|medium|campaign|content|term)$/.test(k)) keep.push(k + '=' + encodeURIComponent(v)); });
     if (keep.length) STORE.android += '&referrer=' + encodeURIComponent(keep.join('&'));
+    // Apple campaign link (2026-11-06): with a provider token, App Store Connect shows downloads per ad.
+    // APPLE_PT comes from ASC -> App Analytics -> Campaigns -> Generate campaign link (the pt= value). Empty =
+    // App Store URL unchanged. ct (campaign) is the ad name from utm_content, else utm_campaign; Apple caps it at 40.
+    var APPLE_PT = '';
+    var ct = (q.get('utm_content') || q.get('utm_campaign') || '').replace(/[^A-Za-z0-9 _.|-]/g, '').slice(0, 40);
+    if (APPLE_PT && ct) STORE.ios += '?pt=' + encodeURIComponent(APPLE_PT) + '&ct=' + encodeURIComponent(ct) + '&mt=8';
   })();
   // Store buttons: hrefs, visibility, and which one leads on a phone.
   (function () {
@@ -179,6 +185,21 @@
     if (plat !== 'desktop') {
       (plat === 'ios' ? and : ios).classList.replace('is-primary', 'is-secondary');
     }
+  })();
+  // Store-button taps (2026-11-06): if the visitor said OK to the Meta pixel, count the tap as StoreClick, give
+  // the pixel a moment to send, then go to the store. Without consent the link just works as a normal link.
+  (function () {
+    ['get-ios', 'get-android'].forEach(function (id) {
+      var a = document.getElementById(id);
+      a.addEventListener('click', function (ev) {
+        if (!(window.izzyAds && window.izzyAds.enabled())) return;
+        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) return;   // new tab/window: let the browser do it
+        ev.preventDefault();
+        window.izzyAds.storeClick(id === 'get-ios' ? 'ios' : 'android');
+        var href = a.href;
+        setTimeout(function () { location.href = href; }, 300);
+      });
+    });
   })();
   // ─── LIFT LINE OPT-IN (moved here from /early, 2026-10-27) ─────────────────────
   // A PLAIN FORM POST, not fetch(). Browsers do not apply CORS to form navigation, so there is nothing to
