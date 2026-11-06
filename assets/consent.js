@@ -52,6 +52,9 @@
   window.izzyAds = {
     enabled: function () { return loaded && typeof window.fbq === 'function'; },
     lead: function () { if (this.enabled()) window.fbq('track', 'Lead'); },
+    // A tap on an App Store / Google Play button on /get (2026-11-06). Lets the ads optimize for people who
+    // head to a store, not just people who click. Same consent rule: no pixel, no event.
+    storeClick: function (store) { if (this.enabled()) window.fbq('trackCustom', 'StoreClick', { store: store }); },
     reset: function () { try { localStorage.removeItem(KEY); } catch (e) {} ; location.reload(); }
   };
 
