@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-09",
+  "generated": "2026-11-12",
   "events": [
     {
       "resort": "Mont Tremblant",
@@ -34,6 +34,22 @@
       "confidence": "high"
     },
     {
+      "resort": "Banff Sunshine",
+      "handle": "sunshinevillage",
+      "source_type": "resort",
+      "name": "Free skiing for veterans and military members",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-15",
+      "category": "Specials",
+      "family_friendly": false,
+      "free": true,
+      "adults_only": false,
+      "where": "Banff Sunshine Village",
+      "permalink": "https://www.instagram.com/p/DfkMw2jScxR/",
+      "evidence": "Canadian Armed Forces and NATO veterans and active members ski free Nov 9-15 with photo ID",
+      "confidence": "high"
+    },
+    {
       "resort": "Lake Louise",
       "handle": "skilouise",
       "source_type": "resort",
@@ -47,6 +63,22 @@
       "where": "Lake Louise Ski Resort",
       "permalink": "https://www.instagram.com/p/DfdU6aXvUqp/",
       "evidence": "Canadian veterans, active CAF and BATUS personnel ski free Nov 9-15 with valid military ID",
+      "confidence": "high"
+    },
+    {
+      "resort": "Vail",
+      "handle": "vailmtn",
+      "source_type": "resort",
+      "name": "Opening day DJ at Express Lift",
+      "start_date": "2026-11-13",
+      "end_date": null,
+      "category": "Music",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Express Lift, Vail",
+      "permalink": "https://www.instagram.com/reel/Dfnq4N7PoiC/",
+      "evidence": "A DJ plays Express Lift 1:30-3:30pm on opening day, Fri Nov 13",
       "confidence": "high"
     },
     {
@@ -82,6 +114,38 @@
       "confidence": "medium"
     },
     {
+      "resort": "Arapahoe Basin",
+      "handle": "arapahoe_basin",
+      "source_type": "resort",
+      "name": "Rise N' Shine Rando Race",
+      "start_date": "2026-11-24",
+      "end_date": null,
+      "category": "Competitions",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Arapahoe Basin",
+      "permalink": "https://www.instagram.com/reel/DfkdzTkKIia/",
+      "evidence": "Next race in the uphill series is Nov 24; the first race was an hour of laps on High Noon",
+      "confidence": "high"
+    },
+    {
+      "resort": "Copper Mountain",
+      "handle": "coppermtn",
+      "source_type": "resort",
+      "name": "Stifel Copper Cup music",
+      "start_date": "2026-11-27",
+      "end_date": "2026-11-28",
+      "category": "Music",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Copper Mountain",
+      "permalink": "https://www.instagram.com/p/Dfnf8NhDyoT/",
+      "evidence": "Race-weekend music: DJ sets Friday night, live music Saturday, Thanksgiving weekend",
+      "confidence": "medium"
+    },
+    {
       "resort": "Killington",
       "handle": "killingtonmtn",
       "source_type": "resort",
@@ -111,6 +175,38 @@
       "where": "Kona Big Wave Stage, Killington",
       "permalink": "https://www.instagram.com/p/DeuQGPwFZHm/",
       "evidence": "Race-weekend concerts: Congress the Band Fri, Aluna + The Revivalists Sat, Dillon Francis Sun",
+      "confidence": "high"
+    },
+    {
+      "resort": "Copper Mountain",
+      "handle": "coppermtn",
+      "source_type": "resort",
+      "name": "Stifel Copper Cup",
+      "start_date": "2026-11-28",
+      "end_date": null,
+      "category": "Competitions",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Copper Mountain",
+      "permalink": "https://www.instagram.com/p/Dfnf8NhDyoT/",
+      "evidence": "Races begin Saturday of Thanksgiving weekend; the full race schedule is not in the post",
+      "confidence": "medium"
+    },
+    {
+      "resort": "Mt. Bachelor",
+      "handle": "mtbachelor",
+      "source_type": "resort",
+      "name": "Lady Laps Tech Talk",
+      "start_date": "2026-11-28",
+      "end_date": null,
+      "category": "Community",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Mt. Bachelor Sports Pro Shop, Mountain Gateway, West Village",
+      "permalink": "https://www.instagram.com/reel/DfnbyFuSQ50/",
+      "evidence": "Meetup for women skiers and riders on gear, 3-5pm Nov 28; custom designs heat-transferred for attendees",
       "confidence": "high"
     },
     {
@@ -191,6 +287,22 @@
       "where": "Palisades Tahoe",
       "permalink": "https://www.instagram.com/reel/DdZV3rITECj/",
       "evidence": "Ski-and-rave music festival: GRiZ, Chris Lake, Knock2, Madeon headline a 3-day lineup",
+      "confidence": "high"
+    },
+    {
+      "resort": "Vail",
+      "handle": "vailmtn",
+      "source_type": "resort",
+      "name": "Apr\u00e8s All Day",
+      "start_date": "2026-12-11",
+      "end_date": "2027-04-11",
+      "category": "Music",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Express Lift, Vail base",
+      "permalink": "https://www.instagram.com/p/DflInoxFnuG/",
+      "evidence": "54 shows by local and Front Range DJs at the base, Fri-Sun 2:30-5:30pm, Dec 11 to Apr 11",
       "confidence": "high"
     },
     {
@@ -338,6 +450,22 @@
       "confidence": "high"
     },
     {
+      "resort": "Vail",
+      "handle": "vailmtn",
+      "source_type": "resort",
+      "name": "Apr\u00e8s Unlimited",
+      "start_date": "2027-01-02",
+      "end_date": null,
+      "category": "Music",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "A different spot on Vail Mountain each Saturday",
+      "permalink": "https://www.instagram.com/p/DflInoxFnuG/",
+      "evidence": "Local DJs at a different spot on Vail Mountain each Saturday, noon-2pm, from Jan 2; no end date given",
+      "confidence": "medium"
+    },
+    {
       "resort": "Steamboat",
       "handle": "steamboatresort",
       "source_type": "resort",
@@ -386,6 +514,38 @@
       "confidence": "high"
     },
     {
+      "resort": "Deer Valley",
+      "handle": "deervalleyresort",
+      "source_type": "resort",
+      "name": "Stifel Freestyle International Ski World Cup",
+      "start_date": "2027-01-28",
+      "end_date": "2027-01-30",
+      "category": "Competitions",
+      "family_friendly": false,
+      "free": true,
+      "adults_only": false,
+      "where": "Deer Valley Resort",
+      "permalink": "https://www.instagram.com/reel/Dfm90DEBwJ8/",
+      "evidence": "Moguls Jan 28, aerials Jan 29, dual moguls Jan 30; general admission free, VIP tickets sold",
+      "confidence": "high"
+    },
+    {
+      "resort": "Steamboat",
+      "handle": "steamboatresort",
+      "source_type": "resort",
+      "name": "Rucksack Challenge",
+      "start_date": "2027-02-18",
+      "end_date": null,
+      "category": "Competitions",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Steamboat Resort",
+      "permalink": "https://www.instagram.com/p/DfnG-vxvFRe/",
+      "evidence": "Night uphill race on the Riva Ridge ascent anniversary, with an optional 90-lb pack",
+      "confidence": "high"
+    },
+    {
       "resort": "Aspen Snowmass",
       "handle": "aspensnowmass",
       "source_type": "resort",
@@ -403,13 +563,6 @@
     }
   ],
   "news": [
-    {
-      "resort": "Whistler Blackcomb",
-      "handle": "whistlerblackcomb",
-      "text": "Showcase Chairlift: towers and terminals installed, haul rope spliced; opening planned for 2026/27",
-      "posted_date": "2026-10-13",
-      "permalink": "https://www.instagram.com/p/Dec9PN-lytQ/"
-    },
     {
       "resort": "Whistler Blackcomb",
       "handle": "whistlerblackcomb",
@@ -490,23 +643,23 @@
     {
       "resort": "Big Sky",
       "handle": "bigskyresort",
-      "text": "Snowmaking guns are running to build a base for the Nov 25 opening day",
-      "posted_date": "2026-10-25",
-      "permalink": "https://www.instagram.com/reel/De7QN_kJxBJ/"
+      "text": "The Iglu apr\u00e8s venue returns in December",
+      "posted_date": "2026-11-09",
+      "permalink": "https://www.instagram.com/p/DfhsuNzF0wt/"
     },
     {
       "resort": "Big Sky",
       "handle": "bigskyresort",
-      "text": "7 inches of new snow fell overnight on Oct 26-27",
-      "posted_date": "2026-10-27",
-      "permalink": "https://www.instagram.com/reel/DfATU2HFALz/"
+      "text": "M by the Alinea Group culinary residency returns, opening Dec 10",
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/p/DfikbWVl8tI/"
     },
     {
       "resort": "Big Sky",
       "handle": "bigskyresort",
-      "text": "12 inches of snow reported on Lone Mountain in the past week",
-      "posted_date": "2026-11-03",
-      "permalink": "https://www.instagram.com/reel/DfSOZoKEQ1c/"
+      "text": "The learning center has a new home steps from the Explorer Gondola mid-station",
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/reel/DfnsXARpNel/"
     },
     {
       "resort": "Copper Mountain",
@@ -532,23 +685,23 @@
     {
       "resort": "Keystone",
       "handle": "keystoneresort",
-      "text": "Snowmaking is underway at Keystone for the 2026/27 winter season",
-      "posted_date": "2026-10-15",
-      "permalink": "https://www.instagram.com/reel/DehGJ5Rx3oA/"
-    },
-    {
-      "resort": "Keystone",
-      "handle": "keystoneresort",
       "text": "Opens Oct 30 at 9am with 43 acres off Montezuma Express and a hike-to terrain park on Scout",
       "posted_date": "2026-10-29",
       "permalink": "https://www.instagram.com/p/DfGK73VEW04/"
     },
     {
-      "resort": "Brighton",
-      "handle": "brightonresort",
-      "text": "Oct 12 bonus summer day cancelled by snow; biking, disc golf and scenic lift rides stayed closed",
-      "posted_date": "2026-10-12",
-      "permalink": "https://www.instagram.com/p/DeZg5KcFEY-/"
+      "resort": "Keystone",
+      "handle": "keystoneresort",
+      "text": "Summit Express resumed its normal winter schedule Nov 11, opening top-to-bottom skiing",
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/reel/Dfk4ZLZOyTf/"
+    },
+    {
+      "resort": "Keystone",
+      "handle": "keystoneresort",
+      "text": "61 acres are open from top to bottom",
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/reel/DfmunzUuYGc/"
     },
     {
       "resort": "Brighton",
@@ -556,6 +709,13 @@
       "text": "Snowmaking has started; the Bone Zone is closed until the resort says it is ready to open",
       "posted_date": "2026-11-03",
       "permalink": "https://www.instagram.com/reel/DfQm3LSIQ-k/"
+    },
+    {
+      "resort": "Brighton",
+      "handle": "brightonresort",
+      "text": "Brighton is heading into its 90th season",
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/p/DflRhqJishi/"
     },
     {
       "resort": "Killington",
@@ -605,6 +765,13 @@
       "text": "New beginner trail Barrow's Bend links Rendezvous to South Peak and Sunshine Express lifts",
       "posted_date": "2026-10-23",
       "permalink": "https://www.instagram.com/p/De1oSCfjTT7/"
+    },
+    {
+      "resort": "Steamboat",
+      "handle": "steamboatresort",
+      "text": "Opening day is set for Nov 21",
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/reel/DflDuSvPUwD/"
     },
     {
       "resort": "Arapahoe Basin",
@@ -686,16 +853,16 @@
     {
       "resort": "Revelstoke",
       "handle": "revelstokemtnresort",
-      "text": "Summer operations wrapped up for the season",
-      "posted_date": "2026-10-13",
-      "permalink": "https://www.instagram.com/reel/DeaeIEmswbp/"
+      "text": "Opening day is Dec 5; early-season lifts start at 9 or 9:30am and close 3 to 3:30pm",
+      "posted_date": "2026-11-04",
+      "permalink": "https://www.instagram.com/p/DfVbAR7l4XH/"
     },
     {
       "resort": "Revelstoke",
       "handle": "revelstokemtnresort",
-      "text": "Opening day is Dec 5; early-season lifts start at 9 or 9:30am and close 3 to 3:30pm",
-      "posted_date": "2026-11-04",
-      "permalink": "https://www.instagram.com/p/DfVbAR7l4XH/"
+      "text": "The lower gondola got a brand-new haul rope this fall, and the grooming fleet was expanded",
+      "posted_date": "2026-11-09",
+      "permalink": "https://www.instagram.com/p/Dfh4s0KmHPg/"
     },
     {
       "resort": "Heavenly",
@@ -705,11 +872,11 @@
       "permalink": "https://www.instagram.com/p/DfFuXtdk50z/"
     },
     {
-      "resort": "Stowe",
-      "handle": "stowemt",
-      "text": "Final weekend of fall operations Oct 17-18: gondola 10am-4:30pm, toll road 9:30am-4:30pm",
-      "posted_date": "2026-10-15",
-      "permalink": "https://www.instagram.com/reel/DehfWc9PzIs/"
+      "resort": "Heavenly",
+      "handle": "skiheavenly",
+      "text": "Gondola sightseeing and Mountain Coaster open early Sat Nov 14, weather permitting; skiing opens Nov 20",
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/p/DflELl3F2G6/"
     },
     {
       "resort": "Stowe",
@@ -726,18 +893,11 @@
       "permalink": "https://www.instagram.com/p/DfZmjRGl6WP/"
     },
     {
-      "resort": "Mont Tremblant",
-      "handle": "monttremblant",
-      "text": "First snowfall of the season reached the summit on Oct 17",
-      "posted_date": "2026-10-17",
-      "permalink": "https://www.instagram.com/p/Del_3TIl50y/"
-    },
-    {
-      "resort": "Mont Tremblant",
-      "handle": "monttremblant",
-      "text": "First snowmaking tests of the season ran on the Johannsen trail on Oct 21",
-      "posted_date": "2026-10-21",
-      "permalink": "https://www.instagram.com/reel/DeweNDgxWLb/"
+      "resort": "Stowe",
+      "handle": "stowemt",
+      "text": "Snowmaking started Nov 10 on the upper half of the mountain",
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/reel/DfkJZ9pvSm_/"
     },
     {
       "resort": "Mont Tremblant",
@@ -745,6 +905,20 @@
       "text": "Duncan Express lift motor was refurbished and reinstalled after a breakdown last winter",
       "posted_date": "2026-10-28",
       "permalink": "https://www.instagram.com/reel/DfCeZBEoCH5/"
+    },
+    {
+      "resort": "Mont Tremblant",
+      "handle": "monttremblant",
+      "text": "New snow groomers for the 2026-27 season arrived at Tremblant",
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/reel/Dfkrs70hAGg/"
+    },
+    {
+      "resort": "Mont Tremblant",
+      "handle": "monttremblant",
+      "text": "Snowmaking began at the summit and on P'tit Bonheur, about two weeks before opening",
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/p/DfnJ47iGdGh/"
     },
     {
       "resort": "Winter Park",
@@ -763,23 +937,23 @@
     {
       "resort": "Vail",
       "handle": "vailmtn",
-      "text": "Snow guns fired up for the first time this season",
-      "posted_date": "2026-10-16",
-      "permalink": "https://www.instagram.com/p/Dej9Wz0lggb/"
-    },
-    {
-      "resort": "Vail",
-      "handle": "vailmtn",
-      "text": "Snow reached Vail Village on Nov 2; snowmaking crews are readying for colder temps this week",
-      "posted_date": "2026-11-02",
-      "permalink": "https://www.instagram.com/p/DfQTLHHltnU/"
-    },
-    {
-      "resort": "Vail",
-      "handle": "vailmtn",
       "text": "A quick storm overnight Nov 4 left a couple of inches of new snow",
       "posted_date": "2026-11-05",
       "permalink": "https://www.instagram.com/p/DfXauvSFokW/"
+    },
+    {
+      "resort": "Vail",
+      "handle": "vailmtn",
+      "text": "Opens Fri Nov 13, 9am-3:30pm: Gondola One and Mountaintop Express for Ramshorn; Eagle Bahn not running",
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/reel/Dfnq4N7PoiC/"
+    },
+    {
+      "resort": "Vail",
+      "handle": "vailmtn",
+      "text": "No beginner terrain on opening day; a hike-to terrain park sits at the top of Swingsville",
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/reel/Dfnq4N7PoiC/"
     },
     {
       "resort": "Breckenridge",
@@ -791,9 +965,9 @@
     {
       "resort": "Breckenridge",
       "handle": "breckenridgemtn",
-      "text": "Nov 6 opening day called off to build a deeper base; a new date will be announced",
-      "posted_date": "2026-11-05",
-      "permalink": "https://www.instagram.com/reel/DfXd-LWxS9y/"
+      "text": "Opened Nov 11 on Peak 8, with Springmeier served by the Colorado SuperChair",
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/p/Dfm_Bp6F1kt/"
     },
     {
       "resort": "Mammoth Mountain",
@@ -943,8 +1117,8 @@
       "handle": "whistlerblackcomb",
       "opening_date": "2026-11-20",
       "closing_date": null,
-      "posted_date": "2026-11-02",
-      "permalink": "https://www.instagram.com/p/DfN_NlNlzlA/"
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/p/DfkmNaigflD/"
     },
     {
       "resort": "Aspen Snowmass",
@@ -959,8 +1133,8 @@
       "handle": "vailmtn",
       "opening_date": "2026-11-13",
       "closing_date": null,
-      "posted_date": "2026-11-06",
-      "permalink": "https://www.instagram.com/p/DfZ3cLdFsXh/"
+      "posted_date": "2026-11-11",
+      "permalink": "https://www.instagram.com/reel/Dfnq4N7PoiC/"
     },
     {
       "resort": "Palisades Tahoe",
@@ -1015,8 +1189,8 @@
       "handle": "steamboatresort",
       "opening_date": "2026-11-21",
       "closing_date": null,
-      "posted_date": "2026-09-21",
-      "permalink": "https://www.instagram.com/reel/DdjZStNuKZn/"
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/reel/DflDuSvPUwD/"
     },
     {
       "resort": "Lake Louise",
@@ -1031,8 +1205,8 @@
       "handle": "skiheavenly",
       "opening_date": "2026-11-20",
       "closing_date": null,
-      "posted_date": "2026-08-22",
-      "permalink": "https://www.instagram.com/p/DcUqE_dDBnp/"
+      "posted_date": "2026-11-10",
+      "permalink": "https://www.instagram.com/p/DflELl3F2G6/"
     },
     {
       "resort": "Mont Tremblant",
@@ -1111,16 +1285,16 @@
       "handle": "revelstokemtnresort",
       "opening_date": "2026-12-05",
       "closing_date": null,
-      "posted_date": "2026-11-04",
-      "permalink": "https://www.instagram.com/p/DfVbAR7l4XH/"
+      "posted_date": "2026-11-09",
+      "permalink": "https://www.instagram.com/p/Dfh4s0KmHPg/"
     },
     {
       "resort": "Mt. Bachelor",
       "handle": "mtbachelor",
       "opening_date": "2026-12-04",
       "closing_date": null,
-      "posted_date": "2026-11-04",
-      "permalink": "https://www.instagram.com/reel/DfVQ_PFA47f/"
+      "posted_date": "2026-11-12",
+      "permalink": "https://www.instagram.com/reel/Dfn4UOygJ4F/"
     },
     {
       "resort": "Copper Mountain",
@@ -1129,6 +1303,14 @@
       "closing_date": null,
       "posted_date": "2026-11-08",
       "permalink": "https://www.instagram.com/reel/DffJPfqu4dF/"
+    },
+    {
+      "resort": "Breckenridge",
+      "handle": "breckenridgemtn",
+      "opening_date": "2026-11-11",
+      "closing_date": null,
+      "posted_date": "2026-11-09",
+      "permalink": "https://www.instagram.com/reel/DfiP0nqREyp/"
     }
   ]
 }
