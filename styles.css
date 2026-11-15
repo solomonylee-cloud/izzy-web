@@ -1487,5 +1487,9 @@ p { margin: 0; text-wrap: pretty; }
 .is-ikon .r-badge, .r-badge.is-ikon { background: rgba(255,179,71,.18); color: var(--sun); }
 .is-epic .r-badge, .r-badge.is-epic { background: rgba(47,147,255,.18); color: var(--blue-bright); }
 .is-independent .r-badge, .r-badge.is-independent { background: transparent; color: var(--grey); border-color: var(--navy-line); }
+/* Ikon Pass Bonus Mountains (2026-11-15): 2 days on the full Ikon Pass, so the pill is outlined, not filled. */
+.is-bonus .r-badge, .r-badge.is-bonus { background: transparent; color: var(--sun); border: 1px dashed rgba(255,179,71,.7); white-space: nowrap; }
+.bonus-key { margin-top: 8px; }
+.bonus-note { margin-top: clamp(24px, 4vw, 36px); max-width: 720px; font-size: 13px; line-height: 1.55; color: var(--grey-dim); }
 .resort-empty { margin-top: 24px; color: var(--grey); }
 .resorts-note { margin-top: clamp(28px, 5vw, 44px); }
