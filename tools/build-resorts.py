@@ -21,6 +21,53 @@ STATES = {
  'WI':'Wisconsin','WV':'West Virginia','WY':'Wyoming','AK':'Alaska','IN':'Indiana','MA':'Massachusetts','AZ':'Arizona',
 }
 BADGE = {'ikon': 'IKON', 'epic': 'EPIC', 'independent': 'INDY'}
+# Ikon Pass BONUS MOUNTAINS, 2026-27 season (Ikon's own announcement, read 2026-11-15): 2 days each on
+# the full Ikon Pass, not regular Ikon access. Season-scoped: re-check this list every autumn. They stay
+# passAffiliation 'ikon' in the catalog (so they count under the IKON filter) and get a BONUS marker here.
+BONUS = {'crystal-ridge', 'nordic-mountain', 'little-switzerland', 'devils-head', 'caberfae-peaks',
+         'giants-ridge', 'wild-mountain', 'buck-hill', 'ski-butternut', 'jiminy-peak', 'cranmore',
+         'tamarack', 'snowy-range', 'grouse-mountain'}
+# Hand-written blocks kept verbatim (plain strings: they contain braces). Season markers, 2026-10-30.
+SEASON_KEY = '''        <p class="season-key" id="seasonKey">
+          <span class="r-open is-open">Open now</span>
+          <span class="r-open is-projected">Projected Nov 20</span>
+          <span class="r-open is-tbd">Projected: TBD</span>
+          <span class="season-key-note">Opening days come from each resort&#x27;s own posts and refresh every few days. <a href="events.html">Sources →</a></span>
+        </p>
+'''
+SEASON_SCRIPT = '''<script>
+  // Season markers (2026-10-30): every row gets "Open now" / "Projected <date>" / "Projected: TBD".
+  // Dates come from data/events.json → season[] (Scout refresh, every ~3 days), matched by resort name,
+  // so this page needs no regeneration when a resort announces. Rows start as TBD and upgrade on fetch.
+  (function () {
+    var ALIAS = { 'mont tremblant': 'tremblant' };
+    var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var rows = {};
+    document.querySelectorAll('.resort').forEach(function (li) {
+      var name = li.querySelector('.r-name');
+      var wrap = document.createElement('span'); wrap.className = 'r-text';
+      var mark = document.createElement('span'); mark.className = 'r-open is-tbd'; mark.textContent = 'Projected: TBD';
+      name.parentNode.insertBefore(wrap, name); wrap.appendChild(name); wrap.appendChild(mark);
+      rows[li.dataset.name] = mark;
+    });
+    function fmt(iso) { var d = iso.split('-'); return MONTHS[+d[1] - 1] + ' ' + (+d[2]); }
+    var t = new Date(), today = t.getFullYear() + '-' + ('0' + (t.getMonth() + 1)).slice(-2) + '-' + ('0' + t.getDate()).slice(-2);
+    fetch('data/events.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
+      (d.season || []).forEach(function (e) {
+        var key = (e.resort || '').toLowerCase(); key = ALIAS[key] || key;
+        var mark = rows[key]; if (!mark) return;
+        var o = e.opening_date, c = e.closing_date, cls, txt;
+        if (c && c < today)            { cls = 'is-tbd';       txt = 'Closed for the season'; }
+        else if (o && o <= today)      { cls = 'is-open';      txt = 'Open now'; }
+        else if (o)                    { cls = 'is-projected'; txt = 'Projected ' + fmt(o); }
+        else return;
+        mark.className = 'r-open ' + cls; mark.textContent = txt;
+        if (e.posted_date) mark.title = 'From the resort\\u2019s own post, ' + fmt(e.posted_date);
+      });
+    }).catch(function () {});
+  })();
+</script>
+'''
 
 src = re.sub(r'//[^\n]*', '', open(SRC, encoding='utf-8').read())
 rows = [dict(id=i, name=n.replace("\\'", "'"), state=s, country=c, pas=p) for i, n, s, c, p in re.findall(
@@ -32,6 +79,10 @@ for ids, label in MERGE.items():
 for r in rows:
     assert r['state'] in STATES, f"add {r['state']} to STATES"
     assert r['pas'] in BADGE, r
+    r['bonus'] = r['id'] in BONUS
+    assert not r['bonus'] or r['pas'] == 'ikon', f"bonus mountain {r['id']} must be tagged ikon"
+n_bonus = sum(r['bonus'] for r in rows)
+assert n_bonus in (0, len(BONUS)), f"catalog has {n_bonus} of {len(BONUS)} bonus mountains: an id was renamed or dropped"
 
 counts = Counter(r['pas'] for r in rows); total = len(rows)
 groups = OrderedDict()
@@ -42,11 +93,19 @@ cards = []
 for (country, st), rs in groups.items():
     region = f"{STATES[st]}, {'Canada' if country == 'Canada' else 'USA'}"
     items = ''.join(
-        f'\n        <li class="resort is-{r["pas"]}" data-pass="{r["pas"]}" data-name="{html.escape(r["name"].lower())}">'
-        f'<span class="r-name">{html.escape(r["name"])}</span><span class="r-badge">{BADGE[r["pas"]]}</span></li>'
+        f'\n        <li class="resort is-{r["pas"]}{" is-bonus" if r["bonus"] else ""}" data-pass="{r["pas"]}" data-name="{html.escape(r["name"].lower())}">'
+        f'<span class="r-name">{html.escape(r["name"])}</span><span class="r-badge">{BADGE[r["pas"]]}{" BONUS*" if r["bonus"] else ""}</span></li>'
         for r in rs)
     cards.append(f'\n      <section class="region" data-region>\n        <h3>{html.escape(region)} <span class="r-count">{len(rs)}</span></h3>\n        <ul class="resort-grid">{items}\n        </ul>\n      </section>')
 
+BONUS_KEY = '' if not n_bonus else '''
+        <div class="pass-key bonus-key" aria-hidden="true">
+          <span class="r-badge is-ikon is-bonus">IKON BONUS*</span>
+          <span class="pass-key-note">An Ikon Pass Bonus Mountain: 2 days a season on the full Ikon Pass.</span>
+        </div>'''
+BONUS_NOTE = '' if not n_bonus else f'''      <p class="bonus-note" id="bonusNote">* Ikon Pass Bonus Mountains for the 2026–27 season ({n_bonus} resorts). Full Ikon Pass holders get 2 days at each one; this is not unlimited Ikon access, and other Ikon products may not include it. Check ikonpass.com for the current terms before you go. Izzy works at these mountains whichever ticket you hold.</p>
+
+'''
 page = f'''<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,8 +160,8 @@ page = f'''<!DOCTYPE html><html lang="en"><head>
         <div class="pass-key" aria-hidden="true">
           <span class="r-badge is-ikon">IKON</span><span class="r-badge is-epic">EPIC</span><span class="r-badge is-independent">INDY</span>
           <span class="pass-key-note">Badges show the pass the resort belongs to. INDY = an independent, on its own pass.</span>
-        </div>
-      </div>
+        </div>{BONUS_KEY}
+{SEASON_KEY}      </div>
 
       <div class="resort-tools">
         <div class="pass-filter" role="group" aria-label="Filter by pass">
@@ -121,7 +180,7 @@ page = f'''<!DOCTYPE html><html lang="en"><head>
 
       <p class="resort-empty" id="resortEmpty" hidden>No resort matches that. Try a shorter name, or clear the filter.</p>
 
-      <p class="note-line resorts-note">Not seeing your mountain? We add resorts as riders ask for them. <a href="mailto:support@izzywolf.com?subject=Add%20my%20resort%20to%20Izzy" style="color:var(--blue-bright)">Ask us to add a resort →</a></p>
+{BONUS_NOTE}      <p class="note-line resorts-note">Not seeing your mountain? We add resorts as riders ask for them. <a href="mailto:support@izzywolf.com?subject=Add%20my%20resort%20to%20Izzy" style="color:var(--blue-bright)">Ask us to add a resort →</a></p>
     </div>
   </section>
 
@@ -166,7 +225,7 @@ page = f'''<!DOCTYPE html><html lang="en"><head>
   </div>
 </footer>
 
-<script>
+{SEASON_SCRIPT}<script>
   // Pass filter + name search. The list is static HTML, so it reads fine without JS.
   (function () {{
     var buttons = document.querySelectorAll('.pass-filter button');
