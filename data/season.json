@@ -1,0 +1,776 @@
+{
+ "generated": "2026-11-18",
+ "source": "season calendar",
+ "season": [
+  {
+   "resort": "Afton Alps",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Alpine Valley",
+   "opening_date": "2026-12-19",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Alta",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Alyeska Resort",
+   "opening_date": "2026-11-28",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Arapahoe Basin",
+   "opening_date": "2026-10-28",
+   "opened": true,
+   "closing_date": null,
+   "as_of": "2026-10-28"
+  },
+  {
+   "resort": "Aspen Highlands",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Aspen Snowmass",
+   "opening_date": "2026-11-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-06"
+  },
+  {
+   "resort": "Attitash",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Banff Sunshine",
+   "opening_date": "2026-11-07",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-09"
+  },
+  {
+   "resort": "Beaver Creek",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Beech Mountain Resort",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": "2027-03-20",
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Big Sky",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Blue Mountain",
+   "opening_date": "2026-12-10",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Blue Mountain PA",
+   "opening_date": "2026-12-10",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Bolton Valley Resort",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Boston Mills / Brandywine",
+   "opening_date": "2026-12-18",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Boyne Mountain",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Breckenridge",
+   "opening_date": "2026-11-11",
+   "opened": true,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Bretton Woods",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-16"
+  },
+  {
+   "resort": "Brighton",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Buck Hill",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Buttermilk",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Caberfae Peaks",
+   "opening_date": "2026-12-05",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-17"
+  },
+  {
+   "resort": "Camelback",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Copper Mountain",
+   "opening_date": "2026-11-08",
+   "opened": true,
+   "closing_date": null,
+   "as_of": "2026-11-10"
+  },
+  {
+   "resort": "Cranmore Mountain Resort",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Crested Butte",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Crotched Mountain",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Crystal Mountain",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Cypress Mountain",
+   "opening_date": "2026-11-28",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Deer Valley",
+   "opening_date": "2026-12-05",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Devil's Head Resort",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Eldora",
+   "opening_date": "2026-11-13",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Fernie Alpine Resort",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Granite Peak",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-06"
+  },
+  {
+   "resort": "Grouse Mountain",
+   "opening_date": "2026-12-18",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Heavenly",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Hidden Valley MO",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Hidden Valley PA",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Hunter Mountain",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Jack Frost",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Jackson Hole",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Jiminy Peak",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "June Mountain",
+   "opening_date": "2026-12-19",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Keystone",
+   "opening_date": "2026-10-30",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Kicking Horse",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-06"
+  },
+  {
+   "resort": "Killington",
+   "opening_date": "2026-11-17",
+   "opened": true,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Kirkwood",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-06"
+  },
+  {
+   "resort": "Lake Louise",
+   "opening_date": "2026-11-01",
+   "opened": true,
+   "closing_date": null,
+   "as_of": "2026-11-06"
+  },
+  {
+   "resort": "Le Massif de Charlevoix",
+   "opening_date": "2026-12-05",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Liberty Mountain",
+   "opening_date": "2026-12-19",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Little Switzerland",
+   "opening_date": "2026-11-28",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Loon Mountain",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-16"
+  },
+  {
+   "resort": "Lutsen Mountains",
+   "opening_date": "2026-11-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-06"
+  },
+  {
+   "resort": "Mad River Mountain",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Mammoth Mountain",
+   "opening_date": "2026-11-05",
+   "opened": true,
+   "closing_date": null,
+   "as_of": "2026-11-09"
+  },
+  {
+   "resort": "Mount Pleasant of Edinboro",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Mount Snow",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Mount Sunapee",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Mt. Bachelor",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Mt. Brighton",
+   "opening_date": "2026-12-09",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Mt. Norquay",
+   "opening_date": "2026-11-06",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Nakiska",
+   "opening_date": "2026-11-28",
+   "opened": false,
+   "closing_date": "2027-04-18",
+   "as_of": "2026-11-07"
+  },
+  {
+   "resort": "Northstar",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Ober Mountain",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Okemo",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Palisades Tahoe",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Panorama",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Paoli Peaks",
+   "opening_date": "2026-12-18",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Park City",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Red Mountain",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Revelstoke",
+   "opening_date": "2026-12-05",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Roundtop Mountain",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Schweitzer",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Seven Springs",
+   "opening_date": "2026-12-05",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Sierra-at-Tahoe",
+   "opening_date": "2026-12-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "SilverStar Mountain Resort",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Ski Butternut",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Snow Creek",
+   "opening_date": "2026-12-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Snow Valley",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Snowbasin",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Snowbird",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Snowriver Mountain Resort",
+   "opening_date": "2026-11-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-12"
+  },
+  {
+   "resort": "Snowshoe",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Solitude",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Steamboat",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Stevens Pass",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Stowe",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Stratton",
+   "opening_date": "2026-11-25",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Sugar Bowl Resort",
+   "opening_date": "2026-11-27",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Sugar Mountain Resort",
+   "opening_date": "2026-12-18",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-08"
+  },
+  {
+   "resort": "Sugarbush",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Sugarloaf",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Sun Peaks Resort",
+   "opening_date": "2026-11-21",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Sun Valley",
+   "opening_date": "2026-11-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Sunday River",
+   "opening_date": "2026-11-15",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Tamarack Resort",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Taos Ski Valley",
+   "opening_date": "2026-11-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Telluride",
+   "opening_date": "2026-11-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-31"
+  },
+  {
+   "resort": "The Highlands",
+   "opening_date": "2026-12-11",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "The Summit at Snoqualmie",
+   "opening_date": "2026-12-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Tremblant",
+   "opening_date": "2026-11-26",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-10-29"
+  },
+  {
+   "resort": "Tussey Mountain Ski Area",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Vail",
+   "opening_date": "2026-11-13",
+   "opened": true,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Whistler Blackcomb",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-18"
+  },
+  {
+   "resort": "Whitetail Resort",
+   "opening_date": "2026-12-12",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-01"
+  },
+  {
+   "resort": "Wild Mountain",
+   "opening_date": "2026-11-20",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-11"
+  },
+  {
+   "resort": "Wildcat",
+   "opening_date": "2026-12-02",
+   "opened": false,
+   "closing_date": "2027-04-04",
+   "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Wilmot Mountain",
+   "opening_date": "2026-12-04",
+   "opened": false,
+   "closing_date": "2027-03-07",
+   "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Winter Park",
+   "opening_date": "2026-11-13",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-15"
+  }
+ ]
+}

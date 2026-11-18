@@ -61,7 +61,7 @@
           <span class="r-open is-open">Open now</span>
           <span class="r-open is-projected">Projected Nov 20</span>
           <span class="r-open is-tbd">Projected: TBD</span>
-          <span class="season-key-note">Opening days come from each resort&#x27;s own posts and refresh every few days. <a href="events.html">Sources →</a></span>
+          <span class="season-key-note">Opening days come from each resort&#x27;s own site and posts and refresh every few days. <a href="events.html">Sources →</a></span>
         </p>
       </div>
 
@@ -392,7 +392,7 @@
 
 <script>
   // Season markers (2026-10-30): every row gets "Open now" / "Projected <date>" / "Projected: TBD".
-  // Dates come from data/events.json → season[] (Scout refresh, every ~3 days), matched by resort name,
+  // Dates come from data/season.json (season calendar) and data/events.json → season[] (Scout), matched by resort name,
   // so this page needs no regeneration when a resort announces. Rows start as TBD and upgrade on fetch.
   (function () {
     var ALIAS = { 'mont tremblant': 'tremblant' };
@@ -407,19 +407,28 @@
     });
     function fmt(iso) { var d = iso.split('-'); return MONTHS[+d[1] - 1] + ' ' + (+d[2]); }
     var t = new Date(), today = t.getFullYear() + '-' + ('0' + (t.getMonth() + 1)).slice(-2) + '-' + ('0' + t.getDate()).slice(-2);
-    fetch('data/events.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
-      (d.season || []).forEach(function (e) {
-        var key = (e.resort || '').toLowerCase(); key = ALIAS[key] || key;
-        var mark = rows[key]; if (!mark) return;
+    function get(u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { return r.json(); }).catch(function () { return {}; }); }
+    // Two sources per resort; the one checked most recently wins (a tie goes to the season calendar).
+    Promise.all([get('data/season.json'), get('data/events.json')]).then(function (ds) {
+      var best = {};
+      [[ds[0], 'as_of', 'site'], [ds[1], 'posted_date', 'post']].forEach(function (s) {
+        ((s[0] && s[0].season) || []).forEach(function (e) {
+          var key = (e.resort || '').toLowerCase(); key = ALIAS[key] || key;
+          if (!rows[key] || !e.opening_date) return;
+          var stamp = e[s[1]] || '';
+          if (!best[key] || stamp > best[key].stamp) best[key] = { e: e, stamp: stamp, from: s[2] };
+        });
+      });
+      Object.keys(best).forEach(function (key) {
+        var b = best[key], e = b.e, mark = rows[key];
         var o = e.opening_date, c = e.closing_date, cls, txt;
         if (c && c < today)            { cls = 'is-tbd';       txt = 'Closed for the season'; }
-        else if (o && o <= today)      { cls = 'is-open';      txt = 'Open now'; }
-        else if (o)                    { cls = 'is-projected'; txt = 'Projected ' + fmt(o); }
-        else return;
+        else if (o <= today)           { cls = 'is-open';      txt = 'Open now'; }
+        else                           { cls = 'is-projected'; txt = 'Projected ' + fmt(o); }
         mark.className = 'r-open ' + cls; mark.textContent = txt;
-        if (e.posted_date) mark.title = 'From the resort\u2019s own post, ' + fmt(e.posted_date);
+        if (b.stamp) mark.title = (b.from === 'post' ? 'From the resort’s own post, ' : 'From the resort’s own site, checked ') + fmt(b.stamp);
       });
-    }).catch(function () {});
+    });
   })();
 </script>
 <script>
