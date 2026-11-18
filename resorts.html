@@ -419,11 +419,16 @@
           if (!best[key] || stamp > best[key].stamp) best[key] = { e: e, stamp: stamp, from: s[2] };
         });
       });
+      // "Open now" only for a confirmed opening (season.json opened: true); a confirmed row beats a newer post.
+      ((ds[0] && ds[0].season) || []).forEach(function (e) {
+        var key = (e.resort || '').toLowerCase(); key = ALIAS[key] || key;
+        if (rows[key] && e.opened === true && e.opening_date) best[key] = { e: e, stamp: e.as_of || '', from: 'site', opened: true };
+      });
       Object.keys(best).forEach(function (key) {
         var b = best[key], e = b.e, mark = rows[key];
         var o = e.opening_date, c = e.closing_date, cls, txt;
         if (c && c < today)            { cls = 'is-tbd';       txt = 'Closed for the season'; }
-        else if (o <= today)           { cls = 'is-open';      txt = 'Open now'; }
+        else if (b.opened && o <= today) { cls = 'is-open';    txt = 'Open now'; }
         else                           { cls = 'is-projected'; txt = 'Projected ' + fmt(o); }
         mark.className = 'r-open ' + cls; mark.textContent = txt;
         if (b.stamp) mark.title = (b.from === 'post' ? 'From the resort’s own post, ' : 'From the resort’s own site, checked ') + fmt(b.stamp);
