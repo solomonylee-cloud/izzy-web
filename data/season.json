@@ -313,9 +313,9 @@
   {
    "resort": "Keystone",
    "opening_date": "2026-10-30",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-01"
+   "as_of": "2026-11-18"
   },
   {
    "resort": "Kicking Horse",
@@ -768,9 +768,9 @@
   {
    "resort": "Winter Park",
    "opening_date": "2026-11-13",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-15"
+   "as_of": "2026-11-18"
   }
  ]
 }
