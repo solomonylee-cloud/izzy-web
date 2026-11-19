@@ -61,9 +61,9 @@
   {
    "resort": "Banff Sunshine",
    "opening_date": "2026-11-07",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-09"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Beaver Creek",
