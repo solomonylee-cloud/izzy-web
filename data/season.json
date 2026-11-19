@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-18",
+ "generated": "2026-11-19",
  "source": "season calendar",
  "season": [
   {
@@ -77,7 +77,7 @@
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": "2027-03-20",
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Big Sky",
@@ -228,10 +228,10 @@
   },
   {
    "resort": "Eldora",
-   "opening_date": "2026-11-13",
+   "opening_date": "2026-11-27",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Fernie Alpine Resort",
@@ -239,6 +239,13 @@
    "opened": false,
    "closing_date": null,
    "as_of": "2026-11-05"
+  },
+  {
+   "resort": "Giants Ridge",
+   "opening_date": "2026-11-28",
+   "opened": false,
+   "closing_date": null,
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Granite Peak",
@@ -259,7 +266,7 @@
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Hidden Valley MO",
@@ -329,7 +336,7 @@
    "opening_date": "2026-11-17",
    "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Kirkwood",
@@ -406,7 +413,7 @@
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Mount Sunapee",
@@ -448,21 +455,21 @@
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Ober Mountain",
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Okemo",
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Palisades Tahoe",
@@ -487,10 +494,10 @@
   },
   {
    "resort": "Park City",
-   "opening_date": "2026-11-20",
+   "opening_date": "2026-11-27",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Red Mountain",
@@ -616,7 +623,7 @@
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Stratton",
@@ -669,10 +676,10 @@
   },
   {
    "resort": "Sunday River",
-   "opening_date": "2026-11-15",
+   "opening_date": "2026-11-27",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Tamarack Resort",
@@ -735,7 +742,7 @@
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-19"
   },
   {
    "resort": "Whitetail Resort",
