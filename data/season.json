@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-19",
+ "generated": "2026-11-20",
  "source": "season calendar",
  "season": [
   {
@@ -21,7 +21,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Alyeska Resort",
@@ -70,14 +70,14 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-05"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Beech Mountain Resort",
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": "2027-03-20",
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Big Sky",
@@ -189,7 +189,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-05"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Crotched Mountain",
@@ -249,10 +249,10 @@
   },
   {
    "resort": "Granite Peak",
-   "opening_date": "2026-11-25",
+   "opening_date": "2026-11-28",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-06"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Grouse Mountain",
@@ -266,7 +266,7 @@
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Hidden Valley MO",
@@ -455,14 +455,14 @@
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Ober Mountain",
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Okemo",
@@ -473,10 +473,10 @@
   },
   {
    "resort": "Palisades Tahoe",
-   "opening_date": "2026-11-25",
+   "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Panorama",
@@ -606,10 +606,10 @@
   },
   {
    "resort": "Steamboat",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-11-27",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Stevens Pass",
@@ -630,7 +630,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Sugar Bowl Resort",
@@ -655,10 +655,10 @@
   },
   {
    "resort": "Sugarloaf",
-   "opening_date": "2026-11-20",
+   "opening_date": "2026-11-27",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Sun Peaks Resort",
@@ -742,7 +742,7 @@
    "opening_date": "2026-11-20",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-20"
   },
   {
    "resort": "Whitetail Resort",
