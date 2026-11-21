@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-20",
+ "generated": "2026-11-21",
  "source": "season calendar",
  "season": [
   {
@@ -21,7 +21,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Alyeska Resort",
@@ -49,7 +49,7 @@
    "opening_date": "2026-11-26",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-06"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Attitash",
@@ -70,21 +70,21 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Beech Mountain Resort",
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": "2027-03-20",
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Big Sky",
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Blue Mountain",
@@ -189,7 +189,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Crotched Mountain",
@@ -385,7 +385,7 @@
    "opening_date": "2026-11-26",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-06"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Mad River Mountain",
@@ -476,7 +476,7 @@
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Panorama",
@@ -585,17 +585,17 @@
   },
   {
    "resort": "Snowriver Mountain Resort",
-   "opening_date": "2026-11-26",
+   "opening_date": "2026-12-05",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-12"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Snowshoe",
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Solitude",
@@ -630,7 +630,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Sugar Bowl Resort",
@@ -662,17 +662,17 @@
   },
   {
    "resort": "Sun Peaks Resort",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-11-26",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Sun Valley",
    "opening_date": "2026-11-26",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Sunday River",
