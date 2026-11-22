@@ -474,9 +474,9 @@
   {
    "resort": "Palisades Tahoe",
    "opening_date": "2026-11-21",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-22"
   },
   {
    "resort": "Panorama",
@@ -599,10 +599,10 @@
   },
   {
    "resort": "Solitude",
-   "opening_date": "2026-11-20",
-   "opened": false,
+   "opening_date": "2026-11-19",
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-22"
   },
   {
    "resort": "Steamboat",
