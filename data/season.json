@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-21",
+ "generated": "2026-11-22",
  "source": "season calendar",
  "season": [
   {
@@ -21,7 +21,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-22"
   },
   {
    "resort": "Alyeska Resort",
@@ -77,7 +77,7 @@
    "opening_date": "2026-11-21",
    "opened": false,
    "closing_date": "2027-03-20",
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-22"
   },
   {
    "resort": "Big Sky",
@@ -189,7 +189,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-22"
   },
   {
    "resort": "Crotched Mountain",
@@ -460,9 +460,9 @@
   {
    "resort": "Ober Mountain",
    "opening_date": "2026-11-20",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Okemo",
@@ -740,9 +740,9 @@
   {
    "resort": "Whistler Blackcomb",
    "opening_date": "2026-11-20",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-20"
+   "as_of": "2026-11-21"
   },
   {
    "resort": "Whitetail Resort",
