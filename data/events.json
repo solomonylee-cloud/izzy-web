@@ -800,6 +800,22 @@
       "permalink": "https://www.instagram.com/reel/Df7ukpJuGrq/",
       "evidence": "Backcountry-style snowboard jump session off the lifts; event window Feb 20 to Mar 6, 2027",
       "confidence": "high"
+    },
+    {
+      "resort": "Whistler Blackcomb",
+      "handle": "whistlerblackcomb",
+      "source_type": "resort",
+      "name": "John Summit: Experts Only Ski Weekender",
+      "start_date": "2027-03-20",
+      "end_date": "2027-03-21",
+      "category": "Music",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Lot 7, Whistler",
+      "permalink": "https://www.axs.com/events/1692997/-tickets",
+      "evidence": "John Summit returns to Whistler Blackcomb Mar 20-21 for the two-day Experts Only Ski Weekender at Lot 7; ticketed",
+      "confidence": "high"
     }
   ],
   "news": [
