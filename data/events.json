@@ -434,6 +434,22 @@
       "confidence": "high"
     },
     {
+      "resort": "Vail",
+      "handle": "vailmtn",
+      "source_type": "resort",
+      "name": "ILLENIUM at Dobson Arena",
+      "start_date": "2026-12-11",
+      "end_date": null,
+      "category": "Music",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Dobson Arena, Lionshead",
+      "permalink": "https://www.axs.com/events/1590911/illenium-tickets",
+      "evidence": "ILLENIUM opens Vail's winter music season at the renovated Dobson Arena, Fri Dec 11, doors 6pm; ticketed via AXS, 18+",
+      "confidence": "high"
+    },
+    {
       "resort": "Aspen Snowmass",
       "handle": "aspensnowmass",
       "source_type": "resort",
@@ -655,6 +671,22 @@
       "where": "Buttermilk halfpipe",
       "permalink": "https://www.instagram.com/p/DezCnf0GAIE/",
       "evidence": "Pro snowboard and freeski league returns to the Buttermilk halfpipe Jan 7-9; tickets on sale",
+      "confidence": "high"
+    },
+    {
+      "resort": "Vail",
+      "handle": "vailmtn",
+      "source_type": "resort",
+      "name": "Ian Asher at Dobson Arena",
+      "start_date": "2027-01-16",
+      "end_date": null,
+      "category": "Music",
+      "family_friendly": false,
+      "free": false,
+      "adults_only": false,
+      "where": "Dobson Arena, Lionshead",
+      "permalink": "https://news.vailresorts.com/2026-11-19-Vail-Resorts-Turns-Up-the-Volume-with-ILLENIUM-in-Vail,-John-Summit-in-Whistler-and-a-Full-Winter-of-Music-and-Mountain-Culture",
+      "evidence": "Ian Asher plays Dobson Arena Sat Jan 16, doors 7:30pm; ticketed via AXS",
       "confidence": "high"
     },
     {
