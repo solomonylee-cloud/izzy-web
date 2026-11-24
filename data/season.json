@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-22",
+ "generated": "2026-11-24",
  "source": "season calendar",
  "season": [
   {
@@ -21,7 +21,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-22"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Alyeska Resort",
@@ -70,14 +70,14 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Beech Mountain Resort",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-12-04",
    "opened": false,
    "closing_date": "2027-03-20",
-   "as_of": "2026-11-22"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Big Sky",
@@ -189,7 +189,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-22"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Crotched Mountain",
@@ -284,10 +284,10 @@
   },
   {
    "resort": "Hunter Mountain",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-18"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Jack Frost",
@@ -382,10 +382,10 @@
   },
   {
    "resort": "Lutsen Mountains",
-   "opening_date": "2026-11-26",
+   "opening_date": "2026-11-28",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Mad River Mountain",
@@ -410,10 +410,10 @@
   },
   {
    "resort": "Mount Snow",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Mount Sunapee",
@@ -466,10 +466,10 @@
   },
   {
    "resort": "Okemo",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Palisades Tahoe",
@@ -620,10 +620,10 @@
   },
   {
    "resort": "Stowe",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Stratton",
@@ -648,10 +648,10 @@
   },
   {
    "resort": "Sugarbush",
-   "opening_date": "2026-11-21",
+   "opening_date": "2026-11-27",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-10-29"
+   "as_of": "2026-11-24"
   },
   {
    "resort": "Sugarloaf",
