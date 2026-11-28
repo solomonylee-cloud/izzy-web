@@ -579,7 +579,7 @@
   {
    "resort": "Snowbird",
    "opening_date": "2026-11-25",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
    "as_of": "2026-11-28"
   },
