@@ -19,9 +19,9 @@
   {
    "resort": "Alta",
    "opening_date": "2026-11-25",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-24"
+   "as_of": "2026-11-28"
   },
   {
    "resort": "Alyeska Resort",
@@ -82,9 +82,9 @@
   {
    "resort": "Big Sky",
    "opening_date": "2026-11-25",
-   "opened": false,
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-28"
   },
   {
    "resort": "Blue Mountain",
@@ -494,10 +494,10 @@
   },
   {
    "resort": "Park City",
-   "opening_date": "2026-11-27",
-   "opened": false,
+   "opening_date": "2026-11-25",
+   "opened": true,
    "closing_date": null,
-   "as_of": "2026-11-19"
+   "as_of": "2026-11-28"
   },
   {
    "resort": "Red Mountain",
