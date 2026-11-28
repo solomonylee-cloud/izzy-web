@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-24",
+ "generated": "2026-11-28",
  "source": "season calendar",
  "season": [
   {
@@ -49,7 +49,7 @@
    "opening_date": "2026-11-26",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-28"
   },
   {
    "resort": "Attitash",
@@ -67,10 +67,10 @@
   },
   {
    "resort": "Beaver Creek",
-   "opening_date": "2026-11-25",
+   "opening_date": "2026-11-28",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-24"
+   "as_of": "2026-11-28"
   },
   {
    "resort": "Beech Mountain Resort",
@@ -581,7 +581,7 @@
    "opening_date": "2026-11-25",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-22"
+   "as_of": "2026-11-28"
   },
   {
    "resort": "Snowriver Mountain Resort",
@@ -672,7 +672,7 @@
    "opening_date": "2026-11-26",
    "opened": false,
    "closing_date": null,
-   "as_of": "2026-11-21"
+   "as_of": "2026-11-28"
   },
   {
    "resort": "Sunday River",
